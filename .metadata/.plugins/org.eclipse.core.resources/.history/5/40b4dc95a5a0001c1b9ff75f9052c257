@@ -41,9 +41,9 @@ public class Nota {
 	}
 
 	public boolean isModificado() {
-		boolean resul = true;
-		if (fechaCreacion.equals(fechaUltimaModificacion)) {
-			resul = false;
+		boolean resul = false;
+		if (fechaCreacion != fechaUltimaModificacion) {
+			resul = true;
 		}
 		return resul;
 	}

@@ -45,7 +45,11 @@ public class NotaAlarma extends Nota {
 	}
 	
 	public boolean isActivado() {
-		return activado;
+		boolean resul=false;
+		if(this.activado) {
+			resul=true;
+		}
+		return resul;
 	}
 
 	@Override

@@ -9,14 +9,14 @@ public class NotaAlarma extends Nota {
 	private boolean activado;
 	private static final int MINUTOS_REPETIR_POR_DEFECTO = 5;
 
-	public NotaAlarma(String texto,LocalDateTime fecha,boolean activado) throws Exception {
+	public NotaAlarma(String texto,LocalDateTime fecha,boolean activado) {
 		super(texto);
 		setFechaAlarma(fecha);
 		this.activado=activado;
 		this.minutosRepetir=MINUTOS_REPETIR_POR_DEFECTO;
 	}
 
-	public NotaAlarma(String texto,LocalDateTime fecha,int minutos) throws Exception {
+	public NotaAlarma(String texto,LocalDateTime fecha,int minutos) {
 		super(texto);
 		setFechaAlarma(fecha);
 		this.minutosRepetir=minutos;
@@ -45,7 +45,11 @@ public class NotaAlarma extends Nota {
 	}
 	
 	public boolean isActivado() {
-		return activado;
+		boolean resul=false;
+		if(this.activado) {
+			resul=true;
+		}
+		return resul;
 	}
 
 	@Override
