@@ -43,14 +43,26 @@ public class Bloc {
 		}
 	}
 	
-	public void activa(int num) {
-		//notas[num] necesito la clase hija??
+	public void activa(int num) throws Exception {
+		compruebaNota(num);
+		if(notas[num] instanceof NotaAlarma) {
+			((NotaAlarma) notas[num]).activar();
+		}
+		else {
+			throw new Exception("Esa nota no dispone de alarma");
+		}
 	}
 
 	public void desactiva(int num) {
 		
 	}
 
+	private void compruebaNota(int pos) throws Exception {
+		if(pos>=numNotas) {
+			throw new Exception("Posición errónea");
+		}
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
