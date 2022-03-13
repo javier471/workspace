@@ -23,7 +23,8 @@ public class Bloc {
 		return resul;
 	}
 	
-	public void updateNota(int num,String texto) {
+	public void updateNota(int num,String texto) throws Exception {
+		compruebaNota(num);// Asi o tengo q comprobar con bucle?
 		notas[num].setTexto(texto);
 	}
 	
@@ -53,8 +54,11 @@ public class Bloc {
 		}
 	}
 
-	public void desactiva(int num) {
-		
+	public void desactiva(int num) throws Exception {
+		compruebaNota(num);
+		if(notas[num] instanceof NotaAlarma) {
+			((NotaAlarma) notas[num]).desactivar();
+		}
 	}
 
 	private void compruebaNota(int pos) throws Exception {
@@ -95,6 +99,7 @@ public class Bloc {
 	
 	public String ordenaBloc() {
 		Nota resul[]=new Nota[numNotas];
+		resul=notas;
 		Arrays.sort(resul);
 		return resul.toString();
 	}

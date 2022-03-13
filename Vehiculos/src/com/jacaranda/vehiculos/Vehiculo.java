@@ -13,6 +13,9 @@ public class Vehiculo {
 
 	public Vehiculo(String matricula, String tipoGama, LocalDate fechaSalida) throws Exception {
 		super();
+		if (fechaSalida == null) {
+			throw new Exception("Fecha de salida no válida");
+		}
 		this.matricula = matricula;
 		this.tipoGama = Gama.valueOf(tipoGama.toUpperCase());
 		this.fechaEntrada = LocalDate.now();

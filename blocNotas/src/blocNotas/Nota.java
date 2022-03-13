@@ -15,7 +15,7 @@ public class Nota {
 		super();
 		this.texto = texto;
 		this.fechaCreacion = LocalDateTime.now();
-		this.fechaUltimaModificacion = LocalDateTime.now();
+		this.fechaUltimaModificacion = fechaCreacion;
 		this.codigo = codigoSiguiente;
 		codigoSiguiente++;
 	}
@@ -26,6 +26,7 @@ public class Nota {
 
 	public void setTexto(String texto) {
 		this.texto = texto;
+		fechaUltimaModificacion=LocalDateTime.now();
 	}
 
 	public int getCodigo() {
