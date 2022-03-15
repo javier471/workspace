@@ -68,7 +68,7 @@ public class Libro {
 	}
 
 	private String generaISBN() throws Exception {
-		if(titulo.length()<3 || titulo.length()<3) {
+		if (titulo.length() < 3 || titulo.length() < 3) {
 			throw new Exception("No se puede crear autor con esa longitud");
 		}
 		StringBuilder resul = new StringBuilder();
@@ -85,19 +85,18 @@ public class Libro {
 
 	public int diferenciaFecha(Libro l1) {
 		int resul;
-		LocalDate fechaAnterior,fechaPosterior;
-		if(this.fechaEdicion.isBefore(l1.fechaEdicion)) {
-			fechaAnterior=this.fechaEdicion;
-			fechaPosterior=l1.fechaEdicion;
+		LocalDate fechaAnterior, fechaPosterior;
+		if (this.fechaEdicion.isBefore(l1.fechaEdicion)) {
+			fechaAnterior = this.fechaEdicion;
+			fechaPosterior = l1.fechaEdicion;
+		} else {
+			fechaAnterior = l1.fechaEdicion;
+			fechaPosterior = this.fechaEdicion;
 		}
-		else {
-			fechaAnterior=l1.fechaEdicion;
-			fechaPosterior=this.fechaEdicion;
-		}
-		resul=(int) fechaAnterior.until(fechaPosterior, ChronoUnit.DAYS);
+		resul = (int) fechaAnterior.until(fechaPosterior, ChronoUnit.DAYS);
 		return resul;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(ISBN);
@@ -115,13 +114,11 @@ public class Libro {
 		return Objects.equals(ISBN, other.ISBN);
 	}
 
-//	abstract public boolean masCaro(Libro l1);
-	
-	
 	@Override
 	public String toString() {
-		 StringBuilder resul=new StringBuilder("Libro: "+this.titulo+ ". Autor: "+this.autor+ ". ISBN: "+this.ISBN+ ". Codigo: "+this.codigo);
-		 return resul.toString();
+		StringBuilder resul = new StringBuilder("Libro: " + this.titulo + ". Autor: " + this.autor + ". ISBN: "
+				+ this.ISBN + ". Codigo: " + this.codigo);
+		return resul.toString();
 	}
 
 }

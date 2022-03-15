@@ -34,6 +34,12 @@ public class LibroDigital extends Libro{
 		}
 		return resul;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder resul=new StringBuilder("Libro: "+this.getTitulo()+". Autor: "+this.getAutor()+". ISBN: "+this.getISBN()+" .Código: "+this.getCodigo()+" .Precio: "+this.getPrecio()+" Formato: "+this.getFormatoLibro());
+		return resul.toString();
+	}
 	
 	
 	
