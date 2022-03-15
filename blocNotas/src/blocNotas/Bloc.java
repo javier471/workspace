@@ -78,7 +78,11 @@ public class Bloc {
 
 	@Override
 	public String toString() {
-		return "Bloc [numNotas=" + numNotas + ", nombre=" + nombre + ", notas=" + Arrays.toString(notas) + "]";
+		StringBuilder resultado=new StringBuilder("Nombre del bloc"+nombre+"\n");
+		for(int i=0;i<numNotas;i++) {
+			resultado.append(notas[i].toString()+"\n");
+		}
+		return resultado.toString();
 	}
 
 	@Override
@@ -100,9 +104,13 @@ public class Bloc {
 	
 	public String ordenaBloc() {
 		Nota resul[]=new Nota[numNotas];
+		StringBuilder resultado=new StringBuilder();
 		resul=notas;
 		Arrays.sort(resul);
-		return resul.toString();
+		for(int i=0;i<numNotas;i++) {
+			resultado.append(resul[i]);
+		}
+		return resultado.toString();
 	}
 	
 	
