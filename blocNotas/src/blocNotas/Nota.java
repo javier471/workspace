@@ -91,7 +91,10 @@ public class Nota {
 				+ ", fechaUltimaModificacion=" + fechaUltimaModificacion + "]";
 	}
 
-	public int CompareTo(Nota n1) {
+	public int CompareTo(Nota n1) throws Exception {
+		if (n1==null) {
+			throw new Exception("Nota no válida");
+		}
 		int resul = this.texto.toUpperCase().compareTo(n1.getTexto().toUpperCase());
 		if (resul == 0) {
 			resul = this.fechaCreacion.compareTo(n1.fechaCreacion);

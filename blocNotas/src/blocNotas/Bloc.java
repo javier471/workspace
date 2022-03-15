@@ -24,7 +24,7 @@ public class Bloc {
 	}
 	
 	public void updateNota(int num,String texto) throws Exception {
-		compruebaNota(num);// Asi o tengo q comprobar con bucle?
+		compruebaNota(num);
 		notas[num].setTexto(texto);
 	}
 	
@@ -41,6 +41,7 @@ public class Bloc {
 		}
 		if(!igual) {
 			notas[i]=n1;
+			numNotas++;
 		}
 	}
 	
