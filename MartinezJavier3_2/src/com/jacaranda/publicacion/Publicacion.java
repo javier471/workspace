@@ -86,7 +86,7 @@ public abstract class Publicacion implements Valorable {
 
 	public int compareTo(Publicacion p1) {
 		int resul;
-		resul = this.getTexto().compareTo(p1.getTexto());
+		resul = this.getValoracion().compareTo(p1.getValoracion());
 		if (resul == 0) {
 			resul = this.FechaCreacion.compareTo(p1.getFechaCreacion());
 		}

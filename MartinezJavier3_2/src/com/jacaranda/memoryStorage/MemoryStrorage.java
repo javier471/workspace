@@ -7,9 +7,8 @@ import com.jacaranda.publicacion.Recomendacion;
 import com.jacaranda.publicacion.Tweet;
 import com.jacaranda.usuario.Usuario;
 
-
 public class MemoryStrorage {
-	
+
 	private static final int NUM_MAXIMO_USUARIOS = 15;
 	private static final int NUM_MAXIMO_PUBLICACIONES = 50;
 	private int numUsuariosActuales;
@@ -26,7 +25,7 @@ public class MemoryStrorage {
 	}
 
 	private int posicionUsuario(String nombre) {
-		int resul = -1; //Si no encuentra al usuario devolverá -1
+		int resul = -1; // Si no encuentra al usuario devolverá -1
 		boolean encontrado = false;
 		for (int i = 0; i < numUsuariosActuales && !encontrado; i++) {
 			if (arrayUsuarios[i].getLogin().equals(nombre)) {
@@ -44,17 +43,14 @@ public class MemoryStrorage {
 
 	public void addPublicacion(String texto, String login) throws PublicacionException {
 		try {
-		int pos = posicionUsuario(login);
-		if (pos==-1) {
-			throw new MemoryStorageException();
-		}
-		arrayPublicaciones[numPublicacionesActuales] = new Tweet(texto, arrayUsuarios[pos]);
-		numPublicacionesActuales++;
-		}
-		catch(PublicacionException e) {
-			System.out.println("No se puede crear un texto con ese texto, introduce de nuevo");
+			int pos = posicionUsuario(login);
+			if (pos == -1) {
+				throw new MemoryStorageException();
+			}
+			arrayPublicaciones[numPublicacionesActuales] = new Tweet(texto, arrayUsuarios[pos]);
+			numPublicacionesActuales++;
+		} catch (PublicacionException e) {
 		} catch (MemoryStorageException e) {
-			System.out.println("El usuario no existe");
 		}
 	}
 
@@ -73,26 +69,26 @@ public class MemoryStrorage {
 	public String mostrarListaPublicaciones() {
 		StringBuilder resul = new StringBuilder();
 		for (int i = 0; i < numPublicacionesActuales; i++) {
-			resul.append(arrayPublicaciones[i].toString() + "\n");
+			resul.append(arrayPublicaciones[i].toString() + " ");
 		}
 		return resul.toString();
 	}
 
 	public String mostrarTweets() {
 		StringBuilder resul = new StringBuilder();
-		for (int i=0;i<numPublicacionesActuales;i++) {
-			if(arrayPublicaciones[i] instanceof Tweet) {
-				resul.append(arrayPublicaciones[i].toString()+"\n");
+		for (int i = 0; i < numPublicacionesActuales; i++) {
+			if (arrayPublicaciones[i] instanceof Tweet) {
+				resul.append(arrayPublicaciones[i].toString() + "\n");
 			}
 		}
 		return resul.toString();
 	}
-	
+
 	public String mostrarPosts() {
 		StringBuilder resul = new StringBuilder();
-		for (int i=0;i<numPublicacionesActuales;i++) {
-			if(arrayPublicaciones[i] instanceof Post) {
-				resul.append(arrayPublicaciones[i].toString()+"\n");
+		for (int i = 0; i < numPublicacionesActuales; i++) {
+			if (arrayPublicaciones[i] instanceof Post) {
+				resul.append(arrayPublicaciones[i].toString() + "\n");
 			}
 		}
 		return resul.toString();
@@ -100,9 +96,9 @@ public class MemoryStrorage {
 
 	public String mostrarRecomendacion() {
 		StringBuilder resul = new StringBuilder();
-		for (int i=0;i<numPublicacionesActuales;i++) {
-			if(arrayPublicaciones[i] instanceof Recomendacion) {
-				resul.append(arrayPublicaciones[i].toString()+"\n");
+		for (int i = 0; i < numPublicacionesActuales; i++) {
+			if (arrayPublicaciones[i] instanceof Recomendacion) {
+				resul.append(arrayPublicaciones[i].toString() + "\n");
 			}
 		}
 		return resul.toString();

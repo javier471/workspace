@@ -28,4 +28,6 @@
     <fullyQualifiedTypeName name="com.jacarande.publicacion.Post"/>
     <fullyQualifiedTypeName name="com.jacaranda.publicacion.PublicacionException"/>
     <fullyQualifiedTypeName name="com.jacaranda.memoryStorage.MemoryStorageException"/>
+    <fullyQualifiedTypeName name="com.jacaranda.pruebas.Utilidades"/>
+    <fullyQualifiedTypeName name="com.jacaranda.libros.LibroException"/>
 </qualifiedTypeNameHistroy>
