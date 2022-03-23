@@ -83,7 +83,10 @@ public class Libro {
 		return resul.toString();
 	}
 
-	public int diferenciaFecha(Libro l1) {
+	public int diferenciaFecha(Libro l1) throws Exception {
+		if(l1==null) {
+			throw new Exception("Libro no válido");
+		}
 		int resul;
 		LocalDate fechaAnterior, fechaPosterior;
 		if (this.fechaEdicion.isBefore(l1.fechaEdicion)) {

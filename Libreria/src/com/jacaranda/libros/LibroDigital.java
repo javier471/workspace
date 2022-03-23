@@ -28,6 +28,9 @@ public class LibroDigital extends Libro{
 
 	public boolean masCaro(LibroDigital l1) throws Exception {
 		//Como no se deja muy claro devuelvo true si el precio de this es mayor
+		if(l1==null) {
+			throw new Exception("Libro no valido");
+		}
 		boolean resul=false;
 		if(this.getPrecio()>l1.getPrecio()) {
 			resul=true;
@@ -37,8 +40,9 @@ public class LibroDigital extends Libro{
 
 	@Override
 	public String toString() {
-		StringBuilder resul=new StringBuilder("Libro: "+this.getTitulo()+". Autor: "+this.getAutor()+". ISBN: "+this.getISBN()+" .Código: "+this.getCodigo()+" .Precio: "+this.getPrecio()+" Formato: "+this.getFormatoLibro());
-		return resul.toString();
+		String resul=super.toString();
+		resul+="Precio: "+this.precio+" Formato.: "+this.getFormatoLibro();
+		return resul;
 	}
 	
 	

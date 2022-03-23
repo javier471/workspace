@@ -25,7 +25,10 @@ public class LibroPapel extends Libro{
 		return peso;
 	}
 	
-	public boolean masCaro(LibroPapel l1) {
+	public boolean masCaro(LibroPapel l1) throws LibroException {
+		if(l1==null) {
+			throw new LibroException("El libro no es válido");
+		}
 		boolean resul=false;
 		if(l1.getPrecio()<this.getPrecio()) {
 			resul=true;
