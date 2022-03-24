@@ -14,9 +14,9 @@ public abstract class Publicacion implements Valorable {
 	private static int codigoSiguiente = 1;
 	protected Usuario usuario;
 
-	public Publicacion(String texto, Usuario usuario) {
+	public Publicacion(String texto, Usuario usuario) throws PublicacionException {
 		super();
-		this.texto = texto;
+		setTexto(texto);
 		this.usuario = usuario;
 		this.FechaCreacion = LocalDateTime.now();
 		this.valoracion = 0;
@@ -28,7 +28,7 @@ public abstract class Publicacion implements Valorable {
 		return texto;
 	}
 
-	//Declaro el método abstracto y lo definiré en los hijos
+	// Declaro el método abstracto y lo definiré en los hijos
 	abstract void setTexto(String texto) throws PublicacionException;
 
 	@Override
@@ -85,8 +85,14 @@ public abstract class Publicacion implements Valorable {
 	}
 
 	public int compareTo(Publicacion p1) {
-		int resul;
-		resul = this.getValoracion().compareTo(p1.getValoracion());
+		int resul = -99;
+		if (this.getValoracion() > p1.getValoracion()) {
+			resul = 1;
+		} else if (this.getValoracion() < p1.getValoracion()) {
+			resul = -1;
+		} else {
+			resul = 0;
+		}
 		if (resul == 0) {
 			resul = this.FechaCreacion.compareTo(p1.getFechaCreacion());
 		}

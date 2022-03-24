@@ -3,9 +3,9 @@ package ejercicioEquipos;
 import java.util.Objects;
 
 public class Alumno {
-	String nombre;
-	String DNI;
-	
+	private String nombre;
+	private String DNI;
+
 	public Alumno(String nombre, String dNI) {
 		super();
 		this.nombre = nombre;
@@ -33,8 +33,5 @@ public class Alumno {
 	public String toString() {
 		return "Alumno [nombre=" + nombre + ", DNI=" + DNI + "]";
 	}
-	
-	
-	
 
 }

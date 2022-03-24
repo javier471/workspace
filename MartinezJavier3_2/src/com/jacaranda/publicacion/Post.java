@@ -10,8 +10,8 @@ public class Post extends Publicacion{
 	
 	public Post(String texto, Usuario usuario,String tema) throws PublicacionException {
 		super(texto, usuario);
-		setTexto(texto);
 		this.tema=tema;
+		this.numeroLecturas=0;
 	}
 	
 	@Override
