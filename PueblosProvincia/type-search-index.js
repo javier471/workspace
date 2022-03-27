@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"com.jacaranda.utilities","l":"Provincia"},{"p":"com.jacaranda.utilities","l":"Pueblo"}];updateSearchResults();

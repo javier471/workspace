@@ -30,4 +30,10 @@
     <fullyQualifiedTypeName name="com.jacaranda.memoryStorage.MemoryStorageException"/>
     <fullyQualifiedTypeName name="com.jacaranda.pruebas.Utilidades"/>
     <fullyQualifiedTypeName name="com.jacaranda.libros.LibroException"/>
+    <fullyQualifiedTypeName name="ejercicioEquipos.Alumno"/>
+    <fullyQualifiedTypeName name="ejercicioEquipos.EquipoException"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="ejercicioEquipos.Equipo"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
 </qualifiedTypeNameHistroy>
