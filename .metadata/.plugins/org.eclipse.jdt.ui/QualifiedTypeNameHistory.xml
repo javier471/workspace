@@ -23,7 +23,6 @@
     <fullyQualifiedTypeName name="com.jacarande.publicacion.Tweet"/>
     <fullyQualifiedTypeName name="com.jacarande.publicacion.Recomendacion"/>
     <fullyQualifiedTypeName name="com.jacarande.publicacion.Valorable"/>
-    <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
     <fullyQualifiedTypeName name="com.jacarande.publicacion.Valoraciones"/>
     <fullyQualifiedTypeName name="com.jacarande.publicacion.Post"/>
     <fullyQualifiedTypeName name="com.jacaranda.publicacion.PublicacionException"/>
@@ -36,4 +35,6 @@
     <fullyQualifiedTypeName name="ejercicioEquipos.Equipo"/>
     <fullyQualifiedTypeName name="java.util.Set"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="com.jacaranda.municipios.Pueblo"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 </qualifiedTypeNameHistroy>

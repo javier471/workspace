@@ -10,24 +10,34 @@ public class Pueblo {
 	private double rentaPerCapita;
 	private double superficie;
 
-	public Pueblo(String nombre, String codigo, int numHabitantes, double rentaPerCapita, double superficie) {
+	public Pueblo(String nombre, String codigo, int numHabitantes, double rentaPerCapita, double superficie) throws PuebloException {
 		super();
-		this.nombre = nombre;
-		this.codigo = codigo;
-		this.numHabitantes = numHabitantes;
-		this.rentaPerCapita = rentaPerCapita;
-		this.superficie = superficie;
+		if(numHabitantes<0|| rentaPerCapita<0|| superficie<0) {
+			throw new PuebloException("Datos no validos");
+		}
+		this.nombre = nombre.toUpperCase();
+		setCodigo(codigo);
+		setNumHabitantes(numHabitantes);
+		setRentaPerCapita(rentaPerCapita);
+		setSuperficie(superficie);
 	}
 
-	public Pueblo(String nombre, String codigo) {
+	public Pueblo(String nombre, String codigo) throws PuebloException {
 		super();
 		this.nombre = nombre;
-		this.codigo = codigo;
+		setCodigo(codigo);
+		setNumHabitantes(numHabitantes);
+		setRentaPerCapita(rentaPerCapita);
+		setSuperficie(superficie);
 	}
 
-	private void setCodigo(String codigo) {
+	private void setCodigo(String codigo) throws PuebloException {
+		if(codigo.length()!=5 || !(codigo.chars().allMatch(Character::isDigit))) {
+			throw new PuebloException("Codigo no valido");
+		}
 		this.codigo = codigo;
 	}
+	
 
 	public String getNombre() {
 		return nombre;
@@ -49,15 +59,24 @@ public class Pueblo {
 		return superficie;
 	}
 
-	public void setNumHabitantes(int numHabitantes) {
+	public void setNumHabitantes(int numHabitantes) throws PuebloException {
+		if(numHabitantes<0) {
+			throw new PuebloException("Numero de habitantes no valido");
+		}
 		this.numHabitantes = numHabitantes;
 	}
 
-	public void setRentaPerCapita(double rentaPerCapita) {
+	public void setRentaPerCapita(double rentaPerCapita) throws PuebloException {
+		if(rentaPerCapita<0) {
+			throw new PuebloException("Renta no valida");
+		}
 		this.rentaPerCapita = rentaPerCapita;
 	}
 
-	public void setSuperficie(double superficie) {
+	public void setSuperficie(double superficie) throws PuebloException {
+		if(superficie<0) {
+			throw new PuebloException("Superficie no valida");
+		}
 		this.superficie = superficie;
 	}
 
