@@ -1,6 +1,7 @@
 package com.jacaranda.municipios;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 public class Provincia {
@@ -14,6 +15,9 @@ public class Provincia {
 
 	public Provincia(String nombre, String codigo) throws ProvinciaException {
 		super();
+		if(nombre==null|| codigo==null) {
+			throw new ProvinciaException("Nombre o codigo no válido");
+		}
 		this.nombre = nombre.toUpperCase();
 		setCodigo(codigo);
 		this.listadoPueblos = new HashSet<Pueblo>();
@@ -61,12 +65,12 @@ public class Provincia {
 		boolean resultado = false;
 		String nuevoCodigo=this.codigo+codigo;
 		Pueblo aux = new Pueblo(nombre, nuevoCodigo, numhabitantes, renta, superficie);
-		if (!existePueblo(nombre)) {
+		if (!existePueblo(aux.getNombre())) {
 			listadoPueblos.add(aux);
-			resultado = true;
 			this.superficie += aux.getSuperficie();
 			this.numHabitantes += aux.getNumHabitantes();
 			this.rentaPerCapita += aux.getRentaPerCapita();
+			resultado = true;
 		}
 		else {
 			throw new ProvinciaException("El pueblo no puede crearse");
@@ -109,11 +113,13 @@ public class Provincia {
 
 	public boolean setSuperficie(String nombre, double superficie) throws PuebloException {
 		boolean resul = false;
-		for (Pueblo p : listadoPueblos) {
-			if (p.getNombre().equalsIgnoreCase(nombre)) {
-				double aux=p.getSuperficie()-superficie;
-				p.setSuperficie(superficie);
-				this.superficie+=aux;
+		Iterator<Pueblo> iterator=listadoPueblos.iterator();
+		while(iterator.hasNext()&& !resul) {
+			Pueblo aux=iterator.next();
+			if (aux.getNombre().equalsIgnoreCase(nombre)) {
+				double au=superficie-aux.getSuperficie();
+				aux.setSuperficie(superficie);
+				this.superficie+=au;
 				resul = true;
 			}
 		}
@@ -122,11 +128,13 @@ public class Provincia {
 
 	public boolean setNumeroHabitantes(String nombre, int numHabitantes) throws PuebloException {
 		boolean resul = false;
-		for (Pueblo p : listadoPueblos) {
-			if (p.getNombre().equalsIgnoreCase(nombre)) {
-				int aux=p.getNumHabitantes()-numHabitantes;
-				p.setNumHabitantes(numHabitantes);
-				this.numHabitantes+=aux;
+		Iterator<Pueblo> iterator=listadoPueblos.iterator();
+		while(iterator.hasNext()&& !resul) {
+			Pueblo aux=iterator.next();
+			if (aux.getNombre().equalsIgnoreCase(nombre)) {
+				int au=numHabitantes-aux.getNumHabitantes();
+				aux.setNumHabitantes(numHabitantes);
+				this.numHabitantes+=au;
 				resul = true;
 			}
 		}
