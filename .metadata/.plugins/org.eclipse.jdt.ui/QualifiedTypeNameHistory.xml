@@ -38,12 +38,13 @@
     <fullyQualifiedTypeName name="com.jacaranda.municipios.ProvinciaException"/>
     <fullyQualifiedTypeName name="com.jacaranda.municipios.Pueblo"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
-    <fullyQualifiedTypeName name="java.util.LinkedList"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
-    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
     <fullyQualifiedTypeName name="com.jacaranda.paginas.Historial"/>
     <fullyQualifiedTypeName name="com.jacaranda.paginas.PaginaWeb"/>
     <fullyQualifiedTypeName name="com.jacaranda.paginas.HistorialException"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
 </qualifiedTypeNameHistroy>

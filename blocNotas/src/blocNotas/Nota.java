@@ -13,7 +13,7 @@ public class Nota {
 
 	public Nota(String texto) {
 		super();
-		this.texto = texto;
+		setTexto(texto);
 		this.fechaCreacion = LocalDateTime.now();
 		this.fechaUltimaModificacion = fechaCreacion;
 		this.codigo = codigoSiguiente;

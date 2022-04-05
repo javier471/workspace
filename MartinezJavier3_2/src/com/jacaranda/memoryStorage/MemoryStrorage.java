@@ -36,12 +36,15 @@ public class MemoryStrorage {
 		return resul;
 	}
 
-	public void addUsuario(String login, String password) {
+	public void addUsuario(String login, String password) throws Exception {
+		if (numUsuariosActuales >= 15 || numPublicacionesActuales>=50) {
+			throw new Exception("No se pueden añadir mas usuarios");
+		}
 		arrayUsuarios[numUsuariosActuales] = new Usuario(login, password);
 		numUsuariosActuales++;
 	}
 
-	public void addPublicacion(String texto, String login) throws PublicacionException {
+	public void addPublicacion(String texto, String login) throws PublicacionException, MemoryStorageException {
 		try {
 			int pos = posicionUsuario(login);
 			if (pos == -1) {
@@ -50,20 +53,34 @@ public class MemoryStrorage {
 			arrayPublicaciones[numPublicacionesActuales] = new Tweet(texto, arrayUsuarios[pos]);
 			numPublicacionesActuales++;
 		} catch (PublicacionException e) {
-		} catch (MemoryStorageException e) {
+			System.out.println(e.getMessage());
 		}
 	}
 
-	public void addPublicacion(String texto, String login, String tema) throws PublicacionException {
-		int pos = posicionUsuario(login);
-		arrayPublicaciones[numPublicacionesActuales] = new Post(texto, arrayUsuarios[pos], tema);
-		numPublicacionesActuales++;
+	public void addPublicacion(String texto, String login, String tema) throws PublicacionException, MemoryStorageException {
+		try {
+			int pos = posicionUsuario(login);
+			if (pos == -1) {
+				throw new MemoryStorageException();
+			}
+			arrayPublicaciones[numPublicacionesActuales] = new Post(texto, arrayUsuarios[pos], tema);
+			numPublicacionesActuales++;
+		} catch (PublicacionException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
-	public void addPublicacion(String texto, String login, int numEstrellas) throws PublicacionException {
+	public void addPublicacion(String texto, String login, int numEstrellas) throws PublicacionException, MemoryStorageException {
+		try {
 		int pos = posicionUsuario(login);
+		if (pos==-1) {
+			throw new MemoryStorageException();
+		}
 		arrayPublicaciones[numPublicacionesActuales] = new Recomendacion(texto, arrayUsuarios[pos], numEstrellas);
 		numPublicacionesActuales++;
+		}catch(PublicacionException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	public String mostrarListaPublicaciones() {

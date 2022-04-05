@@ -23,6 +23,19 @@ public class Historial {
 		return lista.toString();
 	}
 
+	private boolean existePagina(PaginaWeb p1) throws HistorialException {
+		boolean resul=false;
+		if(p1==null) {
+			throw new HistorialException("Pagina no valida");
+		}
+		int pos=lista.indexOf(p1);
+		if(pos!=-1) {
+			resul=true;
+		}
+		return resul;
+		
+	}
+	
 	public boolean addPagina(PaginaWeb p1) throws HistorialException {
 		boolean resul = false;
 		if (lista.isEmpty()) {
