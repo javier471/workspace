@@ -2,6 +2,7 @@ package com.jacaranda.paginas;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Historial {
@@ -76,16 +77,22 @@ public class Historial {
 
 	public String historialDia(LocalDate fecha) {
 		StringBuilder resul = new StringBuilder();
-		for (PaginaWeb p : lista) {
-			if (p.getFecha().toLocalDate().equals(fecha)) {
-				resul.append(p.toString() + "\n");
+		boolean flag=false;
+		Iterator <PaginaWeb> siguiente=lista.iterator();
+		while(siguiente.hasNext()&& !flag) {
+			PaginaWeb aux=siguiente.next();
+			if(aux.getFecha().toLocalDate().isAfter(fecha)) {
+				flag=true;
+			}
+			if (aux.getFecha().toLocalDate().equals(fecha)) {
+				resul.append(aux.toString() + "\n");
 			}
 		}
 		return resul.toString();
 	}
 
 	public void borrarHistorial() {
-		lista.removeAll(lista);
+		lista.clear();;
 	}
 
 	@Override

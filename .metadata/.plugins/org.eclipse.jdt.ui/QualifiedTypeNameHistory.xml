@@ -12,7 +12,6 @@
     <fullyQualifiedTypeName name="com.jacaranda.programadores.Candidate"/>
     <fullyQualifiedTypeName name="com.jacaranda.libros.LibroDigital"/>
     <fullyQualifiedTypeName name="com.jacaranda.libros.LibroPapel"/>
-    <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="com.jacarande.publicacion.PublicacionException"/>
     <fullyQualifiedTypeName name="com.jacarande.publicacion.Publicacion"/>
     <fullyQualifiedTypeName name="com.jacaranda.usuario.Usuario"/>
@@ -21,8 +20,6 @@
     <fullyQualifiedTypeName name="com.jacarande.publicacion.Valorable"/>
     <fullyQualifiedTypeName name="com.jacarande.publicacion.Valoraciones"/>
     <fullyQualifiedTypeName name="com.jacarande.publicacion.Post"/>
-    <fullyQualifiedTypeName name="com.jacaranda.publicacion.PublicacionException"/>
-    <fullyQualifiedTypeName name="com.jacaranda.memoryStorage.MemoryStorageException"/>
     <fullyQualifiedTypeName name="com.jacaranda.pruebas.Utilidades"/>
     <fullyQualifiedTypeName name="com.jacaranda.libros.LibroException"/>
     <fullyQualifiedTypeName name="ejercicioEquipos.Alumno"/>
@@ -47,4 +44,7 @@
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.LinkedList"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+    <fullyQualifiedTypeName name="com.jacaranda.publicacion.PublicacionException"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="com.jacaranda.memoryStorage.MemoryStorageException"/>
 </qualifiedTypeNameHistroy>
