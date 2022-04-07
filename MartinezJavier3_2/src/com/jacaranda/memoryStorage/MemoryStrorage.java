@@ -37,7 +37,7 @@ public class MemoryStrorage {
 	}
 
 	public void addUsuario(String login, String password) throws Exception {
-		if (numUsuariosActuales >= 15 || numPublicacionesActuales>=50) {
+		if (numUsuariosActuales >= NUM_MAXIMO_USUARIOS) {
 			throw new Exception("No se pueden añadir mas usuarios");
 		}
 		arrayUsuarios[numUsuariosActuales] = new Usuario(login, password);
@@ -46,6 +46,9 @@ public class MemoryStrorage {
 
 	public void addPublicacion(String texto, String login) throws PublicacionException, MemoryStorageException {
 		try {
+			if (numPublicacionesActuales >= NUM_MAXIMO_PUBLICACIONES) {
+				throw new MemoryStorageException();
+			}
 			int pos = posicionUsuario(login);
 			if (pos == -1) {
 				throw new MemoryStorageException();
@@ -57,8 +60,12 @@ public class MemoryStrorage {
 		}
 	}
 
-	public void addPublicacion(String texto, String login, String tema) throws PublicacionException, MemoryStorageException {
+	public void addPublicacion(String texto, String login, String tema)
+			throws PublicacionException, MemoryStorageException {
 		try {
+			if (numPublicacionesActuales >= NUM_MAXIMO_PUBLICACIONES) {
+				throw new MemoryStorageException();
+			}
 			int pos = posicionUsuario(login);
 			if (pos == -1) {
 				throw new MemoryStorageException();
@@ -70,15 +77,19 @@ public class MemoryStrorage {
 		}
 	}
 
-	public void addPublicacion(String texto, String login, int numEstrellas) throws PublicacionException, MemoryStorageException {
+	public void addPublicacion(String texto, String login, int numEstrellas)
+			throws PublicacionException, MemoryStorageException {
 		try {
-		int pos = posicionUsuario(login);
-		if (pos==-1) {
-			throw new MemoryStorageException();
-		}
-		arrayPublicaciones[numPublicacionesActuales] = new Recomendacion(texto, arrayUsuarios[pos], numEstrellas);
-		numPublicacionesActuales++;
-		}catch(PublicacionException e) {
+			if (numPublicacionesActuales >= NUM_MAXIMO_PUBLICACIONES) {
+				throw new MemoryStorageException();
+			}
+			int pos = posicionUsuario(login);
+			if (pos == -1) {
+				throw new MemoryStorageException();
+			}
+			arrayPublicaciones[numPublicacionesActuales] = new Recomendacion(texto, arrayUsuarios[pos], numEstrellas);
+			numPublicacionesActuales++;
+		} catch (PublicacionException e) {
 			System.out.println(e.getMessage());
 		}
 	}

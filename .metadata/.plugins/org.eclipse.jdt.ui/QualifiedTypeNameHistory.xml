@@ -45,6 +45,11 @@
     <fullyQualifiedTypeName name="com.jacaranda.publicacion.PublicacionException"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="com.jacaranda.memoryStorage.MemoryStorageException"/>
-    <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="com.jacaranda.paginas.PaginaWeb"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="com.jacaranda.mensajes.MensajeException"/>
+    <fullyQualifiedTypeName name="com.jacaranda.usuarios.PersonaException"/>
+    <fullyQualifiedTypeName name="com.jacaranda.usuarios.Persona"/>
+    <fullyQualifiedTypeName name="com.jacaranda.mensajes.Mensaje"/>
+    <fullyQualifiedTypeName name="com.jacaranda.usuarios.ProfesorException"/>
 </qualifiedTypeNameHistroy>
