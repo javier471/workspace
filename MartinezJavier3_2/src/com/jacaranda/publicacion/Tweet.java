@@ -17,29 +17,27 @@ public class Tweet extends Publicacion {
 			this.texto = texto;
 		}
 	}
+
 	@Override
 	public boolean Valorar(String puntuacion) {
 		boolean resul;
 		try {
-			Valoraciones v1=Valoraciones.valueOf(puntuacion);
-			this.valoracion+=v1.getValoracion()*2;
-			resul=true;
-		}
-		catch (Exception e) {
-			resul=false;
+			Valoraciones v1 = Valoraciones.valueOf(puntuacion);
+			this.valoracion += v1.getValoracion() * 2;
+			resul = true;
+		} catch (Exception e) {
+			resul = false;
 		}
 		return resul;
 	}
 
 	@Override
 	public String toString() {
-		String resul="Tweet \n"+
-				"Publicacion :"+this.texto+" \n"+
-				"Realizada por :"+super.usuario.getLogin()+" \n"+
-				"Valoracion :"+this.valoracion+" \n"+
-				"Fecha de Publicacion :"+super.getFechaCreacion()+" \n";
+		String resul = "Tweet \n" + "Publicacion :" + this.texto + " \n" + "Realizada por :" + super.usuario.getLogin()
+				+ " \n" + "Valoracion :" + this.valoracion + " \n" + "Fecha de Publicacion :" + super.getFechaCreacion()
+				+ " \n";
 		return resul;
-				
-	}	
+
+	}
 
 }

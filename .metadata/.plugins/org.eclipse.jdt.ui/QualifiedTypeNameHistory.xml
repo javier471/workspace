@@ -25,8 +25,6 @@
     <fullyQualifiedTypeName name="ejercicioEquipos.Alumno"/>
     <fullyQualifiedTypeName name="ejercicioEquipos.EquipoException"/>
     <fullyQualifiedTypeName name="ejercicioEquipos.Equipo"/>
-    <fullyQualifiedTypeName name="java.util.Set"/>
-    <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="java.lang.Character"/>
     <fullyQualifiedTypeName name="com.jacaranda.municipios.PuebloException"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
@@ -40,16 +38,19 @@
     <fullyQualifiedTypeName name="com.jacaranda.paginas.HistorialException"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="java.util.LinkedList"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
     <fullyQualifiedTypeName name="com.jacaranda.publicacion.PublicacionException"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
-    <fullyQualifiedTypeName name="com.jacaranda.memoryStorage.MemoryStorageException"/>
     <fullyQualifiedTypeName name="com.jacaranda.paginas.PaginaWeb"/>
-    <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="com.jacaranda.mensajes.MensajeException"/>
     <fullyQualifiedTypeName name="com.jacaranda.usuarios.PersonaException"/>
     <fullyQualifiedTypeName name="com.jacaranda.usuarios.Persona"/>
     <fullyQualifiedTypeName name="com.jacaranda.mensajes.Mensaje"/>
     <fullyQualifiedTypeName name="com.jacaranda.usuarios.ProfesorException"/>
+    <fullyQualifiedTypeName name="com.jacaranda.memoryStorage.MemoryStorageException"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="com.jacaranda.diccionario.PalabraException"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
 </qualifiedTypeNameHistroy>
