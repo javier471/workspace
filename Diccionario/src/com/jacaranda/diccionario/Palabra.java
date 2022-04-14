@@ -61,6 +61,13 @@ public class Palabra {
 			}
 		}
 	}
+	
+	public boolean delTodosSignificados() throws PalabraException {
+		significados.clear();
+		return true;
+		
+		
+	}
 
 	@Override
 	public int hashCode() {

@@ -79,7 +79,7 @@ public class Persona {
 	public boolean delMensajeEnviado(int numMensaje) {
 		boolean resul = false;
 		boolean encontrado = false;
-		Iterator<Mensaje> siguiente = recibidos.iterator();
+		Iterator<Mensaje> siguiente = enviados.iterator();
 		while (siguiente.hasNext() && !encontrado) {
 			Mensaje m1 = siguiente.next();
 			if (m1.getNumMensaje() == numMensaje) {
@@ -98,7 +98,7 @@ public class Persona {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(DNI, edad, enviados, nombre, recibidos);
+		return Objects.hash(DNI);
 	}
 
 	@Override
@@ -110,8 +110,8 @@ public class Persona {
 		if (getClass() != obj.getClass())
 			return false;
 		Persona other = (Persona) obj;
-		return Objects.equals(DNI, other.DNI) && edad == other.edad && Objects.equals(enviados, other.enviados)
-				&& Objects.equals(nombre, other.nombre) && Objects.equals(recibidos, other.recibidos);
+		return Objects.equals(DNI, other.DNI);
 	}
 
+	
 }
