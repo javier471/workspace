@@ -36,14 +36,8 @@ public class Palabra {
 		if (significado == null) {
 			throw new PalabraException("Significado no válido");
 		}
-		boolean encontrado = true;
-		Iterator<String> siguiente = significados.iterator();
-		while (siguiente.hasNext() && encontrado) {
-			String aux = siguiente.next();
-			if (!(aux.equalsIgnoreCase(significado))) {
-				significados.add(significado);
-				encontrado = false;
-			}
+		if(!(significados.add(significado))) {
+			throw new PalabraException("Significado repetido");
 		}
 	}
 
@@ -51,14 +45,8 @@ public class Palabra {
 		if (significado == null) {
 			throw new PalabraException("Significado no válido");
 		}
-		boolean encontrado = false;
-		Iterator<String> siguiente = significados.iterator();
-		while (siguiente.hasNext() && !encontrado) {
-			String aux = siguiente.next();
-			if (aux.equalsIgnoreCase(significado)) {
-				significados.remove(significado);
-				encontrado = true;
-			}
+		if(!(significados.remove(significado))) {
+			throw new PalabraException("No se puede borrar siginificado");
 		}
 	}
 	

@@ -60,7 +60,6 @@ public class PalabraEmpiezan {
 			throw new PalabraException("La palabra no existe");
 		}
 		palabras.remove(pos);
-		//Debería borrar los significados de la palabra??
 	}
 
 	@Override
