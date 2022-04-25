@@ -3,27 +3,40 @@ package com.jacaranda.logistica;
 import java.util.Objects;
 
 public class Usuario {
-	
+
 	private String nombre;
 	private String dni;
 	private int edad;
+
+	public Usuario(String nombre, String dni, int edad) {
+		super();
+		this.nombre = nombre;
+		this.dni = dni;
+		this.edad = edad;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public String getDni() {
 		return dni;
 	}
+
 	public int getEdad() {
 		return edad;
 	}
+
 	@Override
 	public String toString() {
 		return "Usuario [nombre=" + nombre + ", dni=" + dni + ", edad=" + edad + "]";
 	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(dni);
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -35,7 +48,5 @@ public class Usuario {
 		Usuario other = (Usuario) obj;
 		return Objects.equals(dni, other.dni);
 	}
-	
-	
 
 }
