@@ -102,19 +102,19 @@ public class Main {
 
 			}
 			case 4: {
-				for(Nota n:listaNota) {
+				for (Nota n : listaNota) {
 					System.out.println(n);
 				}
 				break;
 			}
 			case 5: {
-				for(Modulo m:listaModulos) {
+				for (Modulo m : listaModulos) {
 					System.out.println(m);
 				}
 				break;
 			}
 			case 6: {
-				for(Alumnado alu:listaAlumnados) {
+				for (Alumnado alu : listaAlumnados) {
 					System.out.println(alu);
 				}
 				break;

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.jacaranda.libros.LibroDigital"/>
     <fullyQualifiedTypeName name="com.jacaranda.libros.LibroPapel"/>
     <fullyQualifiedTypeName name="com.jacarande.publicacion.PublicacionException"/>
     <fullyQualifiedTypeName name="com.jacarande.publicacion.Publicacion"/>
@@ -22,7 +21,6 @@
     <fullyQualifiedTypeName name="com.jacaranda.municipios.Provincia"/>
     <fullyQualifiedTypeName name="com.jacaranda.municipios.ProvinciaException"/>
     <fullyQualifiedTypeName name="com.jacaranda.municipios.Pueblo"/>
-    <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="com.jacaranda.paginas.Historial"/>
     <fullyQualifiedTypeName name="com.jacaranda.paginas.HistorialException"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
@@ -35,14 +33,12 @@
     <fullyQualifiedTypeName name="com.jacaranda.mensajes.Mensaje"/>
     <fullyQualifiedTypeName name="com.jacaranda.usuarios.ProfesorException"/>
     <fullyQualifiedTypeName name="com.jacaranda.memoryStorage.MemoryStorageException"/>
-    <fullyQualifiedTypeName name="java.util.LinkedList"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
     <fullyQualifiedTypeName name="com.jacaranda.videojuegos.VideojuegoException"/>
     <fullyQualifiedTypeName name="java.util.Set"/>
     <fullyQualifiedTypeName name="com.jacaranda.videojuegos.Videojuego"/>
     <fullyQualifiedTypeName name="com.jacaranda.logistica.TiendaException"/>
     <fullyQualifiedTypeName name="com.jacaranda.diccionario.PalabraException"/>
-    <fullyQualifiedTypeName name="com.jacaranda.diccionario.PalabraEmpiezan"/>
     <fullyQualifiedTypeName name="com.jacaranda.diccionario.Palabra"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
@@ -53,11 +49,15 @@
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="java.io.FileWriter"/>
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
-    <fullyQualifiedTypeName name="com.jacaranda.gestion.Nota"/>
     <fullyQualifiedTypeName name="java.time.LocalTime"/>
-    <fullyQualifiedTypeName name="com.jacaranda.gestion.Alumnado"/>
-    <fullyQualifiedTypeName name="java.util.Iterator"/>
-    <fullyQualifiedTypeName name="com.jacaranda.gestion.Modulo"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="com.jacaranda.gestion.Alumnado"/>
+    <fullyQualifiedTypeName name="com.jacaranda.gestion.Modulo"/>
+    <fullyQualifiedTypeName name="com.jacaranda.gestion.Nota"/>
+    <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="com.jacaranda.diccionario.PalabraEmpiezan"/>
 </qualifiedTypeNameHistroy>

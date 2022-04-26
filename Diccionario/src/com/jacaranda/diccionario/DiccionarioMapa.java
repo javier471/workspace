@@ -4,11 +4,11 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 
-public class Diccionario {
+public class DiccionarioMapa {
 
 	private HashMap<String, HashSet<String>> contenido;
 
-	public Diccionario() {
+	public DiccionarioMapa() {
 		super();
 		this.contenido = new HashMap<>();
 	}
