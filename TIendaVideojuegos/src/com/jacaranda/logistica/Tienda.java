@@ -1,5 +1,6 @@
 package com.jacaranda.logistica;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Objects;
@@ -13,6 +14,7 @@ public class Tienda {
 	private String direccion;
 	private Set<Videojuego> stock;
 	private Set<Usuario> clientes;
+	private HashMap<Usuario, Videojuego> reservas;
 
 	public Tienda(String nombre, String direccion) {
 		super();
@@ -84,13 +86,31 @@ public class Tienda {
 	// Devuelve verdadero si existe el juego a reservar y si el usuario es mayor de
 	// edad
 	public boolean reservar(Videojuego j1, Usuario u1) throws TiendaException {
-		if (j1 == null) {
-			throw new TiendaException("Juego no valido");
+		if (j1 == null || reservas.containsValue(j1) || reservas.containsKey(u1)) {
+			throw new TiendaException("No se puede hacer la reserva");
 		}
 		boolean resul = false;
 		if (existeJuego(j1) && u1.getEdad() >= 18) {
 			resul = true;
+			reservas.put(u1, j1);
 		}
+		return resul;
+	}
+
+	public boolean liberarJuego(Videojuego v1, Usuario u1) throws TiendaException {
+		boolean resul = false;
+		if (!reservas.containsKey(u1) || !reservas.containsValue(v1)) {
+			throw new TiendaException("El juego no existe");
+		}
+		// Hay algo que compruebe si un valor pertenece a una clave?
+		for (Usuario u : reservas.keySet()) {
+			Videojuego aux = reservas.get(u);
+			if (aux.equals(v1)) {
+				reservas.remove(u1, v1);
+				resul = true;
+			}
+		}
+
 		return resul;
 	}
 
