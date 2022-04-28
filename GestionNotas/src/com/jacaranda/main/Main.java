@@ -27,108 +27,112 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 
-		int opc;
-		leerAlumno("ficheros//alumnos.txt");
-		leerModulo("ficheros//modulos.txt");
-		leernota("ficheros//notas.txt");
+		try {
+			int opc;
+			leerAlumno("ficheros//alumnos.txt");
+			leerModulo("ficheros//modulos.txt");
+			leernota("ficheros//notas.txt");
 
-		do {
-			muestraMenu();
+			do {
+				muestraMenu();
 
-			opc = Integer.parseInt(teclado.nextLine());
+				opc = Integer.parseInt(teclado.nextLine());
 
-			switch (opc) {
-			case 1: {
-				System.out.println("Introduce nombre");
-				String nombre = teclado.nextLine();
-				System.out.println("Introduce dni");
-				String dni = teclado.nextLine();
-				System.out.println("Introduce correo electronico");
-				String correo = teclado.nextLine();
-				Alumnado a1 = new Alumnado(nombre, dni, correo);
-				listaAlumnados.add(a1);
-				break;
-			}
-			case 2: {
-				System.out.println("Introduce nombre");
-				String nombre = teclado.nextLine();
-				System.out.println("Introduce horas semanales");
-				int horas = Integer.parseInt(teclado.nextLine());
-				System.out.println("Introduce creditos");
-				int creditos = Integer.parseInt(teclado.nextLine());
-				Modulo m1 = new Modulo(nombre, horas, creditos);
-				listaModulos.add(m1);
-				break;
-			}
-			case 3: {
-				System.out.println("Introduzca calificacion");
-				double nota = Double.parseDouble(teclado.nextLine());
-				System.out.println("Introduzca fecha (YYYY-MM-DD)");
-				LocalDate fecha = LocalDate.parse(teclado.nextLine());
-				System.out.println("Introduzca dni del alumno");
-				String dni = teclado.nextLine();
-				boolean encontrado = false;
-				Alumnado a1 = null;
-				Iterator<Alumnado> siguiente = listaAlumnados.iterator();
-				while (siguiente.hasNext() && !encontrado) {
-					Alumnado aux = siguiente.next();
-					if (aux.getDni().equalsIgnoreCase(dni)) {
-						a1 = aux;
-						encontrado = true;
+				switch (opc) {
+				case 1: {
+					System.out.println("Introduce nombre");
+					String nombre = teclado.nextLine();
+					System.out.println("Introduce dni");
+					String dni = teclado.nextLine();
+					System.out.println("Introduce correo electronico");
+					String correo = teclado.nextLine();
+					Alumnado a1 = new Alumnado(nombre, dni, correo);
+					listaAlumnados.add(a1);
+					break;
+				}
+				case 2: {
+					System.out.println("Introduce nombre");
+					String nombre = teclado.nextLine();
+					System.out.println("Introduce horas semanales");
+					int horas = Integer.parseInt(teclado.nextLine());
+					System.out.println("Introduce creditos");
+					int creditos = Integer.parseInt(teclado.nextLine());
+					Modulo m1 = new Modulo(nombre, horas, creditos);
+					listaModulos.add(m1);
+					break;
+				}
+				case 3: {
+					System.out.println("Introduzca calificacion");
+					double nota = Double.parseDouble(teclado.nextLine());
+					System.out.println("Introduzca fecha (YYYY-MM-DD)");
+					LocalDate fecha = LocalDate.parse(teclado.nextLine());
+					System.out.println("Introduzca dni del alumno");
+					String dni = teclado.nextLine();
+					boolean encontrado = false;
+					Alumnado a1 = null;
+					Iterator<Alumnado> siguiente = listaAlumnados.iterator();
+					while (siguiente.hasNext() && !encontrado) {
+						Alumnado aux = siguiente.next();
+						if (aux.getDni().equalsIgnoreCase(dni)) {
+							a1 = aux;
+							encontrado = true;
 
+						}
 					}
-				}
-				if (!encontrado) {
-					throw new Exception("El alumno no se encontró");
-				}
-				System.out.println("Introduzca nombre del módulo");
-				String modulo = teclado.nextLine();
-				encontrado = false;
-				Modulo m1 = null;
-				Iterator<Modulo> sig = listaModulos.iterator();
-				while (sig.hasNext() && !encontrado) {
-					Modulo aux = sig.next();
-					if (aux.getNombre().equalsIgnoreCase(modulo)) {
-						m1 = aux;
-						encontrado = true;
+					if (!encontrado) {
+						throw new Exception("El alumno no se encontró");
 					}
-				}
-				if (!encontrado) {
-					throw new Exception("El módulo no se encontró");
-				}
-				Nota n1 = new Nota(nota, fecha, a1, m1);
-				listaNota.add(n1);
-				break;
+					System.out.println("Introduzca nombre del módulo");
+					String modulo = teclado.nextLine();
+					encontrado = false;
+					Modulo m1 = null;
+					Iterator<Modulo> sig = listaModulos.iterator();
+					while (sig.hasNext() && !encontrado) {
+						Modulo aux = sig.next();
+						if (aux.getNombre().equalsIgnoreCase(modulo)) {
+							m1 = aux;
+							encontrado = true;
+						}
+					}
+					if (!encontrado) {
+						throw new Exception("El módulo no se encontró");
+					}
+					Nota n1 = new Nota(nota, fecha, a1, m1);
+					listaNota.add(n1);
+					break;
 
-			}
-			case 4: {
-				for (Nota n : listaNota) {
-					System.out.println(n);
 				}
-				break;
-			}
-			case 5: {
-				for (Modulo m : listaModulos) {
-					System.out.println(m);
+				case 4: {
+					for (Nota n : listaNota) {
+						System.out.println(n);
+					}
+					break;
 				}
-				break;
-			}
-			case 6: {
-				for (Alumnado alu : listaAlumnados) {
-					System.out.println(alu);
+				case 5: {
+					for (Modulo m : listaModulos) {
+						System.out.println(m);
+					}
+					break;
 				}
-				break;
-			}
-			case 7: {
-				escribirAlumno("ficheros//alumnos.txt");
-				escribirModulo("ficheros//modulo.txt");
-				escribirNota("ficheros//notas.txt");
-				break;
-			}
-			default:
-				System.out.println("Opcion no permitida");
-			}
-		} while (opc != 8);
+				case 6: {
+					for (Alumnado alu : listaAlumnados) {
+						System.out.println(alu);
+					}
+					break;
+				}
+				case 7: {
+					escribirAlumno("ficheros//alumnos.txt");
+					escribirModulo("ficheros//modulo.txt");
+					escribirNota("ficheros//notas.txt");
+					break;
+				}
+				default:
+					System.out.println("Opcion no permitida");
+				}
+			} while (opc != 8);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	public static void muestraMenu() {

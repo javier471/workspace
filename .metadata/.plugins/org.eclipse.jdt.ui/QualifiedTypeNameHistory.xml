@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.jacaranda.libros.LibroPapel"/>
-    <fullyQualifiedTypeName name="com.jacarande.publicacion.PublicacionException"/>
-    <fullyQualifiedTypeName name="com.jacarande.publicacion.Publicacion"/>
-    <fullyQualifiedTypeName name="com.jacaranda.usuario.Usuario"/>
-    <fullyQualifiedTypeName name="com.jacarande.publicacion.Tweet"/>
-    <fullyQualifiedTypeName name="com.jacarande.publicacion.Recomendacion"/>
     <fullyQualifiedTypeName name="com.jacarande.publicacion.Valorable"/>
     <fullyQualifiedTypeName name="com.jacarande.publicacion.Valoraciones"/>
     <fullyQualifiedTypeName name="com.jacarande.publicacion.Post"/>
@@ -14,7 +8,6 @@
     <fullyQualifiedTypeName name="ejercicioEquipos.Alumno"/>
     <fullyQualifiedTypeName name="ejercicioEquipos.EquipoException"/>
     <fullyQualifiedTypeName name="ejercicioEquipos.Equipo"/>
-    <fullyQualifiedTypeName name="java.lang.Character"/>
     <fullyQualifiedTypeName name="com.jacaranda.municipios.PuebloException"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
@@ -36,13 +29,10 @@
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
     <fullyQualifiedTypeName name="com.jacaranda.videojuegos.VideojuegoException"/>
     <fullyQualifiedTypeName name="java.util.Set"/>
-    <fullyQualifiedTypeName name="com.jacaranda.videojuegos.Videojuego"/>
     <fullyQualifiedTypeName name="com.jacaranda.logistica.TiendaException"/>
     <fullyQualifiedTypeName name="com.jacaranda.diccionario.PalabraException"/>
     <fullyQualifiedTypeName name="com.jacaranda.diccionario.Palabra"/>
-    <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
-    <fullyQualifiedTypeName name="com.jacaranda.diccionario.Diccionario"/>
     <fullyQualifiedTypeName name="java.io.FileReader"/>
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
     <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
@@ -50,7 +40,6 @@
     <fullyQualifiedTypeName name="java.io.FileWriter"/>
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
     <fullyQualifiedTypeName name="java.time.LocalTime"/>
-    <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
@@ -58,6 +47,17 @@
     <fullyQualifiedTypeName name="com.jacaranda.gestion.Modulo"/>
     <fullyQualifiedTypeName name="com.jacaranda.gestion.Nota"/>
     <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.lang.Character"/>
     <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="com.jacaranda.diccionario.Diccionario"/>
     <fullyQualifiedTypeName name="com.jacaranda.diccionario.PalabraEmpiezan"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="com.jacaranda.videojuegos.Videojuego"/>
+    <fullyQualifiedTypeName name="com.jacaranda.logistica.Usuario"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="com.jacaranda.logicaJuego.JuegoException"/>
+    <fullyQualifiedTypeName name="com.jacaranda.logicaJuego.Constantes"/>
+    <fullyQualifiedTypeName name="com.jacaranda.elemento.Coordenada"/>
 </qualifiedTypeNameHistroy>
