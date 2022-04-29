@@ -25,7 +25,7 @@ public class Main {
 	public static ArrayList<Nota> listaNota = new ArrayList<>();
 	public static Scanner teclado = new Scanner(System.in);
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 
 		try {
 			int opc;
@@ -80,7 +80,8 @@ public class Main {
 						}
 					}
 					if (!encontrado) {
-						throw new Exception("El alumno no se encontró");
+					System.out.println("El alumno no se encontró");
+						 
 					}
 					System.out.println("Introduzca nombre del módulo");
 					String modulo = teclado.nextLine();
@@ -95,7 +96,7 @@ public class Main {
 						}
 					}
 					if (!encontrado) {
-						throw new Exception("El módulo no se encontró");
+						System.out.println("El módulo no se encontró");
 					}
 					Nota n1 = new Nota(nota, fecha, a1, m1);
 					listaNota.add(n1);

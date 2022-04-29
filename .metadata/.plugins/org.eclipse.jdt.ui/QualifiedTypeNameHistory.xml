@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.jacarande.publicacion.Valorable"/>
-    <fullyQualifiedTypeName name="com.jacarande.publicacion.Valoraciones"/>
-    <fullyQualifiedTypeName name="com.jacarande.publicacion.Post"/>
     <fullyQualifiedTypeName name="com.jacaranda.pruebas.Utilidades"/>
     <fullyQualifiedTypeName name="com.jacaranda.libros.LibroException"/>
     <fullyQualifiedTypeName name="ejercicioEquipos.Alumno"/>
@@ -29,7 +26,6 @@
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
     <fullyQualifiedTypeName name="com.jacaranda.videojuegos.VideojuegoException"/>
     <fullyQualifiedTypeName name="java.util.Set"/>
-    <fullyQualifiedTypeName name="com.jacaranda.logistica.TiendaException"/>
     <fullyQualifiedTypeName name="com.jacaranda.diccionario.PalabraException"/>
     <fullyQualifiedTypeName name="com.jacaranda.diccionario.Palabra"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
@@ -54,10 +50,14 @@
     <fullyQualifiedTypeName name="com.jacaranda.diccionario.PalabraEmpiezan"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
-    <fullyQualifiedTypeName name="com.jacaranda.videojuegos.Videojuego"/>
     <fullyQualifiedTypeName name="com.jacaranda.logistica.Usuario"/>
     <fullyQualifiedTypeName name="java.lang.Math"/>
     <fullyQualifiedTypeName name="com.jacaranda.logicaJuego.JuegoException"/>
-    <fullyQualifiedTypeName name="com.jacaranda.logicaJuego.Constantes"/>
     <fullyQualifiedTypeName name="com.jacaranda.elemento.Coordenada"/>
+    <fullyQualifiedTypeName name="com.jacaranda.elemento.ElementType"/>
+    <fullyQualifiedTypeName name="com.jacaranda.elemento.Element"/>
+    <fullyQualifiedTypeName name="com.jacaranda.elemento.PlayerType"/>
+    <fullyQualifiedTypeName name="com.jacaranda.logicaJuego.Constantes"/>
+    <fullyQualifiedTypeName name="com.jacaranda.logistica.TiendaException"/>
+    <fullyQualifiedTypeName name="com.jacaranda.videojuegos.Videojuego"/>
 </qualifiedTypeNameHistroy>
