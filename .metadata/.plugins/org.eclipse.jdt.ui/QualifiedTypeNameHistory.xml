@@ -54,10 +54,10 @@
     <fullyQualifiedTypeName name="java.lang.Math"/>
     <fullyQualifiedTypeName name="com.jacaranda.logicaJuego.JuegoException"/>
     <fullyQualifiedTypeName name="com.jacaranda.elemento.Coordenada"/>
-    <fullyQualifiedTypeName name="com.jacaranda.elemento.ElementType"/>
-    <fullyQualifiedTypeName name="com.jacaranda.elemento.Element"/>
-    <fullyQualifiedTypeName name="com.jacaranda.elemento.PlayerType"/>
     <fullyQualifiedTypeName name="com.jacaranda.logicaJuego.Constantes"/>
     <fullyQualifiedTypeName name="com.jacaranda.logistica.TiendaException"/>
     <fullyQualifiedTypeName name="com.jacaranda.videojuegos.Videojuego"/>
+    <fullyQualifiedTypeName name="com.jacaranda.elemento.Element"/>
+    <fullyQualifiedTypeName name="com.jacaranda.elemento.PlayerType"/>
+    <fullyQualifiedTypeName name="com.jacaranda.elemento.ElementType"/>
 </qualifiedTypeNameHistroy>

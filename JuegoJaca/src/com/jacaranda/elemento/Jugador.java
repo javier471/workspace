@@ -9,9 +9,11 @@ public class Jugador extends Element {
 	private PlayerType player;
 	private int pociones;
 
-	public Jugador(PlayerType type) {
-		super();
-		this.player = type;
+	public Jugador(PlayerType player) {
+		// Como lo primero que pide el constructor del super es de tipo TypeElement
+		// saco el tipo de elemento del player que me pasan
+		super(ElementType.valueOf(player.name()));
+		this.player = player;
 	}
 
 	public int getDinero() {
@@ -55,11 +57,75 @@ public class Jugador extends Element {
 	}
 
 	public int encuentraRoca() {
-		int resul = 0;
+		int resul = 2;
 		if (gemas > 0) {
-			resul = 1;
+			resul = 0;
+			this.gemas -= 1;
+		} else {
+			if (getMagia() > 4) {
+				resul = 1;
+			}
 		}
 		return resul;
 	}
 
+	public int lucha(Jugador enemigo) {
+		int resul = -99;
+		if (getFuerzaParaLuchar() == enemigo.getFuerzaParaLuchar()) {
+			resul = 0;
+		} else if (getFuerzaParaLuchar() > enemigo.getFuerzaParaLuchar()) {
+			if (enemigo.pociones > 0) {
+				enemigo.pociones -= 1;
+				resul = 1;
+			} else if (enemigo.dinero > 0) {
+				dinero += enemigo.getDinero();
+				enemigo.dinero = 0;
+				resul = 2;
+			} else {
+				resul = 3;
+				enemigo = null;
+			}
+
+		} else {
+			if (pociones > 0) {
+				pociones -= 1;
+				resul = 4;
+			} else if (dinero > 0) {
+				enemigo.dinero += getDinero();
+				dinero = 0;
+				resul = 5;
+			} else {
+				resul = 6;
+				// Como lo mato?
+			}
+		}
+		return resul;
+	}
+
+	private int getFuerza() {
+		return player.getFuerza();
+	}
+
+	private int getVelocidad() {
+		return player.getVelocidad();
+	}
+
+	private int getMagia() {
+		return player.getMagia();
+	}
+
+	public int getFuerzaParaLuchar() {
+		int resul = (int) (Math.random() * (getFuerza() - 0 + 1) + getFuerza());
+		return resul;
+	}
+
+	public int getMagiaParaLuchar() {
+		int resul = (int) (Math.random() * (getMagia() - 0 + 1) + getMagia());
+		return resul;
+	}
+
+	public int getVelocidadParaLuchar() {
+		int resul = (int) (Math.random() * (getVelocidad() - 0 + 1) + getVelocidad());
+		return resul;
+	}
 }

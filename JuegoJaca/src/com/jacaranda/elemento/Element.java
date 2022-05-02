@@ -10,6 +10,11 @@ public class Element {
 		return type;
 	}
 
+	public Element(ElementType type) {
+		super();
+		this.type = type;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(type);
