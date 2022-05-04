@@ -22,6 +22,7 @@ public class Tienda {
 		this.direccion = direccion;
 		this.stock = new HashSet<Videojuego>();
 		this.clientes = new HashSet<Usuario>();
+		this.reservas = new HashMap<>();
 	}
 
 	// Metodo privado que devuelve true si el videojuego ya está en el stock y false
@@ -39,6 +40,11 @@ public class Tienda {
 
 	public String getDireccion() {
 		return direccion;
+	}
+
+	// Añade el usuario y delvuelve true o devuelve false si ya estaba
+	public boolean addUsuario(Usuario u1) {
+		return clientes.add(u1);
 	}
 
 	// Si devuelve false es que el juego ya existe en el stock y no lo puede añadir
@@ -83,14 +89,14 @@ public class Tienda {
 		return resul;
 	}
 
-	// Devuelve verdadero si existe el juego a reservar y si el usuario es mayor de
-	// edad
+	// Devuelve verdadero si existe el juego a reservar, si el usuario es mayor de
+	// edad y está en la lista de clientes
 	public boolean reservar(Videojuego j1, Usuario u1) throws TiendaException {
 		if (j1 == null || reservas.containsValue(j1) || reservas.containsKey(u1)) {
 			throw new TiendaException("No se puede hacer la reserva");
 		}
 		boolean resul = false;
-		if (existeJuego(j1) && u1.getEdad() >= 18) {
+		if (existeJuego(j1) && u1.getEdad() >= 18 && clientes.contains(u1)) {
 			resul = true;
 			reservas.put(u1, j1);
 		}
@@ -118,6 +124,10 @@ public class Tienda {
 		return stock.toString();
 	}
 
+	public String mostrarReservas() {
+		return reservas.toString();
+	}
+	
 	@Override
 	public String toString() {
 		return "Tienda [nombre=" + nombre + ", direccion=" + direccion + ", stock=" + stock + ", clientes=" + clientes
