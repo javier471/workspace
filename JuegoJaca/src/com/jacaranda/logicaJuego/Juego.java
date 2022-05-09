@@ -12,7 +12,54 @@ public class Juego {
 	private ArrayList<Coordenada> coordenadaJugadores;
 	private int jugadorJuega;
 	private int dado; // Dado para ver los movimientos del jugador que juega
+	
 
+	public Juego(PlayerType[] jugadores) {
+		super();
+	}
+
+	private void crearTablero() {
+		crearRocas();
+		crearGemas();
+		crearPociones();
+		crearDinero();
+	}
+	
+	private boolean crearJugador(PlayerType jugador) {
+		boolean resul=false;
+		for(PlayerType p1:PlayerType.values()) {
+			if(p1.equals(jugador)) {
+				Jugador j1=new Jugador(jugador);
+				resul=true;
+			}
+		}
+		return resul;
+	}
+	
+	private void crearRocas() {
+		for(int i=0;i<Constantes.NUM_ROCAS;i++) {
+			Element e=new Element(ElementType.valueOf("ROCA"));
+		}
+	}
+	
+	private void crearGemas() {
+		for(int i=0;i<Constantes.NUM_GEMAS;i++) {
+			Element e=new Element(ElementType.valueOf("GEMAS"));
+		}
+	}
+	
+	private void crearPociones() {
+		for (int i=0;i<Constantes.NUM_POCIONES;i++) {
+			Element e=new Element(ElementType.valueOf("POCIONES"));
+		}
+	}
+	
+	private void crearDinero() {
+		for (int i=0;i<Constantes.NUM_DINERO;i++) {
+			Element e=new Element(ElementType.valueOf("DINERO"));
+		}
+	}
+	
 
 	/**
 	 * Escribe el tablero en formato no gráfico. Devuelve el string con la

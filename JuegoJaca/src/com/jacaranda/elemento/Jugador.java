@@ -71,32 +71,33 @@ public class Jugador extends Element {
 
 	public int lucha(Jugador enemigo) {
 		int resul = -99;
-		if (getFuerzaParaLuchar() == enemigo.getFuerzaParaLuchar()) {
-			resul = 0;
-		} else if (getFuerzaParaLuchar() > enemigo.getFuerzaParaLuchar()) {
+		int fuerzaAliado=getFuerzaParaLuchar();
+		int fuerzaEnemigo=enemigo.getFuerzaParaLuchar();
+		if (fuerzaAliado == fuerzaEnemigo) {
+			resul = Constantes.EMPATE;
+		} else if (fuerzaAliado > fuerzaEnemigo) {
 			if (enemigo.pociones > 0) {
 				enemigo.pociones -= 1;
-				resul = 1;
+				resul = Constantes.GANA_USA_POCIMA;
 			} else if (enemigo.dinero > 0) {
 				dinero += enemigo.getDinero();
 				enemigo.dinero = 0;
-				resul = 2;
+				resul = Constantes.GANA_DINERO;
 			} else {
-				resul = 3;
+				resul = Constantes.GANA_MUERE;
 				enemigo = null;
 			}
 
 		} else {
 			if (pociones > 0) {
 				pociones -= 1;
-				resul = 4;
+				resul = Constantes.PIERDE_USA_POCIMA;
 			} else if (dinero > 0) {
 				enemigo.dinero += getDinero();
 				dinero = 0;
-				resul = 5;
+				resul = Constantes.PIERDE_DINERO;
 			} else {
-				resul = 6;
-				// Como lo mato?
+				resul = Constantes.PIERDE_MUERE;
 			}
 		}
 		return resul;

@@ -38,7 +38,7 @@ public class Coordenada {
 	public boolean goUp() {
 		boolean resul;
 		int aux = y - 1;
-		if (aux < 0) {
+		if (aux <= 0) {
 			resul = false;
 		} else {
 			y = aux;
@@ -63,7 +63,7 @@ public class Coordenada {
 	public boolean goLeft() {
 		boolean resul;
 		int aux = x - 1;
-		if (aux > 0) {
+		if (aux <= 0) {
 			resul = false;
 
 		} else {
