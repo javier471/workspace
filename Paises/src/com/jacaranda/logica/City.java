@@ -5,28 +5,30 @@ import java.util.Objects;
 
 public class City {
 
-	private int city_id;
 	private String city;
-	private HashMap<String, Address> addressList;
+	private HashMap<Integer, Address> listaDirecc;
 
-	public City(int city_id, String city) {
+	public City(String city) {
 		super();
-		this.city_id = city_id;
 		this.city = city;
-		addressList = new HashMap<>();
+		listaDirecc=new HashMap<>();
 	}
 
 	public String getCity() {
 		return city;
 	}
+	
+	public void addAdrress(Integer id,Address a1) {
+		listaDirecc.put(id, a1);
+	}
 
-	public int getCity_id() {
-		return city_id;
+	public String getListaDirecc() {
+		return listaDirecc.toString();
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(city_id);
+		return Objects.hash(city, listaDirecc);
 	}
 
 	@Override
@@ -38,16 +40,15 @@ public class City {
 		if (getClass() != obj.getClass())
 			return false;
 		City other = (City) obj;
-		return city_id == other.city_id;
-	}
-
-	public String getAddressList() {
-		return addressList.toString();
+		return Objects.equals(city, other.city) && Objects.equals(listaDirecc, other.listaDirecc);
 	}
 
 	@Override
 	public String toString() {
-		return "City [city_id=" + city_id + ", city=" + city + ", addressList=" + addressList.toString() + "]";
+		return "City [city=" + city + ", listaDirecc=" + listaDirecc.toString() + "]";
 	}
+
+	
+	
 
 }

@@ -5,33 +5,39 @@ import java.util.Objects;
 
 public class Country {
 
-	private int country_id;
-	private String country;
-	private HashMap<String, City> cityList;
+	private String name;
+	private HashMap<Integer,City> listaCities;
 
-	public Country(int country_id, String country) {
+	public Country(String name) {
 		super();
-		this.country_id = country_id;
-		this.country = country;
-		cityList=new HashMap<>();
+		this.name = name;
+		listaCities= new HashMap<>();
 	}
 
-	public int getCountry_id() {
-		return country_id;
+
+	public void addCity(int id,City aux) {
+		listaCities.put(id, aux);
 	}
 
-	public String getCountry() {
-		return country;
+
+	public String getName() {
+		return name;
 	}
 
-	public String getCityList() {
-		return cityList.toString();
+
+	public String getListaCities() {
+		return listaCities.toString();
 	}
 
+	public City getCiudad(Integer id) {
+		return listaCities.get(id);
+	}
+	
 	@Override
 	public int hashCode() {
-		return Objects.hash(country_id);
+		return Objects.hash(listaCities, name);
 	}
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -42,13 +48,17 @@ public class Country {
 		if (getClass() != obj.getClass())
 			return false;
 		Country other = (Country) obj;
-		return country_id == other.country_id;
+		return Objects.equals(listaCities, other.listaCities) && Objects.equals(name, other.name);
 	}
+
 
 	@Override
 	public String toString() {
-		return "Country [country_id=" + country_id + ", country=" + country + ", cityList=" + cityList.toString() + "]";
+		return "Country [name=" + name + ", listaCities=" + listaCities.toString() + "]";
 	}
+
+
+	
 	
 	
 	
