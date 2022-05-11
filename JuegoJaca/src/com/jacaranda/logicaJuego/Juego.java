@@ -16,6 +16,13 @@ public class Juego {
 
 	public Juego(PlayerType[] jugadores) {
 		super();
+		tablero=new HashMap<>();
+		coordenadaJugadores=new ArrayList<>();
+		crearTablero();
+		crearJugador(jugadores[0]);
+		crearJugador(jugadores[1]);
+		crearJugador(jugadores[2]);
+		crearJugador(jugadores[3]);
 	}
 
 	private void crearTablero() {
@@ -30,33 +37,60 @@ public class Juego {
 		for(PlayerType p1:PlayerType.values()) {
 			if(p1.equals(jugador)) {
 				Jugador j1=new Jugador(jugador);
+				Coordenada c=new Coordenada();
+				while(tablero.containsKey(c)) {
+					c=new Coordenada();
+				}
+				coordenadaJugadores.add(c);
+				tablero.put(c, j1);
 				resul=true;
 			}
 		}
+		
 		return resul;
 	}
 	
 	private void crearRocas() {
-		for(int i=0;i<Constantes.NUM_ROCAS;i++) {
+		for(int i=0;i<=Constantes.NUM_ROCAS;i++) {
 			Element e=new Element(ElementType.valueOf("ROCA"));
+			Coordenada c=new Coordenada();
+			while(tablero.containsKey(c)) {
+				c= new Coordenada();
+			}
+			tablero.put(c, e);
 		}
 	}
 	
 	private void crearGemas() {
-		for(int i=0;i<Constantes.NUM_GEMAS;i++) {
-			Element e=new Element(ElementType.valueOf("GEMAS"));
+		for(int i=0;i<=Constantes.NUM_GEMAS;i++) {
+			Element e=new Element(ElementType.valueOf("GEMA"));
+			Coordenada c=new Coordenada();
+			while(tablero.containsKey(c)) {
+				c= new Coordenada();
+			}
+			tablero.put(c, e);
 		}
 	}
 	
 	private void crearPociones() {
-		for (int i=0;i<Constantes.NUM_POCIONES;i++) {
-			Element e=new Element(ElementType.valueOf("POCIONES"));
+		for (int i=0;i<=Constantes.NUM_POCIONES;i++) {
+			Element e=new Element(ElementType.valueOf("POCION"));
+			Coordenada c=new Coordenada();
+			while(tablero.containsKey(c)) {
+				c= new Coordenada();
+			}
+			tablero.put(c, e);
 		}
 	}
 	
 	private void crearDinero() {
-		for (int i=0;i<Constantes.NUM_DINERO;i++) {
+		for (int i=0;i<=Constantes.NUM_DINERO;i++) {
 			Element e=new Element(ElementType.valueOf("DINERO"));
+			Coordenada c=new Coordenada();
+			while(tablero.containsKey(c)) {
+				c= new Coordenada();
+			}
+			tablero.put(c, e);
 		}
 	}
 	

@@ -16,6 +16,10 @@ public class Jugador extends Element {
 		this.player = player;
 	}
 
+	public String getNombre() {
+		return player.toString();
+	}
+	
 	public int getDinero() {
 		return dinero;
 	}
