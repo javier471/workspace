@@ -12,17 +12,12 @@ public class Juego {
 	private ArrayList<Coordenada> coordenadaJugadores;
 	private int jugadorJuega;
 	private int dado; // Dado para ver los movimientos del jugador que juega
-	
 
 	public Juego(PlayerType[] jugadores) {
 		super();
-		tablero=new HashMap<>();
-		coordenadaJugadores=new ArrayList<>();
+		tablero = new HashMap<>();
+		coordenadaJugadores = new ArrayList<>();
 		crearTablero();
-		crearJugador(jugadores[0]);
-		crearJugador(jugadores[1]);
-		crearJugador(jugadores[2]);
-		crearJugador(jugadores[3]);
 	}
 
 	private void crearTablero() {
@@ -31,69 +26,88 @@ public class Juego {
 		crearPociones();
 		crearDinero();
 	}
-	
+
 	private boolean crearJugador(PlayerType jugador) {
-		boolean resul=false;
-		for(PlayerType p1:PlayerType.values()) {
-			if(p1.equals(jugador)) {
-				Jugador j1=new Jugador(jugador);
-				Coordenada c=new Coordenada();
-				while(tablero.containsKey(c)) {
-					c=new Coordenada();
+		boolean resul = false;
+		for (PlayerType p1 : PlayerType.values()) {
+			if (p1.equals(jugador)) {
+				Jugador j1 = new Jugador(jugador);
+				Coordenada c = new Coordenada();
+				while (tablero.containsKey(c)) {
+					c = new Coordenada();
 				}
 				coordenadaJugadores.add(c);
 				tablero.put(c, j1);
-				resul=true;
+				resul = true;
 			}
 		}
-		
+
 		return resul;
 	}
-	
+
 	private void crearRocas() {
-		for(int i=0;i<=Constantes.NUM_ROCAS;i++) {
-			Element e=new Element(ElementType.valueOf("ROCA"));
-			Coordenada c=new Coordenada();
-			while(tablero.containsKey(c)) {
-				c= new Coordenada();
+		int cont = 0;
+		while (cont < Constantes.NUM_ROCAS) {
+			Element e = new Element(ElementType.ROCA);
+			Coordenada c = new Coordenada();
+			// Si la coordenada es nula significa que puedo colocar el elemento
+			if (tablero.get(c) == null) {
+				tablero.put(c, e);
+				// Solo aumento el contador cuando se que he podido añadir
+				// Si no ha entrado en el if es que en esa coordenada hay algo
+				cont++;
 			}
-			tablero.put(c, e);
 		}
 	}
-	
+
 	private void crearGemas() {
-		for(int i=0;i<=Constantes.NUM_GEMAS;i++) {
-			Element e=new Element(ElementType.valueOf("GEMA"));
-			Coordenada c=new Coordenada();
-			while(tablero.containsKey(c)) {
-				c= new Coordenada();
+		int cont = 0;
+		while (cont < Constantes.NUM_GEMAS) {
+			Element e = new Element(ElementType.GEMA);
+			Coordenada c = new Coordenada();
+			if (tablero.get(c) == null) {
+				tablero.put(c, e);
+				cont++;
 			}
-			tablero.put(c, e);
+
 		}
 	}
-	
+
 	private void crearPociones() {
-		for (int i=0;i<=Constantes.NUM_POCIONES;i++) {
-			Element e=new Element(ElementType.valueOf("POCION"));
-			Coordenada c=new Coordenada();
-			while(tablero.containsKey(c)) {
-				c= new Coordenada();
+		int cont = 0;
+		while (cont < Constantes.NUM_POCIONES) {
+			Element e = new Element(ElementType.POCION);
+			Coordenada c = new Coordenada();
+			if (tablero.get(c) == null) {
+				tablero.put(c, e);
+				cont++;
 			}
-			tablero.put(c, e);
+
 		}
 	}
-	
+
 	private void crearDinero() {
-		for (int i=0;i<=Constantes.NUM_DINERO;i++) {
-			Element e=new Element(ElementType.valueOf("DINERO"));
-			Coordenada c=new Coordenada();
-			while(tablero.containsKey(c)) {
-				c= new Coordenada();
+		int cont = 0;
+		while (cont < Constantes.NUM_DINERO) {
+			Element e = new Element(ElementType.DINERO);
+			Coordenada c = new Coordenada();
+			if (tablero.get(c) == null) {
+				tablero.put(c, e);
+				cont++;
 			}
-			tablero.put(c, e);
+
 		}
 	}
-	
+
+	public boolean isTerminado() {
+		boolean resul = false;
+
+		return resul;
+	}
+
+	private void eliminarJugador(Coordenada c) {
+
+	}
 
 	/**
 	 * Escribe el tablero en formato no grÃ¡fico. Devuelve el string con la
@@ -125,7 +139,6 @@ public class Juego {
 		return resul.toString();
 	}
 
-
 	/**
 	 * Simplemente escribe una barra en pantalla
 	 * 
@@ -140,7 +153,6 @@ public class Juego {
 		resul.append("\n");
 		return resul.toString();
 	}
-
 
 	/**
 	 * Mover el jugador
@@ -236,5 +248,4 @@ public class Juego {
 		return resul;
 	}
 
-	
 }

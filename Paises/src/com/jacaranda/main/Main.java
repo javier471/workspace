@@ -14,9 +14,10 @@ public class Main {
 	public static HashMap<Integer, Country> paises = new HashMap<>();
 
 	public static void main(String[] args) {
-		leerAddrress("ficheros//address2.txt");
-		leerCities("ficheros//cities.txt");
 		leerCountry("ficheros//countries.txt");
+		leerCities("ficheros//cities.txt");
+		leerAddrress("ficheros//address2.txt");
+		
 		System.out.println(paises.toString());
 
 	}
