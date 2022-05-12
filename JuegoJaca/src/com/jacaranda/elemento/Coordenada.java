@@ -12,8 +12,8 @@ public class Coordenada {
 
 	public Coordenada() {
 		super();
-		x = (int) (Math.random() * Constantes.TAMANNO + 1);
-		y = (int) (Math.random() * Constantes.TAMANNO + 1);
+		x = (int) (Math.random() * Constantes.TAMANNO);
+		y = (int) (Math.random() * Constantes.TAMANNO);
 	}
 
 	public Coordenada(int x, int y) {

@@ -18,6 +18,9 @@ public class Juego {
 		tablero = new HashMap<>();
 		coordenadaJugadores = new ArrayList<>();
 		crearTablero();
+		for (int i = 0; i < Constantes.NUM_JUGADORES; i++) {
+			crearJugador(jugadores[i]);
+		}
 	}
 
 	private void crearTablero() {
@@ -33,7 +36,7 @@ public class Juego {
 			if (p1.equals(jugador)) {
 				Jugador j1 = new Jugador(jugador);
 				Coordenada c = new Coordenada();
-				while (tablero.containsKey(c)) {
+				while (tablero.get(c) != null) {
 					c = new Coordenada();
 				}
 				coordenadaJugadores.add(c);
@@ -101,12 +104,95 @@ public class Juego {
 
 	public boolean isTerminado() {
 		boolean resul = false;
+		boolean tieneMaxDinero = false;
+		for (Element e : tablero.values()) {
+			if (e instanceof Jugador) {
+				if (((Jugador) e).getDinero() == Constantes.DINERO) {
+					tieneMaxDinero = true;
+				}
+			}
+		}
+		if (coordenadaJugadores.size() == 1 || tieneMaxDinero) {
+			resul = true;
+		}
 
 		return resul;
 	}
 
 	private void eliminarJugador(Coordenada c) {
+		if (tablero.get(c) instanceof Jugador) {
+			tablero.remove(c);
+			coordenadaJugadores.remove(c);
+		}
+	}
 
+	private Coordenada getNextPosition(char direction) throws JuegoException {
+		// Busco la coordenada del jugador
+		Coordenada jugadorTurno = coordenadaJugadores.get(jugadorJuega);
+		// Hago una copia que será la que devuelva con el resul de donde se
+		// moveria el jugador
+		Coordenada resul = new Coordenada(jugadorTurno.getX(), jugadorTurno.getY());
+		if (direction != 'N' && direction != 'S' && direction != 'E' && direction != 'O') {
+			throw new JuegoException("Direccion no valida");
+		}
+		switch (direction) {
+		case 'N': {
+			resul.goUp();
+			break;
+		}
+		case 'S': {
+			resul.goDown();
+			break;
+		}
+		case 'E': {
+			resul.goRight();
+			break;
+		}
+		case 'O': {
+			resul.goLeft();
+			break;
+		}
+		default:
+			throw new JuegoException("Error");
+		}
+		return resul;
+	}
+
+	public String imprimeNombreJugadores() {
+		StringBuilder resul = new StringBuilder();
+		int cont = 1;
+		for (Coordenada c : coordenadaJugadores) {
+			Jugador aux = (Jugador) tablero.get(c);
+			resul.append("El jugador " + cont + " es un " + aux.getPlayer() + " ");
+			cont++;
+		}
+		return resul.toString();
+	}
+
+	public String imprimeValoreJugadores() {
+		StringBuilder resul = new StringBuilder();
+		int cont = 1;
+		for (Coordenada c : coordenadaJugadores) {
+			Jugador aux = (Jugador) tablero.get(c);
+			resul.append("El jugador" + cont + " tiene " + aux.getDinero() + " dinero, " + aux.getGemas() + " gemas, "
+					+ aux.getPociones() + " pociones ");
+			cont++;
+		}
+		return resul.toString();
+	}
+
+	private void cambiaJugadorAPosicion(Coordenada coor) {
+		// Coordenada del jugador
+		Coordenada coorActual = coordenadaJugadores.get(jugadorJuega);
+		// Jugador que esta en esa coordenada
+		Jugador aux = (Jugador) tablero.get(coorActual);
+		// Lo movemos hacia su nueva posicion
+		tablero.put(coor, aux);
+		// Borramos la antigua coordenada
+		tablero.remove(coorActual);
+		// Actualizamos en la lista de coordenadas de los jugadores
+		coordenadaJugadores.remove(jugadorJuega);
+		coordenadaJugadores.add(jugadorJuega, coor);
 	}
 
 	/**
@@ -248,4 +334,63 @@ public class Juego {
 		return resul;
 	}
 
+	public void proximoJugador() {
+		jugadorJuega++;
+		if (jugadorJuega == (Constantes.NUM_JUGADORES - 1)) {
+			jugadorJuega = 0;
+		}
+	}
+
+	public String getGanador() throws JuegoException {
+		if (!isTerminado()) {
+			throw new JuegoException("El juego no esta terminado");
+		}
+		String resul = "";
+		Jugador aux;
+		if (coordenadaJugadores.size() == 1) {
+			// Si queda un jugador, lo recojo en aux e imprimo sus valores en resul
+			aux = (Jugador) tablero.get(coordenadaJugadores.get(0));
+			resul = aux.toString();
+		} else {
+			for (Element e : tablero.values()) {
+				if (e instanceof Jugador) {
+					if (((Jugador) e).getDinero() == Constantes.DINERO) {
+						resul=e.toString();
+					}
+				}
+			}
+		}
+		return resul;
+	}
+	
+	public String getNombreJuegadorQueJuega() {
+		Jugador aux=(Jugador) tablero.get(coordenadaJugadores.get(jugadorJuega));
+		return aux.getNombre();
+	}
+	
+	public int getMovimientoJugador() {
+		int resul=0;
+		
+	}
+	
+	public int getValorDado() {
+		return dado;
+	}
+	
+	public void decrementaDado() {
+		dado--;
+	}
+	
+	public void setDado() {
+		
+	}
+	
+	public Element obtenerElementoTablero(Coordenada coord) {
+		return tablero.get(coord);
+	}
+	
+	public Coordenada obtenerCoordenadaJugadorJuega() {
+		return coordenadaJugadores.get(jugadorJuega);
+	}
+	
 }

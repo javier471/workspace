@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -208,7 +209,15 @@ public class JuegoGUI extends Juego implements ActionListener {
 		if (super.isTerminado())
 
 		{
-			JOptionPane.showMessageDialog(ventana, "Juego terminado. El ganador es:" + super.getGanador());
+			try {
+				JOptionPane.showMessageDialog(ventana, "Juego terminado. El ganador es:" + super.getGanador());
+			} catch (HeadlessException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (JuegoException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			System.exit(0);
 		}
 
