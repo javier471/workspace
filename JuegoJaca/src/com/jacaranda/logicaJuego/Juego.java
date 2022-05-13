@@ -120,6 +120,7 @@ public class Juego {
 	}
 
 	private void eliminarJugador(Coordenada c) {
+		// Si la coordenada es un jugador lo borro
 		if (tablero.get(c) instanceof Jugador) {
 			tablero.remove(c);
 			coordenadaJugadores.remove(c);
@@ -128,40 +129,40 @@ public class Juego {
 
 	private Coordenada getNextPosition(char direction) throws JuegoException {
 		// Busco la coordenada del jugador
-		Coordenada jugadorTurno = coordenadaJugadores.get(jugadorJuega);
-		// Hago una copia que será la que devuelva con el resul de donde se
-		// moveria el jugador
-		Coordenada resul = new Coordenada(jugadorTurno.getX(), jugadorTurno.getY());
+		Coordenada aux = coordenadaJugadores.get(jugadorJuega);
 		if (direction != 'N' && direction != 'S' && direction != 'E' && direction != 'O') {
 			throw new JuegoException("Direccion no valida");
 		}
 		switch (direction) {
 		case 'N': {
-			resul.goUp();
+			aux.goUp();
 			break;
 		}
 		case 'S': {
-			resul.goDown();
+			aux.goDown();
 			break;
 		}
 		case 'E': {
-			resul.goRight();
+			aux.goRight();
 			break;
 		}
 		case 'O': {
-			resul.goLeft();
+			aux.goLeft();
 			break;
 		}
 		default:
 			throw new JuegoException("Error");
 		}
-		return resul;
+		return aux;
 	}
 
 	public String imprimeNombreJugadores() {
 		StringBuilder resul = new StringBuilder();
 		int cont = 1;
 		for (Coordenada c : coordenadaJugadores) {
+			// Recorro las coordenadas de jugadores y con esa coordenada
+			// miro en el tablero para sacar el jugador y con el jugador ya
+			// saco su nombre
 			Jugador aux = (Jugador) tablero.get(c);
 			resul.append("El jugador " + cont + " es un " + aux.getPlayer() + " ");
 			cont++;
@@ -173,6 +174,8 @@ public class Juego {
 		StringBuilder resul = new StringBuilder();
 		int cont = 1;
 		for (Coordenada c : coordenadaJugadores) {
+			// Saco el jugador que hay en esa coordenada del tablero y le saco
+			// sus valores
 			Jugador aux = (Jugador) tablero.get(c);
 			resul.append("El jugador" + cont + " tiene " + aux.getDinero() + " dinero, " + aux.getGemas() + " gemas, "
 					+ aux.getPociones() + " pociones ");
@@ -335,7 +338,8 @@ public class Juego {
 	}
 
 	public void proximoJugador() {
-		jugadorJuega++;
+		jugadorJuega++;// Aumenta el jugador que le toca turno
+		// Si es el ultimo, pongo a 0 para que le toque al primero
 		if (jugadorJuega == (Constantes.NUM_JUGADORES - 1)) {
 			jugadorJuega = 0;
 		}
@@ -355,45 +359,50 @@ public class Juego {
 			for (Element e : tablero.values()) {
 				if (e instanceof Jugador) {
 					if (((Jugador) e).getDinero() == Constantes.DINERO) {
-						resul=e.toString();
+						resul = e.toString();
 					}
 				}
 			}
 		}
 		return resul;
 	}
-	
+
 	public String getNombreJuegadorQueJuega() {
-		Jugador aux=(Jugador) tablero.get(coordenadaJugadores.get(jugadorJuega));
+		// Saco de las coorjugadores la coordenada del jugador que está jugando
+		// y la busco en el tablero para guardar el jugador
+		Jugador aux = (Jugador) tablero.get(coordenadaJugadores.get(jugadorJuega));
 		return aux.getNombre();
 	}
-	
+
 	public int getMovimientoJugador() {
-		Coordenada c= coordenadaJugadores.get(jugadorJuega);
-		Jugador aux=(Jugador) tablero.get(c);
+		// Idem a getNombreJugador
+		Coordenada c = coordenadaJugadores.get(jugadorJuega);
+		Jugador aux = (Jugador) tablero.get(c);
 		return aux.getVelocidadParaLuchar();
 	}
-	
+
 	public int getValorDado() {
 		return dado;
 	}
-	
+
 	public void decrementaDado() {
 		dado--;
 	}
-	
+
 	public void setDado() {
-		Coordenada c= coordenadaJugadores.get(jugadorJuega);
-		Jugador aux=(Jugador) tablero.get(c);
-		dado=aux.getVelocidadParaLuchar();
+		// Saco la coordenada del jugador que esta jugando y con esa coor
+		// saco al jugador, y le asigno al dado su velocidad
+		Coordenada c = coordenadaJugadores.get(jugadorJuega);
+		Jugador aux = (Jugador) tablero.get(c);
+		dado = aux.getVelocidadParaLuchar();
 	}
-	
+
 	public Element obtenerElementoTablero(Coordenada coord) {
 		return tablero.get(coord);
 	}
-	
+
 	public Coordenada obtenerCoordenadaJugadorJuega() {
 		return coordenadaJugadores.get(jugadorJuega);
 	}
-	
+
 }
