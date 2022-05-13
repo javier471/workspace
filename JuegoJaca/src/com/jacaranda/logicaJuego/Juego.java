@@ -369,8 +369,9 @@ public class Juego {
 	}
 	
 	public int getMovimientoJugador() {
-		int resul=0;
-		
+		Coordenada c= coordenadaJugadores.get(jugadorJuega);
+		Jugador aux=(Jugador) tablero.get(c);
+		return aux.getVelocidadParaLuchar();
 	}
 	
 	public int getValorDado() {
@@ -382,7 +383,9 @@ public class Juego {
 	}
 	
 	public void setDado() {
-		
+		Coordenada c= coordenadaJugadores.get(jugadorJuega);
+		Jugador aux=(Jugador) tablero.get(c);
+		dado=aux.getVelocidadParaLuchar();
 	}
 	
 	public Element obtenerElementoTablero(Coordenada coord) {

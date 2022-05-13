@@ -6,6 +6,7 @@ import com.jacaranda.elemento.Jugador;
 import com.jacaranda.elemento.PlayerType;
 import com.jacaranda.logicaJuego.Juego;
 import com.jacaranda.logicaJuego.JuegoException;
+import com.jacaranda.logicaJuego.JuegoGUI;
 
 public class Pruebas {
 
@@ -20,9 +21,8 @@ public class Pruebas {
 		jugadores[2]=PlayerType.GUERRERO;
 		jugadores[3]=PlayerType.ELFO;
 		
-		Juego j1=new Juego(jugadores);
-		System.out.println(j1.toString());
-		System.out.println(j1.isTerminado());
+		JuegoGUI j1=new JuegoGUI(jugadores);
+		
 
 		
 		
