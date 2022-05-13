@@ -21,11 +21,23 @@ public class City {
 	public void addAdrress(Integer id,Address a1) {
 		listaDirecc.put(id, a1);
 	}
+	
+	public int getId() {
+		int resul=0;
+		for(Integer i:listaDirecc.keySet()) {
+			resul=i.intValue();
+		}
+		return resul;
+	}
 
 	public String getListaDirecc() {
 		return listaDirecc.toString();
 	}
 
+	public int getNumeroDirecciones(){
+		return listaDirecc.values().size();
+	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(city, listaDirecc);

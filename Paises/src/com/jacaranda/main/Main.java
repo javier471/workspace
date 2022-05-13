@@ -1,6 +1,7 @@
 package com.jacaranda.main;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -21,6 +22,7 @@ public class Main {
 		leerCities("ficheros//cities.txt");
 		leerAddrress("ficheros//address2.txt");
 
+		System.out.println();
 		escribirEnFicheroPorLineas("ficheros//resultado.txt");
 
 	}
@@ -29,8 +31,10 @@ public class Main {
 		try {
 			FileWriter flujoEscritura = new FileWriter(nombre);
 			PrintWriter filtroEscritura = new PrintWriter(flujoEscritura);
-			for (Country c:paises.values()) {
-				filtroEscritura.println(c.getName()+c.getListaCities());
+			for (Country c : paises.values()) {
+				for (City aux : c.getListaCities().values()) {
+					filtroEscritura.println(c.getName() + " " + c.numeroCiudades() + " " + c.getId()+" "+aux.getNumeroDirecciones());
+				}
 			}
 			filtroEscritura.close();
 			flujoEscritura.close();
