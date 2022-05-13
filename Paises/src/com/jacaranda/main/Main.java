@@ -2,6 +2,9 @@ package com.jacaranda.main;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -17,9 +20,23 @@ public class Main {
 		leerCountry("ficheros//countries.txt");
 		leerCities("ficheros//cities.txt");
 		leerAddrress("ficheros//address2.txt");
-		
-		System.out.println(paises.toString());
 
+		escribirEnFicheroPorLineas("ficheros//resultado.txt");
+
+	}
+
+	private static void escribirEnFicheroPorLineas(String nombre) {
+		try {
+			FileWriter flujoEscritura = new FileWriter(nombre);
+			PrintWriter filtroEscritura = new PrintWriter(flujoEscritura);
+			for (Country c:paises.values()) {
+				filtroEscritura.println(c.getName()+c.getListaCities());
+			}
+			filtroEscritura.close();
+			flujoEscritura.close();
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	private static void leerAddrress(String nombreFichero) {
@@ -30,17 +47,17 @@ public class Main {
 			linea = filtroLectura.readLine();
 			while (linea != null) {
 				String[] campos = linea.split(",");
-				
+
 				// Obtengo el id del address y el address y el id de la ciudad
 				// Recorro mi coleccion de paises y miro en cada pais si tiene la ciu
 				// dad con codigo id que he leido. Si la tiene, consigo la ciudad
 				// y le añado la dirección y termino. Si no la tiene, paso al siguiente
 				// país
 				Address aux = new Address(Integer.parseInt(campos[0]), campos[1]);
-				int codCiudad= Integer.parseInt(campos[4]);
-				for (Country c:paises.values()) {
-					if(c.getCiudad(codCiudad)!=null) {
-						City ciudad=c.getCiudad(codCiudad);
+				int codCiudad = Integer.parseInt(campos[4]);
+				for (Country c : paises.values()) {
+					if (c.getCiudad(codCiudad) != null) {
+						City ciudad = c.getCiudad(codCiudad);
 						ciudad.addAdrress(codCiudad, aux);
 					}
 				}
@@ -86,7 +103,7 @@ public class Main {
 			linea = filtroLectura.readLine();
 			while (linea != null) {
 				String[] campos = linea.split(",");
-				//Creo el pais y lo añado a la coleccion de paises del main
+				// Creo el pais y lo añado a la coleccion de paises del main
 				Country aux = new Country(campos[1]);
 				paises.put(Integer.parseInt(campos[0]), aux);
 				linea = filtroLectura.readLine();

@@ -1,0 +1,109 @@
+Afghanistan{1=City [city=Kabul, listaDirecc={1=Address [address_id=56, direcc=939 Probolinggo Loop]}]}
+Algeria{2=City [city=Skikda, listaDirecc={2=Address [address_id=105, direcc=733 Mandaluyong Place]}]}
+American Samoa{3=City [city=Tafuna, listaDirecc={3=Address [address_id=457, direcc=535 Ahmadnagar Manor]}]}
+Angola{4=City [city=Namibe, listaDirecc={}]}
+Anguilla{5=City [city=South Hill, listaDirecc={5=Address [address_id=332, direcc=663 Baha Blanca Parkway]}]}
+Argentina{6=City [city=Vicente Lpez, listaDirecc={6=Address [address_id=397, direcc=614 Pak Kret Street]}]}
+Armenia{7=City [city=Yerevan, listaDirecc={7=Address [address_id=214, direcc=751 Lima Loop]}]}
+Australia{8=City [city=Woodridge, listaDirecc={8=Address [address_id=372, direcc=230 Urawa Drive]}]}
+Austria{9=City [city=Salzburg, listaDirecc={9=Address [address_id=302, direcc=922 Vila Velha Loop]}]}
+Azerbaijan{10=City [city=Sumqayit, listaDirecc={}]}
+Bahrain{11=City [city=al-Manama, listaDirecc={}]}
+Bangladesh{12=City [city=Tangail, listaDirecc={12=Address [address_id=102, direcc=669 Firozabad Loop]}]}
+Belarus{13=City [city=Molodetno, listaDirecc={13=Address [address_id=74, direcc=1124 Buenaventura Drive]}]}
+Bolivia{14=City [city=Sucre, listaDirecc={}]}
+Brazil{15=City [city=Vitria de Santo Anto, listaDirecc={15=Address [address_id=400, direcc=1152 Citrus Heights Manor]}]}
+Brunei{16=City [city=Bandar Seri Begawan, listaDirecc={16=Address [address_id=422, direcc=289 Santo Andr Manor]}]}
+Bulgaria{17=City [city=Stara Zagora, listaDirecc={17=Address [address_id=37, direcc=127 Purnea Purnia Manor]}]}
+Cambodia{18=City [city=Phnom Penh, listaDirecc={18=Address [address_id=179, direcc=431 Xiangtan Avenue]}]}
+Cameroon{19=City [city=Yaound, listaDirecc={19=Address [address_id=419, direcc=397 Sunnyvale Avenue]}]}
+Canada{20=City [city=Vancouver, listaDirecc={20=Address [address_id=364, direcc=1623 Kingstown Drive]}]}
+Chad{21=City [city=NDjamna, listaDirecc={}]}
+Chile{22=City [city=Rancagua, listaDirecc={22=Address [address_id=229, direcc=1014 Loja Manor]}]}
+China{23=City [city=Zhoushan, listaDirecc={23=Address [address_id=420, direcc=992 Klerksdorp Loop]}]}
+Colombia{24=City [city=Sogamoso, listaDirecc={}]}
+Congo{25=City [city=Mwene-Ditu, listaDirecc={25=Address [address_id=312, direcc=1354 Siegen Street]}]}
+Czech Republic{26=City [city=Olomouc, listaDirecc={26=Address [address_id=233, direcc=356 Olomouc Manor]}]}
+Dominican Republic{27=City [city=Santiago de los Caballeros, listaDirecc={27=Address [address_id=49, direcc=1718 Valencia Street]}]}
+Ecuador{28=City [city=Robamba, listaDirecc={28=Address [address_id=220, direcc=1201 Qomsheh Manor]}]}
+Egypt{29=City [city=Shubra al-Khayma, listaDirecc={29=Address [address_id=141, direcc=1749 Daxian Place]}]}
+Estonia{30=City [city=Tartu, listaDirecc={30=Address [address_id=81, direcc=1692 Ede Loop]}]}
+Ethiopia{31=City [city=Addis Abeba, listaDirecc={31=Address [address_id=40, direcc=334 Munger Monghyr Lane]}]}
+Faroe Islands{32=City [city=Trshavn, listaDirecc={32=Address [address_id=365, direcc=1009 Zanzibar Lane]}]}
+Finland{33=City [city=Oulu, listaDirecc={33=Address [address_id=310, direcc=913 Coacalco de Berriozbal Loop]}]}
+France{34=City [city=Toulouse, listaDirecc={34=Address [address_id=106, direcc=659 Vaduz Drive]}]}
+French Guiana{35=City [city=Cayenne, listaDirecc={35=Address [address_id=204, direcc=387 Mwene-Ditu Drive]}]}
+French Polynesia{36=City [city=Papeete, listaDirecc={}]}
+Gambia{37=City [city=Banjul, listaDirecc={37=Address [address_id=230, direcc=201 Effon-Alaiye Way]}]}
+Germany{38=City [city=Witten, listaDirecc={38=Address [address_id=7, direcc=692 Joliet Street]}]}
+Greece{39=City [city=Patras, listaDirecc={39=Address [address_id=402, direcc=616 Hagonoy Avenue]}]}
+Greenland{40=City [city=Nuuk, listaDirecc={40=Address [address_id=88, direcc=125 Citt del Vaticano Boulevard]}]}
+Holy See Vatican City State{41=City [city=Citt del Vaticano, listaDirecc={41=Address [address_id=100, direcc=1308 Arecibo Way]}]}
+Hong Kong{42=City [city=Kowloon and New Kowloon, listaDirecc={42=Address [address_id=335, direcc=587 Benguela Manor]}]}
+Hungary{43=City [city=Szkesfehrvr, listaDirecc={}]}
+India{44=City [city=Yamuna Nagar, listaDirecc={44=Address [address_id=403, direcc=1190 0 Place]}]}
+Indonesia{45=City [city=Tegal, listaDirecc={45=Address [address_id=327, direcc=1427 A Corua La Corua Place]}]}
+Iran{46=City [city=Tabriz, listaDirecc={}]}
+Iraq{47=City [city=Mosul, listaDirecc={}]}
+Israel{48=City [city=Tel Aviv-Jaffa, listaDirecc={48=Address [address_id=338, direcc=431 Szkesfehrvr Avenue]}]}
+Italy{49=City [city=Udine, listaDirecc={49=Address [address_id=59, direcc=1697 Kowloon and New Kowloon Loop]}]}
+Japan{50=City [city=Urawa, listaDirecc={50=Address [address_id=371, direcc=1912 Emeishan Drive]}]}
+Kazakstan{51=City [city=Zhezqazghan, listaDirecc={51=Address [address_id=212, direcc=624 Oshawa Boulevard]}]}
+Kenya{52=City [city=Nyeri, listaDirecc={52=Address [address_id=357, direcc=1641 Changhwa Place]}]}
+Kuwait{53=City [city=Jalib al-Shuyukh, listaDirecc={53=Address [address_id=95, direcc=1370 Le Mans Avenue]}]}
+Latvia{54=City [city=Liepaja, listaDirecc={}]}
+Liechtenstein{55=City [city=Vaduz, listaDirecc={}]}
+Lithuania{56=City [city=Vilnius, listaDirecc={56=Address [address_id=65, direcc=915 Ponce Place]}]}
+Madagascar{57=City [city=Mahajanga, listaDirecc={57=Address [address_id=320, direcc=1542 Lubumbashi Boulevard]}]}
+Malawi{58=City [city=Lilongwe, listaDirecc={58=Address [address_id=176, direcc=29 Pyongyang Loop]}]}
+Malaysia{59=City [city=Sungai Petani, listaDirecc={59=Address [address_id=446, direcc=1924 Shimonoseki Drive]}]}
+Mexico{60=City [city=Zapopan, listaDirecc={}]}
+Moldova{61=City [city=Chisinau, listaDirecc={61=Address [address_id=75, direcc=492 Cam Ranh Street]}]}
+Morocco{62=City [city=Sal, listaDirecc={62=Address [address_id=192, direcc=1166 Changhwa Street]}]}
+Mozambique{63=City [city=Tete, listaDirecc={63=Address [address_id=73, direcc=1031 Daugavpils Parkway]}]}
+Myanmar{64=City [city=Myingyan, listaDirecc={64=Address [address_id=262, direcc=771 Yaound Manor]}]}
+Nauru{65=City [city=Yangor, listaDirecc={65=Address [address_id=216, direcc=660 Jedda Boulevard]}]}
+Nepal{66=City [city=Birgunj, listaDirecc={66=Address [address_id=367, direcc=1163 London Parkway]}]}
+Netherlands{67=City [city=s-Hertogenbosch, listaDirecc={}]}
+New Zealand{68=City [city=Hamilton, listaDirecc={}]}
+Nigeria{69=City [city=Zaria, listaDirecc={69=Address [address_id=289, direcc=1279 Udine Parkway]}]}
+North Korea{70=City [city=Pyongyang, listaDirecc={70=Address [address_id=444, direcc=231 Kaliningrad Place]}]}
+Oman{71=City [city=Salala, listaDirecc={71=Address [address_id=418, direcc=126 Acua Parkway]}]}
+Pakistan{72=City [city=Shikarpur, listaDirecc={72=Address [address_id=159, direcc=185 Novi Sad Place]}]}
+Paraguay{73=City [city=San Lorenzo, listaDirecc={73=Address [address_id=384, direcc=97 Mogiljov Lane]}]}
+Peru{74=City [city=Sullana, listaDirecc={74=Address [address_id=213, direcc=43 Dadu Avenue]}]}
+Philippines{75=City [city=Tuguegarao, listaDirecc={}]}
+Poland{76=City [city=Wroclaw, listaDirecc={76=Address [address_id=19, direcc=419 Iligan Lane]}]}
+Puerto Rico{77=City [city=Ponce, listaDirecc={77=Address [address_id=206, direcc=642 Nador Drive]}]}
+Romania{78=City [city=Bucuresti, listaDirecc={78=Address [address_id=473, direcc=1257 Guadalajara Street]}]}
+Runion{79=City [city=Saint-Denis, listaDirecc={}]}
+Russian Federation{80=City [city=Zeleznogorsk, listaDirecc={}]}
+Saint Vincent and the Grenadines{81=City [city=Kingstown, listaDirecc={81=Address [address_id=326, direcc=470 Boksburg Street]}]}
+Saudi Arabia{82=City [city=Tabuk, listaDirecc={82=Address [address_id=98, direcc=152 Kitwe Parkway]}]}
+Senegal{83=City [city=Ziguinchor, listaDirecc={83=Address [address_id=210, direcc=1304 s-Hertogenbosch Way]}]}
+Slovakia{84=City [city=Bratislava, listaDirecc={84=Address [address_id=347, direcc=1293 Nam Dinh Way]}]}
+South Africa{85=City [city=Springs, listaDirecc={85=Address [address_id=129, direcc=569 Baicheng Lane]}]}
+South Korea{86=City [city=Uijongbu, listaDirecc={86=Address [address_id=234, direcc=1256 Bislig Boulevard]}]}
+Spain{87=City [city=Santiago de Compostela, listaDirecc={87=Address [address_id=136, direcc=898 Belm Manor]}]}
+Sri Lanka{88=City [city=Jaffna, listaDirecc={88=Address [address_id=89, direcc=1557 Ktahya Boulevard]}]}
+Sudan{89=City [city=Omdurman, listaDirecc={89=Address [address_id=330, direcc=981 Kumbakonam Place]}]}
+Sweden{90=City [city=Malm, listaDirecc={90=Address [address_id=362, direcc=482 Kowloon and New Kowloon Manor]}]}
+Switzerland{91=City [city=Lausanne, listaDirecc={91=Address [address_id=314, direcc=1224 Huejutla de Reyes Boulevard]}]}
+Taiwan{92=City [city=Tsaotun, listaDirecc={92=Address [address_id=407, direcc=1346 Mysore Drive]}]}
+Tanzania{93=City [city=Zanzibar, listaDirecc={}]}
+Thailand{94=City [city=Songkhla, listaDirecc={94=Address [address_id=153, direcc=782 Mosul Street]}]}
+Tonga{95=City [city=Nukualofa, listaDirecc={}]}
+Tunisia{96=City [city=Sousse, listaDirecc={96=Address [address_id=239, direcc=98 Stara Zagora Boulevard]}]}
+Turkey{97=City [city=Usak, listaDirecc={97=Address [address_id=323, direcc=1769 Iwaki Lane]}]}
+Turkmenistan{98=City [city=Ashgabat, listaDirecc={98=Address [address_id=376, direcc=1061 Ede Avenue]}]}
+Tuvalu{99=City [city=Funafuti, listaDirecc={99=Address [address_id=309, direcc=827 Yuncheng Drive]}]}
+Ukraine{100=City [city=Sumy, listaDirecc={}]}
+United Arab Emirates{101=City [city=Sharja, listaDirecc={}]}
+United Kingdom{102=City [city=York, listaDirecc={102=Address [address_id=115, direcc=1378 Alvorada Avenue]}]}
+United States{103=City [city=Warren, listaDirecc={}]}
+Venezuela{104=City [city=Valle de la Pascua, listaDirecc={104=Address [address_id=393, direcc=717 Changzhou Lane]}]}
+Vietnam{105=City [city=Vinh, listaDirecc={105=Address [address_id=69, direcc=698 Otsu Street]}]}
+Virgin Islands{106=City [city=Charlotte Amalie, listaDirecc={}]}
+Yemen{107=City [city=Taizz, listaDirecc={107=Address [address_id=171, direcc=1540 Wroclaw Drive]}]}
+Yugoslavia{108=City [city=Novi Sad, listaDirecc={108=Address [address_id=79, direcc=1551 Rampur Lane]}]}
+Zambia{109=City [city=Kitwe, listaDirecc={109=Address [address_id=201, direcc=817 Bradford Loop]}]}
