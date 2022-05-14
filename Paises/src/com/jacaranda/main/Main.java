@@ -22,7 +22,6 @@ public class Main {
 		leerCities("ficheros//cities.txt");
 		leerAddrress("ficheros//address2.txt");
 
-		System.out.println();
 		escribirEnFicheroPorLineas("ficheros//resultado.txt");
 
 	}
@@ -33,7 +32,7 @@ public class Main {
 			PrintWriter filtroEscritura = new PrintWriter(flujoEscritura);
 			for (Country c : paises.values()) {
 				for (City aux : c.getListaCities().values()) {
-					filtroEscritura.println(c.getName() + " " + c.numeroCiudades() + " " + c.getId()+" "+aux.getNumeroDirecciones());
+					filtroEscritura.println(c.getName()+" " + c.getId()+ " " + c.numeroCiudades() + " "+aux.getNumeroDirecciones());
 				}
 			}
 			filtroEscritura.close();

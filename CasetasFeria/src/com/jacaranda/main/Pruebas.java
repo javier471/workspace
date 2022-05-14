@@ -13,7 +13,7 @@ public class Pruebas {
 		ca.addCaseta(c1);
 		ca.addCaseta(c2);
 		ca.addCaseta(c3);
-		System.out.println(ca.muestraCasetasDistrito());
+		System.out.println(ca.muestraCasetasFamiliar());
 	}
 
 }

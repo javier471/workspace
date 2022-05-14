@@ -15,6 +15,11 @@ public class Calle {
 		listaCasetas=new HashSet<>();
 	}
 
+	public Calle(String nombre) {
+		super();
+		this.nombre=nombre;
+		listaCasetas=new HashSet<>();
+	}
 	public String getNombre() {
 		return nombre;
 	}
@@ -30,7 +35,7 @@ public class Calle {
 	public String mostrarCasetas() {
 		StringBuilder resul=new StringBuilder();
 		for(Caseta c: listaCasetas) {
-			resul.append(c);
+			resul.append(c+"\n");
 		}
 		return resul.toString();
 	}
