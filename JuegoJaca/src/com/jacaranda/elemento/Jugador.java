@@ -14,6 +14,9 @@ public class Jugador extends Element {
 		// saco el tipo de elemento del player que me pasan
 		super(ElementType.valueOf(player.name()));
 		this.player = player;
+		this.pociones=0;
+		this.gemas=0;
+		this.dinero=0;
 	}
 
 	public String getNombre() {

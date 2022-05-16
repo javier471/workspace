@@ -194,8 +194,7 @@ public class Juego {
 		// Borramos la antigua coordenada
 		tablero.remove(coorActual);
 		// Actualizamos en la lista de coordenadas de los jugadores
-		coordenadaJugadores.remove(jugadorJuega);
-		coordenadaJugadores.add(jugadorJuega, coor);
+		coordenadaJugadores.set(jugadorJuega, coor);
 	}
 
 	/**

@@ -1,12 +1,13 @@
 package com.jacaranda.logica;
 
 import java.util.HashSet;
+import java.util.Iterator;
 
 public class Calle {
 
 	private String nombre;
 	private int id_calle;
-	private HashSet<Caseta> listaCasetas;
+	protected HashSet<Caseta> listaCasetas;
 
 	public Calle(String nombre, int id_calle) {
 		super();
@@ -44,9 +45,29 @@ public class Calle {
 		StringBuilder resul=new StringBuilder();
 		for(Caseta c:listaCasetas) {
 			if(c.getClase().equalsIgnoreCase("Familiar"));
-			resul.append(c);
+			resul.append(c+"\n");
 		}
 		return resul.toString();
+	}
+	
+	
+	public boolean eliminarCaseta(String caseta) {
+		boolean encontrado=false;
+		Iterator<Caseta> nextCaseta=listaCasetas.iterator();
+		while(nextCaseta.hasNext() && !encontrado) {
+			Caseta c=nextCaseta.next();
+			if(c.getTitulo().equalsIgnoreCase(caseta)) {
+				listaCasetas.remove(c);
+				encontrado=true;
+			}
+		}
+		return encontrado;
+	}
+	
+	
+	public HashSet<Caseta> listadoCasetas(){
+		HashSet<Caseta> copia=listaCasetas;
+		return copia;
 	}
 	
 	public String muestraCasetasDistrito() {
