@@ -1,0 +1,1036 @@
+Pais: Afghanistan
+CountryId: 1
+NumeroCiudades: 1
+Kabul: 1
+
+Pais: Algeria
+CountryId: 2
+NumeroCiudades: 3
+Batna: 1
+Bchar: 1
+Skikda: 1
+
+Pais: American Samoa
+CountryId: 3
+NumeroCiudades: 1
+Tafuna: 1
+
+Pais: Angola
+CountryId: 4
+NumeroCiudades: 2
+Benguela: 0
+Namibe: 1
+
+Pais: Anguilla
+CountryId: 5
+NumeroCiudades: 1
+South Hill: 1
+
+Pais: Argentina
+CountryId: 6
+NumeroCiudades: 13
+Avellaneda: 0
+Ezeiza: 0
+Quilmes: 0
+Almirante Brown: 1
+Baha Blanca: 1
+Crdoba: 1
+Escobar: 1
+La Plata: 1
+Merlo: 1
+San Miguel de Tucumn: 1
+Santa F: 1
+Tandil: 1
+Vicente Lpez: 1
+
+Pais: Armenia
+CountryId: 7
+NumeroCiudades: 1
+Yerevan: 1
+
+Pais: Australia
+CountryId: 8
+NumeroCiudades: 1
+Woodridge: 2
+
+Pais: Austria
+CountryId: 9
+NumeroCiudades: 3
+Graz: 1
+Linz: 1
+Salzburg: 1
+
+Pais: Azerbaijan
+CountryId: 10
+NumeroCiudades: 2
+Baku: 1
+Sumqayit: 1
+
+Pais: Bahrain
+CountryId: 11
+NumeroCiudades: 1
+al-Manama: 0
+
+Pais: Bangladesh
+CountryId: 12
+NumeroCiudades: 3
+Dhaka: 1
+Jamalpur: 1
+Tangail: 1
+
+Pais: Belarus
+CountryId: 13
+NumeroCiudades: 2
+Mogiljov: 0
+Molodetno: 1
+
+Pais: Bolivia
+CountryId: 14
+NumeroCiudades: 2
+El Alto: 1
+Sucre: 1
+
+Pais: Brazil
+CountryId: 15
+NumeroCiudades: 28
+Alvorada: 0
+Juiz de Fora: 0
+So Bernardo do Campo: 0
+Angra dos Reis: 1
+Anpolis: 1
+Aparecida de Goinia: 1
+Araatuba: 1
+Bag: 1
+Belm: 1
+Blumenau: 1
+Boa Vista: 1
+Braslia: 1
+Goinia: 1
+Guaruj: 1
+guas Lindas de Gois: 1
+Ibirit: 1
+Juazeiro do Norte: 1
+Luzinia: 1
+Maring: 1
+Po: 1
+Poos de Caldas: 1
+Rio Claro: 1
+Santa Brbara dOeste: 1
+Santo Andr: 1
+So Leopoldo: 1
+Sorocaba: 1
+Vila Velha: 1
+Vitria de Santo Anto: 1
+
+Pais: Brunei
+CountryId: 16
+NumeroCiudades: 1
+Bandar Seri Begawan: 1
+
+Pais: Bulgaria
+CountryId: 17
+NumeroCiudades: 2
+Ruse: 0
+Stara Zagora: 1
+
+Pais: Cambodia
+CountryId: 18
+NumeroCiudades: 2
+Battambang: 0
+Phnom Penh: 1
+
+Pais: Cameroon
+CountryId: 19
+NumeroCiudades: 2
+Bamenda: 1
+Yaound: 1
+
+Pais: Canada
+CountryId: 20
+NumeroCiudades: 7
+Gatineau: 0
+London: 0
+Halifax: 1
+Oshawa: 1
+Richmond Hill: 1
+Vancouver: 1
+Lethbridge: 2
+
+Pais: Chad
+CountryId: 21
+NumeroCiudades: 1
+NDjamna: 0
+
+Pais: Chile
+CountryId: 22
+NumeroCiudades: 3
+Coquimbo: 0
+Antofagasta: 1
+Rancagua: 1
+
+Pais: China
+CountryId: 23
+NumeroCiudades: 53
+Baicheng: 0
+Baiyin: 0
+Binzhou: 0
+Haining: 0
+Jining: 0
+Jinzhou: 0
+Leshan: 0
+Rizhao: 0
+Sanya: 0
+Shaoguan: 0
+Suihua: 0
+Tieli: 0
+Weifang: 0
+Xintai: 0
+Yinchuan: 0
+Yingkou: 0
+Zaoyang: 0
+Zhoushan: 0
+Changzhou: 1
+Datong: 1
+Daxian: 1
+Dongying: 1
+Emeishan: 1
+Enshi: 1
+Ezhou: 1
+Fuyu: 1
+Fuzhou: 1
+Hami: 1
+Hohhot: 1
+Huaian: 1
+Jinchang: 1
+Junan: 1
+Korla: 1
+Laiwu: 1
+Laohekou: 1
+Lengshuijiang: 1
+Liaocheng: 1
+Meixian: 1
+Nanyang: 1
+Pingxiang: 1
+Qinhuangdao: 1
+Shanwei: 1
+Shenzhen: 1
+Tianjin: 1
+Tiefa: 1
+Tongliao: 1
+Xiangfan: 1
+Xiangtan: 1
+Xinxiang: 1
+Yantai: 1
+Yuncheng: 1
+Yuzhou: 1
+Zalantun: 1
+
+Pais: Colombia
+CountryId: 24
+NumeroCiudades: 6
+Sogamoso: 0
+Buenaventura: 1
+Dos Quebradas: 1
+Florencia: 1
+Pereira: 1
+Sincelejo: 1
+
+Pais: Congo
+CountryId: 25
+NumeroCiudades: 2
+Lubumbashi: 1
+Mwene-Ditu: 1
+
+Pais: Czech Republic
+CountryId: 26
+NumeroCiudades: 1
+Olomouc: 1
+
+Pais: Dominican Republic
+CountryId: 27
+NumeroCiudades: 3
+La Romana: 1
+San Felipe de Puerto Plata: 1
+Santiago de los Caballeros: 1
+
+Pais: Ecuador
+CountryId: 28
+NumeroCiudades: 3
+Loja: 0
+Robamba: 0
+Portoviejo: 1
+
+Pais: Egypt
+CountryId: 29
+NumeroCiudades: 6
+Bilbays: 0
+Mit Ghamr: 0
+Idfu: 1
+Qalyub: 1
+Sawhaj: 1
+Shubra al-Khayma: 1
+
+Pais: Estonia
+CountryId: 30
+NumeroCiudades: 1
+Tartu: 1
+
+Pais: Ethiopia
+CountryId: 31
+NumeroCiudades: 1
+Addis Abeba: 1
+
+Pais: Faroe Islands
+CountryId: 32
+NumeroCiudades: 1
+Trshavn: 1
+
+Pais: Finland
+CountryId: 33
+NumeroCiudades: 1
+Oulu: 1
+
+Pais: France
+CountryId: 34
+NumeroCiudades: 4
+Brest: 1
+Le Mans: 1
+Toulon: 1
+Toulouse: 1
+
+Pais: French Guiana
+CountryId: 35
+NumeroCiudades: 1
+Cayenne: 1
+
+Pais: French Polynesia
+CountryId: 36
+NumeroCiudades: 2
+Faaa: 1
+Papeete: 1
+
+Pais: Gambia
+CountryId: 37
+NumeroCiudades: 1
+Banjul: 0
+
+Pais: Germany
+CountryId: 38
+NumeroCiudades: 7
+Duisburg: 1
+Erlangen: 1
+Halle/Saale: 1
+Mannheim: 1
+Saarbrcken: 1
+Siegen: 1
+Witten: 1
+
+Pais: Greece
+CountryId: 39
+NumeroCiudades: 2
+Patras: 0
+Athenai: 1
+
+Pais: Greenland
+CountryId: 40
+NumeroCiudades: 1
+Nuuk: 1
+
+Pais: Holy See Vatican City State
+CountryId: 41
+NumeroCiudades: 1
+Citt del Vaticano: 1
+
+Pais: Hong Kong
+CountryId: 42
+NumeroCiudades: 1
+Kowloon and New Kowloon: 1
+
+Pais: Hungary
+CountryId: 43
+NumeroCiudades: 1
+Szkesfehrvr: 0
+
+Pais: India
+CountryId: 44
+NumeroCiudades: 60
+Amroha: 0
+Bhimavaram: 0
+Chapra: 0
+Kanchrapara: 0
+Rajkot: 0
+Siliguri Shiliguri: 0
+Vijayawada: 0
+Adoni: 1
+Ahmadnagar: 1
+Allappuzha Alleppey: 1
+Ambattur: 1
+Balurghat: 1
+Berhampore Baharampur: 1
+Bhavnagar: 1
+Bhilwara: 1
+Bhopal: 1
+Bhusawal: 1
+Bijapur: 1
+Chandrapur: 1
+Dhule Dhulia: 1
+Etawah: 1
+Firozabad: 1
+Gandhinagar: 1
+Gulbarga: 1
+Haldia: 1
+Halisahar: 1
+Hoshiarpur: 1
+Hubli-Dharwad: 1
+Jaipur: 1
+Jhansi: 1
+Jodhpur: 1
+Kamarhati: 1
+Karnal: 1
+Katihar: 1
+Kumbakonam: 1
+Miraj: 1
+Munger Monghyr: 1
+Mysore: 1
+Nagaon: 1
+Palghat Palakkad: 1
+Parbhani: 1
+Pathankot: 1
+Patiala: 1
+Pudukkottai: 1
+Pune: 1
+Purnea Purnia: 1
+Rae Bareli: 1
+Rampur: 1
+Ranchi: 1
+Sambhal: 1
+Satna: 1
+Shimoga: 1
+Shivapuri: 1
+Tambaram: 1
+Udaipur: 1
+Uluberia: 1
+Uttarpara-Kotrung: 1
+Valparai: 1
+Varanasi Benares: 1
+Yamuna Nagar: 1
+
+Pais: Indonesia
+CountryId: 45
+NumeroCiudades: 14
+Lhokseumawe: 0
+Madiun: 0
+Pangkal Pinang: 0
+Pontianak: 0
+Purwakarta: 0
+Cianjur: 1
+Ciomas: 1
+Ciparay: 1
+Gorontalo: 1
+Jakarta: 1
+Pemalang: 1
+Probolinggo: 1
+Surakarta: 1
+Tegal: 1
+
+Pais: Iran
+CountryId: 46
+NumeroCiudades: 8
+Arak: 1
+Esfahan: 1
+Kermanshah: 1
+Najafabad: 1
+Qomsheh: 1
+Shahr-e Kord: 1
+Sirjan: 1
+Tabriz: 1
+
+Pais: Iraq
+CountryId: 47
+NumeroCiudades: 1
+Mosul: 0
+
+Pais: Israel
+CountryId: 48
+NumeroCiudades: 4
+Ashqelon: 0
+Ashdod: 1
+Bat Yam: 1
+Tel Aviv-Jaffa: 1
+
+Pais: Italy
+CountryId: 49
+NumeroCiudades: 7
+Brindisi: 0
+Livorno: 0
+Udine: 0
+Alessandria: 1
+Bergamo: 1
+Brescia: 1
+Syrakusa: 1
+
+Pais: Japan
+CountryId: 50
+NumeroCiudades: 31
+Akishima: 0
+Isesaki: 0
+Kanazawa: 0
+Kuwana: 0
+Okayama: 0
+Ueda: 0
+Fukuyama: 1
+Higashiosaka: 1
+Hino: 1
+Hiroshima: 1
+Iwaki: 1
+Iwakuni: 1
+Iwatsuki: 1
+Izumisano: 1
+Kakamigahara: 1
+Kamakura: 1
+Koriyama: 1
+Kurashiki: 1
+Matsue: 1
+Miyakonojo: 1
+Nagareyama: 1
+Okinawa: 1
+Omiya: 1
+Onomichi: 1
+Otsu: 1
+Sagamihara: 1
+Sasebo: 1
+Shimonoseki: 1
+Tama: 1
+Tsuyama: 1
+Urawa: 1
+
+Pais: Kazakstan
+CountryId: 51
+NumeroCiudades: 2
+Zhezqazghan: 0
+Pavlodar: 1
+
+Pais: Kenya
+CountryId: 52
+NumeroCiudades: 2
+Kisumu: 1
+Nyeri: 1
+
+Pais: Kuwait
+CountryId: 53
+NumeroCiudades: 1
+Jalib al-Shuyukh: 1
+
+Pais: Latvia
+CountryId: 54
+NumeroCiudades: 2
+Daugavpils: 1
+Liepaja: 1
+
+Pais: Liechtenstein
+CountryId: 55
+NumeroCiudades: 1
+Vaduz: 1
+
+Pais: Lithuania
+CountryId: 56
+NumeroCiudades: 1
+Vilnius: 0
+
+Pais: Madagascar
+CountryId: 57
+NumeroCiudades: 1
+Mahajanga: 1
+
+Pais: Malawi
+CountryId: 58
+NumeroCiudades: 1
+Lilongwe: 1
+
+Pais: Malaysia
+CountryId: 59
+NumeroCiudades: 3
+Ipoh: 1
+Kuching: 1
+Sungai Petani: 1
+
+Pais: Mexico
+CountryId: 60
+NumeroCiudades: 30
+Acua: 0
+Carmen: 0
+Celaya: 0
+Coatzacoalcos: 0
+Cuernavaca: 0
+Huejutla de Reyes: 0
+Jos Azueta: 0
+La Paz: 0
+Monclova: 0
+Allende: 1
+Atlixco: 1
+Coacalco de Berriozbal: 1
+Cuauhtmoc: 1
+Cuautla: 1
+El Fuerte: 1
+Guadalajara: 1
+Hidalgo: 1
+Huixquilucan: 1
+Jurez: 1
+Matamoros: 1
+Mexicali: 1
+Nezahualcyotl: 1
+Pachuca de Soto: 1
+Salamanca: 1
+San Felipe del Progreso: 1
+San Juan Bautista Tuxtepec: 1
+Torren: 1
+Uruapan: 1
+Valle de Santiago: 1
+Zapopan: 1
+
+Pais: Moldova
+CountryId: 61
+NumeroCiudades: 1
+Chisinau: 1
+
+Pais: Morocco
+CountryId: 62
+NumeroCiudades: 3
+Beni-Mellal: 0
+Nador: 1
+Sal: 1
+
+Pais: Mozambique
+CountryId: 63
+NumeroCiudades: 3
+Beira: 1
+Naala-Porto: 1
+Tete: 1
+
+Pais: Myanmar
+CountryId: 64
+NumeroCiudades: 2
+Monywa: 1
+Myingyan: 1
+
+Pais: Nauru
+CountryId: 65
+NumeroCiudades: 1
+Yangor: 0
+
+Pais: Nepal
+CountryId: 66
+NumeroCiudades: 1
+Birgunj: 1
+
+Pais: Netherlands
+CountryId: 67
+NumeroCiudades: 5
+Emmen: 0
+Amersfoort: 1
+Apeldoorn: 1
+Ede: 1
+s-Hertogenbosch: 1
+
+Pais: New Zealand
+CountryId: 68
+NumeroCiudades: 1
+Hamilton: 1
+
+Pais: Nigeria
+CountryId: 69
+NumeroCiudades: 13
+Sokoto: 0
+Benin City: 1
+Deba Habe: 1
+Effon-Alaiye: 1
+Ife: 1
+Ikerre: 1
+Ilorin: 1
+Kaduna: 1
+Ogbomosho: 1
+Ondo: 1
+Owo: 1
+Oyo: 1
+Zaria: 1
+
+Pais: North Korea
+CountryId: 70
+NumeroCiudades: 1
+Pyongyang: 1
+
+Pais: Oman
+CountryId: 71
+NumeroCiudades: 2
+Salala: 0
+Masqat: 1
+
+Pais: Pakistan
+CountryId: 72
+NumeroCiudades: 5
+Dadu: 1
+Mandi Bahauddin: 1
+Mardan: 1
+Okara: 1
+Shikarpur: 1
+
+Pais: Paraguay
+CountryId: 73
+NumeroCiudades: 3
+Asuncin: 1
+Ciudad del Este: 1
+San Lorenzo: 1
+
+Pais: Peru
+CountryId: 74
+NumeroCiudades: 4
+Hunuco: 0
+Sullana: 0
+Callao: 1
+Lima: 1
+
+Pais: Philippines
+CountryId: 75
+NumeroCiudades: 20
+Iligan: 0
+Santa Rosa: 0
+Talavera: 0
+Tarlac: 0
+Baybay: 1
+Bayugan: 1
+Bislig: 1
+Cabuyao: 1
+Cavite: 1
+Davao: 1
+Gingoog: 1
+Hagonoy: 1
+Imus: 1
+Lapu-Lapu: 1
+Mandaluyong: 1
+Ozamis: 1
+Taguig: 1
+Tanauan: 1
+Tanza: 1
+Tuguegarao: 1
+
+Pais: Poland
+CountryId: 76
+NumeroCiudades: 8
+Czestochowa: 0
+Lublin: 0
+Plock: 0
+Wroclaw: 0
+Bydgoszcz: 1
+Jastrzebie-Zdrj: 1
+Kalisz: 1
+Tychy: 1
+
+Pais: Puerto Rico
+CountryId: 77
+NumeroCiudades: 2
+Arecibo: 1
+Ponce: 1
+
+Pais: Romania
+CountryId: 78
+NumeroCiudades: 2
+Bucuresti: 0
+Botosani: 1
+
+Pais: Runion
+CountryId: 79
+NumeroCiudades: 1
+Saint-Denis: 1
+
+Pais: Russian Federation
+CountryId: 80
+NumeroCiudades: 28
+Kamyin: 0
+Pjatigorsk: 0
+Serpuhov: 0
+Atinsk: 1
+Balaiha: 1
+Dzerzinsk: 1
+Elista: 1
+Ivanovo: 1
+Jaroslavl: 1
+Jelets: 1
+Kaliningrad: 1
+Kirovo-Tepetsk: 1
+Kolpino: 1
+Korolev: 1
+Kurgan: 1
+Kursk: 1
+Lipetsk: 1
+Ljubertsy: 1
+Maikop: 1
+Moscow: 1
+Nabereznyje Telny: 1
+Niznekamsk: 1
+Novoterkassk: 1
+Smolensk: 1
+Syktyvkar: 1
+Teboksary: 1
+Usolje-Sibirskoje: 1
+Zeleznogorsk: 1
+
+Pais: Saint Vincent and the Grenadines
+CountryId: 81
+NumeroCiudades: 1
+Kingstown: 1
+
+Pais: Saudi Arabia
+CountryId: 82
+NumeroCiudades: 5
+Abha: 1
+al-Hawiya: 1
+al-Qatif: 1
+Jedda: 1
+Tabuk: 1
+
+Pais: Senegal
+CountryId: 83
+NumeroCiudades: 1
+Ziguinchor: 1
+
+Pais: Slovakia
+CountryId: 84
+NumeroCiudades: 1
+Bratislava: 1
+
+Pais: South Africa
+CountryId: 85
+NumeroCiudades: 11
+Chatsworth: 0
+Boksburg: 1
+Botshabelo: 1
+Johannesburg: 1
+Kimberley: 1
+Klerksdorp: 1
+Newcastle: 1
+Paarl: 1
+Rustenburg: 1
+Soshanguve: 1
+Springs: 1
+
+Pais: South Korea
+CountryId: 86
+NumeroCiudades: 5
+Tonghae: 0
+Cheju: 1
+Kimchon: 1
+Naju: 1
+Uijongbu: 1
+
+Pais: Spain
+CountryId: 87
+NumeroCiudades: 5
+Santiago de Compostela: 0
+A Corua La Corua: 1
+Donostia-San Sebastin: 1
+Gijn: 1
+Ourense Orense: 1
+
+Pais: Sri Lanka
+CountryId: 88
+NumeroCiudades: 1
+Jaffna: 1
+
+Pais: Sudan
+CountryId: 89
+NumeroCiudades: 2
+al-Qadarif: 1
+Omdurman: 1
+
+Pais: Sweden
+CountryId: 90
+NumeroCiudades: 1
+Malm: 1
+
+Pais: Switzerland
+CountryId: 91
+NumeroCiudades: 3
+Lausanne: 0
+Basel: 1
+Bern: 1
+
+Pais: Taiwan
+CountryId: 92
+NumeroCiudades: 10
+Chungho: 0
+Fengshan: 0
+Tanshui: 0
+Tsaotun: 0
+Changhwa: 1
+Chiayi: 1
+Hsichuh: 1
+Lungtan: 1
+Nantou: 1
+Touliu: 1
+
+Pais: Tanzania
+CountryId: 93
+NumeroCiudades: 3
+Mwanza: 0
+Tabora: 1
+Zanzibar: 1
+
+Pais: Thailand
+CountryId: 94
+NumeroCiudades: 3
+Nakhon Sawan: 1
+Pak Kret: 1
+Songkhla: 1
+
+Pais: Tonga
+CountryId: 95
+NumeroCiudades: 1
+Nukualofa: 1
+
+Pais: Tunisia
+CountryId: 96
+NumeroCiudades: 1
+Sousse: 1
+
+Pais: Turkey
+CountryId: 97
+NumeroCiudades: 15
+Denizli: 0
+Eskisehir: 0
+Gaziantep: 0
+Sivas: 0
+Sultanbeyli: 0
+Tokat: 0
+Adana: 1
+Balikesir: 1
+Batman: 1
+Inegl: 1
+Kilis: 1
+Ktahya: 1
+Osmaniye: 1
+Tarsus: 1
+Usak: 1
+
+Pais: Turkmenistan
+CountryId: 98
+NumeroCiudades: 1
+Ashgabat: 1
+
+Pais: Tuvalu
+CountryId: 99
+NumeroCiudades: 1
+Funafuti: 1
+
+Pais: Ukraine
+CountryId: 100
+NumeroCiudades: 6
+Konotop: 0
+ostka: 0
+Kamjanets-Podilskyi: 1
+Mukateve: 1
+Simferopol: 1
+Sumy: 1
+
+Pais: United Arab Emirates
+CountryId: 101
+NumeroCiudades: 3
+Abu Dhabi: 1
+al-Ayn: 1
+Sharja: 1
+
+Pais: United Kingdom
+CountryId: 102
+NumeroCiudades: 8
+Southampton: 0
+Southport: 0
+Stockport: 0
+York: 0
+Bradford: 1
+Dundee: 1
+London: 1
+Southend-on-Sea: 1
+
+Pais: United States
+CountryId: 103
+NumeroCiudades: 35
+Akron: 0
+Cape Coral: 0
+Garden Grove: 0
+Garland: 0
+Joliet: 0
+Arlington: 1
+Augusta-Richmond County: 1
+Aurora: 1
+Bellevue: 1
+Brockton: 1
+Citrus Heights: 1
+Clarksville: 1
+Compton: 1
+Dallas: 1
+Dayton: 1
+El Monte: 1
+Fontana: 1
+Grand Prairie: 1
+Greensboro: 1
+Kansas City: 1
+Lancaster: 1
+Laredo: 1
+Lincoln: 1
+Manchester: 1
+Memphis: 1
+Peoria: 1
+Roanoke: 1
+Rockford: 1
+Saint Louis: 1
+Salinas: 1
+San Bernardino: 1
+Sterling Heights: 1
+Sunnyvale: 1
+Tallahassee: 1
+Warren: 1
+
+Pais: Venezuela
+CountryId: 104
+NumeroCiudades: 7
+Barcelona: 0
+Valencia: 0
+Caracas: 1
+Cuman: 1
+Maracabo: 1
+Ocumare del Tuy: 1
+Valle de la Pascua: 1
+
+Pais: Vietnam
+CountryId: 105
+NumeroCiudades: 6
+Cam Ranh: 0
+Nha Trang: 0
+Vinh: 0
+Haiphong: 1
+Hanoi: 1
+Nam Dinh: 1
+
+Pais: Virgin Islands
+CountryId: 106
+NumeroCiudades: 1
+Charlotte Amalie: 1
+
+Pais: Yemen
+CountryId: 107
+NumeroCiudades: 4
+Aden: 1
+Hodeida: 1
+Sanaa: 1
+Taizz: 1
+
+Pais: Yugoslavia
+CountryId: 108
+NumeroCiudades: 2
+Novi Sad: 0
+Kragujevac: 1
+
+Pais: Zambia
+CountryId: 109
+NumeroCiudades: 1
+Kitwe: 1
+

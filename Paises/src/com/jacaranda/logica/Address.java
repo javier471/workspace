@@ -3,27 +3,39 @@ package com.jacaranda.logica;
 import java.util.Objects;
 
 public class Address {
+	private int adrress_id;
+	private String address;
 
-	private int address_id;
-	private String direcc;
-
-	public Address(int address_id, String direcc) {
+	public Address(int adrress_id, String address) {
 		super();
-		this.address_id = address_id;
-		this.direcc = direcc;
+		this.adrress_id = adrress_id;
+		this.address = address;
 	}
 
-	public int getAddress_id() {
-		return address_id;
+	public int getAdrress_id() {
+		return adrress_id;
 	}
 
-	public String getDirecc() {
-		return direcc;
+	public void setAdrress_id(int adrress_id) {
+		this.adrress_id = adrress_id;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	@Override
+	public String toString() {
+		return "Address [adrress_id=" + adrress_id + ", address=" + address + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(address_id);
+		return Objects.hash(adrress_id);
 	}
 
 	@Override
@@ -35,13 +47,7 @@ public class Address {
 		if (getClass() != obj.getClass())
 			return false;
 		Address other = (Address) obj;
-		return address_id == other.address_id;
+		return adrress_id == other.adrress_id;
 	}
 
-	@Override
-	public String toString() {
-		return "Address [address_id=" + address_id + ", direcc=" + direcc + "]";
-	}
-
-	
 }

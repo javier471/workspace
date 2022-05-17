@@ -1,67 +1,66 @@
 package com.jacaranda.logica;
 
-import java.util.HashMap;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Objects;
 
 public class Country {
+	private int country_id;
+	private String country;
+	private List<City> ciudades;
 
-	private String name;
-	private HashMap<Integer,City> listaCities;
-
-	public Country(String name) {
+	public Country(int country_id, String country) {
 		super();
-		this.name = name;
-		listaCities= new HashMap<>();
+		this.country_id = country_id;
+		this.country = country;
+		this.ciudades = new LinkedList<>();
 	}
 
-
-	public void addCity(int id,City aux) {
-		listaCities.put(id, aux);
+	public int getCountry_id() {
+		return country_id;
 	}
 
-	
-	public String getName() {
-		return name;
+	public void setCountry_id(int country_id) {
+		this.country_id = country_id;
 	}
 
+	public String getCountry() {
+		return country;
+	}
 
-	public int getId() {
-		int resul=0;
-		for(Integer i:listaCities.keySet()) {
-			resul=i.intValue();
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public City getCiudad(int city_id) {
+		City aux = new City(city_id, null);
+		int posicion = this.ciudades.indexOf(aux);
+		if (posicion == -1) {
+			return null;
+		} else {
+			return this.ciudades.get(posicion);
 		}
-		return resul;
-	}
-	
-	
 
-	public HashMap<Integer, City> getListaCities() {
-		return listaCities;
 	}
 
-
-	public City getCiudad(Integer id) {
-		return listaCities.get(id);
-	}
-	
-	public int numeroCiudades() {
-		return listaCities.values().size();
-	}
-	
-	public int numeroDirecciones() {
-		int resul=0;
-		for(City c:listaCities.values()) {
-			resul+=c.getNumeroDirecciones();
+	public void addCity(int city_id, String city) {
+		City aux = new City(city_id, city);
+		int posicion = this.ciudades.indexOf(aux);
+		if (posicion == -1) {
+			this.ciudades.add(aux);
 		}
-		return resul;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Country [country_id=" + country_id + ", country=" + country + ", ciudades=" + ciudades + "]";
+	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(listaCities, name);
+		return Objects.hash(country_id);
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -72,21 +71,27 @@ public class Country {
 		if (getClass() != obj.getClass())
 			return false;
 		Country other = (Country) obj;
-		return Objects.equals(listaCities, other.listaCities) && Objects.equals(name, other.name);
+		return country_id == other.country_id;
 	}
 
+	public String escribirFichero() {
+		StringBuilder resultado = new StringBuilder();
 
-	@Override
-	public String toString() {
-		return "Country [name=" + name + ", listaCities=" + listaCities.toString() + "]";
+		Collections.sort(ciudades);
+
+		for (City c : ciudades) {
+			resultado.append(c.escribirFichero());
+		}
+		return "Pais: " + country + "\nCountryId: " + country_id + "\nNumeroCiudades: " + ciudades.size() + "\n"
+				+ resultado;
+
 	}
 
-
-	
-	
-	
-	
-
-	
-	
+	public String escribirCiudades() {
+		StringBuilder resultado = new StringBuilder();
+		for (City siguiente : this.ciudades) {
+			resultado.append(siguiente.escribirFicheroCiudades());
+		}
+		return resultado.toString();
+	}
 }
