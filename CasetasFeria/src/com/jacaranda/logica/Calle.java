@@ -2,6 +2,7 @@ package com.jacaranda.logica;
 
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Objects;
 
 public class Calle {
 
@@ -36,7 +37,7 @@ public class Calle {
 	public String mostrarCasetas() {
 		StringBuilder resul=new StringBuilder();
 		for(Caseta c: listaCasetas) {
-			resul.append(c+"\n");
+			resul.append(c.toString()+"\n");
 		}
 		return resul.toString();
 	}
@@ -44,8 +45,8 @@ public class Calle {
 	public String muestraCasetasFamiliar() {
 		StringBuilder resul=new StringBuilder();
 		for(Caseta c:listaCasetas) {
-			if(c.getClase().equalsIgnoreCase("Familiar"));
-			resul.append(c+"\n");
+			if(c.getClase().equalsIgnoreCase("FAMILIAR"));
+			resul.append(c.toString()+"\n");
 		}
 		return resul.toString();
 	}
@@ -93,6 +94,23 @@ public class Calle {
 	@Override
 	public String toString() {
 		return "Calle [nombre=" + nombre + ", id_calle=" + id_calle + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(nombre);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Calle other = (Calle) obj;
+		return Objects.equals(nombre, other.nombre);
 	}
 
 	

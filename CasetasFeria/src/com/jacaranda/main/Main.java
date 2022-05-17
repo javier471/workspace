@@ -4,6 +4,7 @@ import java.io.File;
 
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Scanner;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -14,6 +15,8 @@ import com.jacaranda.logica.Calle;
 import com.jacaranda.logica.Caseta;
 
 public class Main {
+
+	public static Scanner teclado = new Scanner(System.in);
 
 	public static HashSet<Calle> recintoFerial = new HashSet<>();
 
@@ -49,14 +52,52 @@ public class Main {
 					recintoFerial.add(aux);
 
 				}
-				
+			}
 
+			System.out.println(muestraMenu());
+			System.out.println("Introduce opción");
+			int opcion = Integer.parseInt(teclado.nextLine());
+			while (opcion != 8) {
+				switch (opcion) {
+				case 1: {
+					System.out.println("Introduzca calle");
+					String calle = teclado.nextLine();
+					System.out.println(mostrarCasetasCalle(calle));
+					break;
+				}
+				case 2: {
+					System.out.println(casetasFamiliar());
+					break;
+				}
+				case 3: {
+					System.out.println(casetasDistrito());
+					break;
+				}
+				case 4: {
+					System.out.println(casetasDistinta());
+					break;
+				}
+				case 5: {
+					System.out.println(numCasetasFamiliares());
+					break;
+				}
+				case 6: {
+					System.out.println(numCasetasDistrito());
+					break;
+				}
+				case 7: {
+					System.out.println("Introduzca calle en la que se encuentra la caseta");
+					String calleCaseta = teclado.nextLine();
+					System.out.println("Introduzca caseta");
+					String caseta = teclado.nextLine();
+					eliminarCaseta(calleCaseta, caseta);
+					break;
+				}
+				}
+				System.out.println(muestraMenu());
+				System.out.println("Introduzca opcion");
+				opcion = Integer.parseInt(teclado.nextLine());
 			}
-			
-			for(Calle c:recintoFerial) {
-				System.out.println(c);
-			}
-			
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -64,24 +105,23 @@ public class Main {
 
 	}
 
-	public String muestraMenu() {
+	public static String muestraMenu() {
 		return "1. Mostrar todas las casetas existentes en una calle.\n"
 				+ "2. Mostrar todas las casetas de tipo familiar. \n"
 				+ "3. Mostrar todas las casetas de tipo Distrito. \n"
 				+ "4. Mostrar todas las casetas que no sean ni familiares ni distritos. \n"
 				+ "5. Mostrar para cada una de las calles del recinto ferial el número de casetas de tipo familiar que existen. \n"
 				+ "6. Mostrar para cada una de las calles del recinto ferial el número de casetas de tipo Distrito que existen. \n"
-				+ "7. Eliminar una caseta.\n"
-				+ "8. Salir.\n";
+				+ "7. Eliminar una caseta.\n" + "8. Salir.\n";
 	}
 
-	public String mostrarCasetasCalle(String calle) {
+	public static String mostrarCasetasCalle(String calle) {
 		StringBuilder resul = new StringBuilder();
 		boolean encontrado = false;
 		Iterator<Calle> siguiente = recintoFerial.iterator();
 		while (siguiente.hasNext() && !encontrado) {
 			Calle aux = siguiente.next();
-			if (calle.equalsIgnoreCase(aux.getNombre())) {
+			if (aux.getNombre().equalsIgnoreCase(calle)) {
 				resul.append(aux.mostrarCasetas());
 				encontrado = true;
 			}
@@ -89,74 +129,75 @@ public class Main {
 		return resul.toString();
 	}
 
-	
-	public String casetasFamiliar() {
-		StringBuilder resul=new StringBuilder();
-		for(Calle c:recintoFerial) {
-			resul.append(c.muestraCasetasFamiliar());		}
-		
+	public static String casetasFamiliar() {
+		StringBuilder resul = new StringBuilder();
+		for (Calle c : recintoFerial) {
+			resul.append(c.muestraCasetasFamiliar());
+		}
+
 		return resul.toString();
 	}
-	
-	public String casetasDistrito() {
-		StringBuilder resul=new StringBuilder();
-		for(Calle c:recintoFerial) {
-			resul.append(c.muestraCasetasDistrito());		}
-		
+
+	public static String casetasDistrito() {
+		StringBuilder resul = new StringBuilder();
+		for (Calle c : recintoFerial) {
+			resul.append(c.muestraCasetasDistrito());
+		}
+
 		return resul.toString();
 	}
-	
-	public String casetasDistinta() {
-		StringBuilder resul=new StringBuilder();
-		for(Calle c:recintoFerial) {
-			resul.append(c.muestraCasetasDistintas());		}
-		
+
+	public static String casetasDistinta() {
+		StringBuilder resul = new StringBuilder();
+		for (Calle c : recintoFerial) {
+			resul.append(c.muestraCasetasDistintas());
+		}
+
 		return resul.toString();
 	}
-	
-	public int numCasetasFamiliares() {
-		int cont=0;
-		for(Calle c:recintoFerial) {
-			for(Caseta aux:c.listadoCasetas()) {
-				if(aux.getClase().equals("FAMILIAR")) {
+
+	public static int numCasetasFamiliares() {
+		int cont = 0;
+		for (Calle c : recintoFerial) {
+			for (Caseta aux : c.listadoCasetas()) {
+				if (aux.getClase().equals("FAMILIAR")) {
 					cont++;
 				}
 			}
 		}
 		return cont;
 	}
-	
-	public int numCasetasDistrito() {
-		int cont=0;
-		for(Calle c:recintoFerial) {
-			for(Caseta aux:c.listadoCasetas()) {
-				if(aux.getClase().equals("DISTRITO")) {
+
+	public static int numCasetasDistrito() {
+		int cont = 0;
+		for (Calle c : recintoFerial) {
+			for (Caseta aux : c.listadoCasetas()) {
+				if (aux.getClase().equals("DISTRITO")) {
 					cont++;
 				}
 			}
 		}
 		return cont;
 	}
-	
-	
-	private Calle buscaCalle(String calle) {
-		boolean encontrado=false;
-		Calle busca=null;
-		Iterator<Calle> siguiente=recintoFerial.iterator();
-		while(siguiente.hasNext() && !encontrado) {
-			Calle aux=siguiente.next();
-			if(aux.getNombre().equalsIgnoreCase(calle)) {
-				busca=aux;
-				encontrado=true;
+
+	private static Calle buscaCalle(String calle) {
+		boolean encontrado = false;
+		Calle busca = null;
+		Iterator<Calle> siguiente = recintoFerial.iterator();
+		while (siguiente.hasNext() && !encontrado) {
+			Calle aux = siguiente.next();
+			if (aux.getNombre().equalsIgnoreCase(calle)) {
+				busca = aux;
+				encontrado = true;
 			}
 		}
 		return busca;
 	}
-	
-	public boolean eliminarCaseta(String calle, String caseta) {
-		boolean encontrado=false;
-		Calle aux=buscaCalle(calle);
-		encontrado=aux.eliminarCaseta(caseta);
+
+	public static boolean eliminarCaseta(String calle, String caseta) {
+		boolean encontrado = false;
+		Calle aux = buscaCalle(calle);
+		encontrado = aux.eliminarCaseta(caseta);
 		return encontrado;
 	}
 }

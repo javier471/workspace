@@ -1,5 +1,7 @@
 package com.jacaranda.logica;
 
+import java.util.Objects;
+
 public class Caseta {
 	private String titulo;
 	private Calle calle;
@@ -24,8 +26,8 @@ public class Caseta {
 		return titulo;
 	}
 
-	public Calle getCalle() {
-		return calle;
+	public String getCalle() {
+		return calle.getNombre();
 	}
 
 	public int getNumero() {
@@ -53,6 +55,7 @@ public class Caseta {
 		return "Caseta [titulo=" + titulo + ", calle=" + calle + ", numero=" + numero + ", numModulos=" + numModulos
 				+ ", clase=" + clase + ", id_caseta=" + id_caseta + ", id_calle=" + id_calle + "]";
 	}
+
 	
 	
 
