@@ -56,6 +56,23 @@ public class Caseta {
 				+ ", clase=" + clase + ", id_caseta=" + id_caseta + ", id_calle=" + id_calle + "]";
 	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(id_caseta, numero, titulo);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Caseta other = (Caseta) obj;
+		return id_caseta == other.id_caseta && numero == other.numero && Objects.equals(titulo, other.titulo);
+	}
+
 	
 	
 

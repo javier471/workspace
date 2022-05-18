@@ -40,17 +40,24 @@ public class Main {
 				if (hijo.getNodeType() == Element.ELEMENT_NODE) {
 					// Me devuelve un String y para crear una caseta necesito
 					// pasarle un objeto Calle
-					Calle aux = new Calle(hijo.getElementsByTagName("CALLE").item(0).getTextContent(),
-							Integer.valueOf(hijo.getElementsByTagName("ID_CALLE").item(0).getTextContent()));
+					Calle aux;
+					if (!existeCalle(hijo.getElementsByTagName("CALLE").item(0).getTextContent())) {
+						aux = new Calle(hijo.getElementsByTagName("CALLE").item(0).getTextContent(),
+								Integer.valueOf(hijo.getElementsByTagName("ID_CALLE").item(0).getTextContent()));
+						
+					}
+					else {
+						aux=buscaCalle(hijo.getElementsByTagName("CALLE").item(0).getTextContent());
+					}
 					Caseta c = new Caseta(hijo.getElementsByTagName("TITULO").item(0).getTextContent(), aux,
 							Integer.valueOf(hijo.getElementsByTagName("NUMERO").item(0).getTextContent()),
 							Integer.valueOf(hijo.getElementsByTagName("MODULOS").item(0).getTextContent()),
 							hijo.getElementsByTagName("CLASE").item(0).getTextContent(),
 							Integer.valueOf(hijo.getElementsByTagName("ID").item(0).getTextContent()));
-
 					aux.addCaseta(c);
-					recintoFerial.add(aux);
+					recintoFerial.add(aux);	
 
+					
 				}
 			}
 
@@ -90,7 +97,7 @@ public class Main {
 					String calleCaseta = teclado.nextLine();
 					System.out.println("Introduzca caseta");
 					String caseta = teclado.nextLine();
-					eliminarCaseta(calleCaseta, caseta);
+					System.out.println(eliminarCaseta(calleCaseta, caseta));
 					break;
 				}
 				}
@@ -104,6 +111,18 @@ public class Main {
 		}
 
 	}
+
+	private static boolean existeCalle(String nombre) {
+		boolean resul = false;
+		// Uso un for por hacerlo más corto y porque solo hay unas 10 calles
+		for (Calle c : recintoFerial) {
+			if (c.getNombre().equalsIgnoreCase(nombre)) {
+				resul = true;
+			}
+		}
+		return resul;
+	}
+
 
 	public static String muestraMenu() {
 		return "1. Mostrar todas las casetas existentes en una calle.\n"
