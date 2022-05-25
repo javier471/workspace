@@ -14,17 +14,21 @@ public class Jugador extends Element {
 		// saco el tipo de elemento del player que me pasan
 		super(ElementType.valueOf(player.name()));
 		this.player = player;
-		this.pociones=0;
-		this.gemas=0;
-		this.dinero=0;
+		this.pociones = 0;
+		this.gemas = 0;
+		this.dinero = 0;
 	}
 
 	public String getNombre() {
 		return player.toString();
 	}
-	
+
 	public int getDinero() {
 		return dinero;
+	}
+
+	public void setPociones(int pociones) {
+		this.pociones = pociones;
 	}
 
 	public void setDinero(int dinero) {
@@ -78,8 +82,8 @@ public class Jugador extends Element {
 
 	public int lucha(Jugador enemigo) {
 		int resul = -99;
-		int fuerzaAliado=getFuerzaParaLuchar();
-		int fuerzaEnemigo=enemigo.getFuerzaParaLuchar();
+		int fuerzaAliado = getFuerzaParaLuchar();
+		int fuerzaEnemigo = enemigo.getFuerzaParaLuchar();
 		if (fuerzaAliado == fuerzaEnemigo) {
 			resul = Constantes.EMPATE;
 		} else if (fuerzaAliado > fuerzaEnemigo) {
@@ -108,6 +112,11 @@ public class Jugador extends Element {
 			}
 		}
 		return resul;
+	}
+
+	public String resumen() {
+		return "Jugador: " + super.getType() + " Dinero: " + getDinero() + " Gemas: " + getGemas() + " Pociones: "
+				+ getPociones();
 	}
 
 	private int getFuerza() {

@@ -18,7 +18,7 @@ public class Coordenada {
 
 	public Coordenada(int x, int y) {
 		super();
-		if (x < 0 || x > Constantes.TAMANNO || y < 0 || y > Constantes.TAMANNO) {
+		if (x < 0 || x >= Constantes.TAMANNO || y < 0 || y >= Constantes.TAMANNO) {
 			this.x = 0;
 			this.y = 0;
 		} else {
@@ -38,7 +38,7 @@ public class Coordenada {
 	public boolean goUp() {
 		boolean resul;
 		int aux = y - 1;
-		if (aux <= 0) {
+		if (aux < 0) {
 			resul = false;
 		} else {
 			y = aux;
@@ -63,7 +63,7 @@ public class Coordenada {
 	public boolean goLeft() {
 		boolean resul;
 		int aux = x - 1;
-		if (aux <= 0) {
+		if (aux < 0) {
 			resul = false;
 
 		} else {
@@ -91,6 +91,11 @@ public class Coordenada {
 		return Objects.hash(x, y);
 	}
 
+	public Coordenada clona() {
+		Coordenada c=new Coordenada(getX(), getY());
+		return c;
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -105,7 +110,7 @@ public class Coordenada {
 
 	@Override
 	public String toString() {
-		return "Coordenada [x=" + x + ", y=" + y + "]";
+		return "Coordenada [x = " + x + ", y = " + y + "]";
 	}
 
 	@Override

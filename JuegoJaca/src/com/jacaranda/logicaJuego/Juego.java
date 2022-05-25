@@ -129,7 +129,7 @@ public class Juego {
 
 	private Coordenada getNextPosition(char direction) throws JuegoException {
 		// Busco la coordenada del jugador
-		Coordenada aux = coordenadaJugadores.get(jugadorJuega);
+		Coordenada aux = coordenadaJugadores.get(jugadorJuega).clona();
 		if (direction != 'N' && direction != 'S' && direction != 'E' && direction != 'O') {
 			throw new JuegoException("Direccion no valida");
 		}
@@ -172,29 +172,32 @@ public class Juego {
 
 	public String imprimeValoreJugadores() {
 		StringBuilder resul = new StringBuilder();
-		int cont = 1;
 		for (Coordenada c : coordenadaJugadores) {
 			// Saco el jugador que hay en esa coordenada del tablero y le saco
 			// sus valores
-			Jugador aux = (Jugador) tablero.get(c);
-			resul.append("El jugador" + cont + " tiene " + aux.getDinero() + " dinero, " + aux.getGemas() + " gemas, "
-					+ aux.getPociones() + " pociones ");
-			cont++;
+
+			if (tablero.containsKey(c)) {
+				Jugador aux = (Jugador) tablero.get(c);
+				resul.append(aux.resumen() + "\n");
+			}
+
 		}
 		return resul.toString();
 	}
 
 	private void cambiaJugadorAPosicion(Coordenada coor) {
 		// Coordenada del jugador
-		Coordenada coorActual = coordenadaJugadores.get(jugadorJuega);
+		Coordenada coorActual = coordenadaJugadores.get(jugadorJuega).clona();
 		// Jugador que esta en esa coordenada
 		Jugador aux = (Jugador) tablero.get(coorActual);
 		// Lo movemos hacia su nueva posicion
-		tablero.put(coor, aux);
+
 		// Borramos la antigua coordenada
 		tablero.remove(coorActual);
+		tablero.put(coor, aux);
 		// Actualizamos en la lista de coordenadas de los jugadores
-		coordenadaJugadores.set(jugadorJuega, coor);
+		coordenadaJugadores.remove(jugadorJuega);
+		coordenadaJugadores.add(jugadorJuega, coor);
 	}
 
 	/**
@@ -260,7 +263,7 @@ public class Juego {
 		// Tengo que ver que hay en la nueva casilla
 		Element elemento = this.tablero.get(coordDestino);
 
-		if (elemento != null) { // Hay algo en la casilla
+		if (elemento != null && !coordDestino.equals(coordenadaJugadores.get(jugadorJuega))) { // Hay algo en la casilla
 			if (elemento instanceof Jugador) {
 
 				Jugador enemigo = (Jugador) elemento;

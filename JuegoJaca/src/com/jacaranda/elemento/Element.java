@@ -34,7 +34,7 @@ public class Element {
 
 	@Override
 	public String toString() {
-		return "Element [type=" + type + "]";
+		return "Element [type = " + type + "]";
 	}
 
 }
