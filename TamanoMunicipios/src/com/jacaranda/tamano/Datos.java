@@ -19,6 +19,15 @@ public class Datos {
 		return dato;
 	}
 
+	
+	public void setAno(int ano) {
+		this.ano = ano;
+	}
+
+	public void setDato(int dato) {
+		this.dato = dato;
+	}
+
 	@Override
 	public String toString() {
 		return "Datos [ano=" + ano + ", dato=" + dato + "]";
