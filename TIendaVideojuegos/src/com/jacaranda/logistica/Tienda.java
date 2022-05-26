@@ -1,5 +1,10 @@
 package com.jacaranda.logistica;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -127,7 +132,93 @@ public class Tienda {
 	public String mostrarReservas() {
 		return reservas.toString();
 	}
-	
+
+	public String addNewGen(String nombre, Double precio, String genero, int valoracion, LocalDate fecha, Connection c)
+			throws SQLException {
+		String resul = "";
+		Statement insert = (Statement) c.createStatement();
+		String cadena = "INSERT INTO NEWGEN VALUES('" + nombre + "','" + precio + "','" + genero + "','" + valoracion
+				+ "','" + fecha + "');";
+
+		if (insert.executeUpdate(cadena) == 0) {
+			resul = "Se produjo un error";
+		} else {
+			resul = "Operacion exitosa";
+		}
+		return resul;
+	}
+
+	public String addOldGen(String nombre, Double precio, String genero, String formato, Double precioDia, Connection c)
+			throws SQLException {
+		String resul = "";
+		Statement insert = (Statement) c.createStatement();
+		String cadena = "INSERT INTO NEWGEN VALUES('" + nombre + "','" + precio + "','" + genero + "','" + formato
+				+ "','" + precioDia + "');";
+
+		if (insert.executeUpdate(cadena) == 0) {
+			resul = "Se produjo un error";
+		} else {
+			resul = "Operacion exitosa";
+		}
+		return resul;
+	}
+
+	public String addUserBD(String nombre, String dni, int edad, Connection c) throws SQLException {
+
+		String resul = "";
+		Statement insert = (Statement) c.createStatement();
+		String cadena = "INSERT INTO USUARIO VALUES('" + nombre + "','" + dni + "','" + edad + "','" + getNombre()
+				+ "');";
+
+		if (insert.executeUpdate(cadena) == 0) {
+			resul = "Se produjo un error";
+		} else {
+			resul = "Operacion exitosa";
+		}
+		return resul;
+
+	}
+
+	public String delUser(String nombre, Connection c) throws SQLException {
+		String resul = "";
+		Statement insert = (Statement) c.createStatement();
+		String cadena = "DELETE FROM USUARIO WHERE NOMBRE='" + nombre + "';";
+
+		if (insert.executeUpdate(cadena) == 0) {
+			resul = "Se produjo un error";
+		} else {
+			resul = "Operacion exitosa";
+		}
+		return resul;
+	}
+
+	public String updateUser(String DNI, String nombre, int edad, Connection c) throws SQLException {
+		StringBuilder resul = new StringBuilder();
+		Statement insert = (Statement) c.createStatement();
+		String cadena = "UPDATE USUARIO SET NOMBRE='" + nombre + "', EDAD='" + edad + "' WHERE DNI='" + DNI + "';";
+
+		if(insert.executeUpdate(cadena)==0) {
+			resul.append("Se produjo un error");
+		}
+		else {
+			resul.append("Operacion exitosa");
+		}
+		return resul.toString();
+	}
+
+	public String buscaUser(String nombre, Connection c) throws SQLException {
+		StringBuilder resul = new StringBuilder();
+		Statement insert = (Statement) c.createStatement();
+		String cadena = "SELECT * FROM USUARIO WHERE NOMBRE='" + nombre + "';";
+
+		ResultSet r=insert.executeQuery(cadena);
+		while(r.next()) {
+			resul.append(r.getString("NOMBRE")+" "+r.getString("DNI")+" "+r.getInt("EDAD")+" "+r.getString("NOMBRE_TIENDA")+"\n");
+		}
+		
+		return resul.toString();
+	}
+
 	@Override
 	public String toString() {
 		return "Tienda [nombre=" + nombre + ", direccion=" + direccion + ", stock=" + stock + ", clientes=" + clientes
