@@ -52,16 +52,8 @@ public class Serie {
 	 * @throws SerieException
 	 */
 	public void annadirTemporada(String nombreTemporada) throws SerieException {
-		boolean encontrado = false;
-		Iterator<Temporada> siguiente = temporadas.iterator();
-		while (siguiente.hasNext() && !encontrado) {
-			Temporada aux = siguiente.next();
-			if (aux.getNombreTemporada().equalsIgnoreCase(nombreTemporada)) {
-				encontrado = true;
-			}
-		}
-		if (!encontrado) {
-			Temporada t = new Temporada(nombreTemporada);
+		Temporada t = new Temporada(nombreTemporada);
+		if(!temporadas.contains(t)) {
 			temporadas.add(t);
 		} else {
 			throw new SerieException("La temporada ya existe");
@@ -233,6 +225,25 @@ public class Serie {
 		return result;
 	}
 
+	// Añade el nombre de la serie y por cada temporada que tenga suma su método de escribir
+	public String escribeFicheroTemporada() {
+		StringBuilder resultado = new StringBuilder();
+		resultado.append(nombreSerie);
+		for (Temporada t : this.temporadas) {
+			resultado.append(","+t.escribeFichero());
+		}
+		return resultado.toString();
+	}
+	
+	// Recorre temporadas y añade el nombre y el método que escribe los capitulos
+	public String escribeFicheroCapitulos() {
+		StringBuilder resultado = new StringBuilder();
+		for (Temporada t : this.temporadas) {
+			resultado.append(t.getNombreTemporada()+","+t.escribeCapitulos());
+		}
+		return resultado.toString();
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

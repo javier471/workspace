@@ -24,9 +24,6 @@ public class Series {
 		mapSeries = new HashMap<String, Serie>();
 	}
 
-	
-	
-	
 	/**
 	 * Añade una serie a la lista de series. Si existe una serie con el mismo
 	 * nombre lanza una excpetion
@@ -139,14 +136,13 @@ public class Series {
 	public String listadoOrdenadoSeriesDeUnTema(Tema tema) throws SerieException {
 		StringBuilder resul = new StringBuilder();
 		ArrayList<Serie> lista = new ArrayList<>(mapSeries.values());
-		ComparadorSerie co = new ComparadorSerie();
-		Collections.sort(lista, co);
 		for (Serie s : lista) {
 			if (s.getTema().equals(tema)) {
 				resul.append(s.getNombreSerie() + " " + s.getAnno() + " " + s.numeroTemporadas() + "\n");
 			}
 		}
-
+		ComparadorSerie co = new ComparadorSerie();
+		Collections.sort(lista, co);
 		return resul.toString();
 	}
 
@@ -157,12 +153,12 @@ public class Series {
 		}
 		return resul.toString();
 	}
-	
+
 	public void escribirSerie(String nombre) {
 		try {
 			FileWriter flujoEscritura = new FileWriter(nombre);
 			PrintWriter filtroEscritura = new PrintWriter(flujoEscritura);
-			for(Serie s:mapSeries.values()) {
+			for (Serie s : mapSeries.values()) {
 				filtroEscritura.println(s.escribeFichero());
 			}
 			filtroEscritura.close();
@@ -171,49 +167,47 @@ public class Series {
 			System.out.println(e.getMessage());
 		}
 	}
-	
-	
-	public void escribirTemporada(String nombre) {
+
+	public String escribirTemporada(String fichero) {
+		StringBuilder resultado = new StringBuilder();
+		// Creo un arrayList de series
+		ArrayList<Serie> siguiente = new ArrayList<>(this.mapSeries.values());
 		try {
-			FileWriter flujoEscritura = new FileWriter(nombre);
+			FileWriter flujoEscritura = new FileWriter(fichero);
 			PrintWriter filtroEscritura = new PrintWriter(flujoEscritura);
-			int cont=0;
-			ArrayList<Serie> ser=new ArrayList<>(mapSeries.values());
-			for(Serie s:ser) {
-				StringBuilder resul=new StringBuilder();
-				Temporada aux=s.getTemporadas().get(cont);
-				resul.append(s.getNombreSerie()+","+aux.getNombreTemporada()+","+aux.getSumaOpiniones()+","+aux.getNumeroOpiniones());
-				cont++;
-				filtroEscritura.println(resul.toString());
+			// Por cada serie escribo
+			for (Serie s : siguiente) {
+				filtroEscritura.println(s.escribeFicheroTemporada());
 			}
+
 			filtroEscritura.close();
 			flujoEscritura.close();
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
-	}
-	
-	public void escribirCapitulos(String nombre) {
-		try {
-			FileWriter flujoEscritura = new FileWriter(nombre);
-			PrintWriter filtroEscritura = new PrintWriter(flujoEscritura);
-			int cont=0;
-			for(Serie s:mapSeries.values()) {
-				StringBuilder resul=new StringBuilder();
-				Temporada aux=s.getTemporadas().get(cont);
-				int caps=0;
-				while(caps<aux.getCapitulos().size()) {
-					resul.append(s.getNombreSerie()+","+aux.getNombreTemporada()+","+aux.getCapitulos().get(caps));
-					caps++;
-				}
-				cont++;
-				filtroEscritura.println(resul.toString());
-			}
-			filtroEscritura.close();
-			flujoEscritura.close();
-		} catch (IOException e) {
-			System.out.println(e.getMessage());
-		}
+		return resultado.toString();
 	}
 
+	public String escribirCapitulos(String fichero) {
+		StringBuilder resultado = new StringBuilder();
+		// Creo el arraylist de los valores del map
+		ArrayList<Serie> siguiente = new ArrayList<>(this.mapSeries.values());
+		try {
+			FileWriter flujoEscritura = new FileWriter(fichero);
+			PrintWriter filtroEscritura = new PrintWriter(flujoEscritura);
+			// Para cada serie voy llamando a los metodos de escritura inferiores
+			for (Serie s : siguiente) {
+				resultado.append(s.getNombreSerie() + "," + s.escribeFicheroCapitulos() + "\n");
+			}
+			filtroEscritura.println(resultado.toString());
+			filtroEscritura.close();
+			flujoEscritura.close();
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
+		for (Serie s : siguiente) {
+			resultado.append(s.escribeFicheroTemporada() + "\n");
+		}
+		return resultado.toString();
+	}
 }

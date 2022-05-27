@@ -34,8 +34,6 @@ public class Temporada {
 	public void annadirCapitulo(String capitulo) {
 		capitulos.add(capitulo);
 	}
-	
-	
 
 	public LinkedList<String> getCapitulos() {
 		return capitulos;
@@ -92,10 +90,8 @@ public class Temporada {
 		if (posicion == -1) {
 			throw new SerieException("No se encontro el capitulo");
 		}
-		capitulos.add(posicion+1, nombreCapituloAnnadir);
+		capitulos.add(posicion + 1, nombreCapituloAnnadir);
 	}
-	
-	
 
 	public int getSumaOpiniones() {
 		return sumaOpiniones;
@@ -115,17 +111,17 @@ public class Temporada {
 	 */
 	public String primerCapituloQueContieneEstaPalabara(String palabra) throws SerieException {
 		String resul = "";
-		boolean encontrado=false;
-		Iterator<String> siguiente=capitulos.iterator();
-		while(siguiente.hasNext() && !encontrado) {
-			String cap=siguiente.next();
-			if(cap.contains(palabra)) {
-				int posicion=capitulos.indexOf(cap);
-				resul=capitulos.get(posicion);
-				encontrado=true;
+		boolean encontrado = false;
+		Iterator<String> siguiente = capitulos.iterator();
+		while (siguiente.hasNext() && !encontrado) {
+			String cap = siguiente.next();
+			if (cap.contains(palabra)) {
+				int posicion = capitulos.indexOf(cap);
+				resul = capitulos.get(posicion);
+				encontrado = true;
 			}
 		}
-		if(!encontrado) {
+		if (!encontrado) {
 			throw new SerieException("Capitulo no encontrado");
 		}
 		return resul;
@@ -140,13 +136,13 @@ public class Temporada {
 	}
 
 	public String listaCaps() {
-		StringBuilder resul= new StringBuilder();
-		for (String s:capitulos) {
-			resul.append(s+"\n");
+		StringBuilder resul = new StringBuilder();
+		for (String s : capitulos) {
+			resul.append(s + "\n");
 		}
 		return resul.toString();
 	}
-	
+
 	public String getNombreTemporada() {
 		return nombreTemporada;
 	}
@@ -154,7 +150,16 @@ public class Temporada {
 	public int getNumeroCaps() {
 		return capitulos.size();
 	}
-	
+
+	public String escribeCapitulos() {
+		// Recorre capitulos y lo añade
+		StringBuilder resultado = new StringBuilder();
+		for (String c : this.capitulos) {
+			resultado.append(c + ",");
+		}
+		return resultado.toString();
+	}
+
 	public String toString() {
 		String info;
 
@@ -162,8 +167,11 @@ public class Temporada {
 		return info;
 
 	}
-	
-	
+
+	// Devuelve String con formato para escribir en ficheros
+	public String escribeFichero() {
+		return this.nombreTemporada + "," + capitulos.size() + "," + this.sumaOpiniones + "," + this.numeroOpiniones;
+	}
 
 	@Override
 	public int hashCode() {
@@ -189,7 +197,5 @@ public class Temporada {
 			return false;
 		return true;
 	}
-	
-	
 
 }
