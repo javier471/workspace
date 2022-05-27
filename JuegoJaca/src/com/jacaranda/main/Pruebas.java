@@ -16,10 +16,10 @@ public class Pruebas {
 		
 		
 		PlayerType [] jugadores=new PlayerType[4];
-		jugadores[0]=PlayerType.OGRO;
+		jugadores[0]=PlayerType.ELFO;
 		jugadores[1]=PlayerType.MAGO;
 		jugadores[2]=PlayerType.GUERRERO;
-		jugadores[3]=PlayerType.ELFO;
+		jugadores[3]=PlayerType.OGRO;
 		
 		JuegoGUI j1=new JuegoGUI(jugadores);
 		

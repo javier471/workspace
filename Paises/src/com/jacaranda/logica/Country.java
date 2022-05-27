@@ -5,6 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
+import com.jacaranda.main.ComparadorPaises;
+
 public class Country {
 	private int country_id;
 	private String country;
@@ -73,12 +75,17 @@ public class Country {
 		Country other = (Country) obj;
 		return country_id == other.country_id;
 	}
+	
+	public int numCiudades() {
+		return ciudades.size();
+	}
 
 	public String escribirFichero() {
 		StringBuilder resultado = new StringBuilder();
 
-		Collections.sort(ciudades);
-
+		ComparadorPaises co=new ComparadorPaises();
+		Collections.sort(ciudades,co);
+		
 		for (City c : ciudades) {
 			resultado.append(c.escribirFichero());
 		}
@@ -86,10 +93,11 @@ public class Country {
 				+ resultado;
 
 	}
-
 	public String escribirCiudades() {
-		StringBuilder resultado = new StringBuilder();
-		for (City siguiente : this.ciudades) {
+		StringBuilder resultado=new StringBuilder();
+		ComparadorPaises cp=new ComparadorPaises();
+		Collections.sort(ciudades,cp);
+		for (City siguiente:this.ciudades) {
 			resultado.append(siguiente.escribirFicheroCiudades());
 		}
 		return resultado.toString();

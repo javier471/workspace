@@ -62,7 +62,6 @@
 89 Braslia,[Address [adrress_id=330, address=981 Kumbakonam Place]]
 183 Goinia,[Address [adrress_id=96, address=984 Effon-Alaiye Avenue]]
 189 Guaruj,[Address [adrress_id=432, address=259 Ipoh Drive]]
-190 guas Lindas de Gois,[Address [adrress_id=134, address=758 Junan Lane]]
 215 Ibirit,[Address [adrress_id=315, address=543 Bergamo Avenue]]
 247 Juazeiro do Norte,[Address [adrress_id=51, address=686 Garland Manor]]
 317 Luzinia,[Address [adrress_id=187, address=1839 Szkesfehrvr Parkway]]
@@ -76,6 +75,7 @@
 490 Sorocaba,[Address [adrress_id=319, address=1957 Yantai Lane]]
 569 Vila Velha,[Address [adrress_id=43, address=306 Antofagasta Place]]
 572 Vitria de Santo Anto,[Address [adrress_id=379, address=1133 Rizhao Avenue]]
+190 guas Lindas de Gois,[Address [adrress_id=134, address=758 Junan Lane]]
 
 53 Bandar Seri Begawan,[Address [adrress_id=95, address=1370 Le Mans Avenue]]
 
@@ -537,10 +537,10 @@
 269 Kingstown,[Address [adrress_id=331, address=1016 Iwakuni Street]]
 
 2 Abha,[Address [adrress_id=105, address=733 Mandaluyong Place]]
-13 al-Hawiya,[Address [adrress_id=74, address=1124 Buenaventura Drive]]
-16 al-Qatif,[Address [adrress_id=422, address=289 Santo Andr Manor]]
 237 Jedda,[Address [adrress_id=53, address=725 Isesaki Place]]
 515 Tabuk,[Address [adrress_id=317, address=780 Kimberley Way]]
+13 al-Hawiya,[Address [adrress_id=74, address=1124 Buenaventura Drive]]
+16 al-Qatif,[Address [adrress_id=422, address=289 Santo Andr Manor]]
 
 600 Ziguinchor,[Address [adrress_id=461, address=1889 Valparai Way]]
 
@@ -572,8 +572,8 @@
 
 230 Jaffna,[Address [adrress_id=413, address=692 Amroha Drive]]
 
-15 al-Qadarif,[Address [adrress_id=400, address=1152 Citrus Heights Manor]]
 379 Omdurman,[Address [adrress_id=54, address=115 Hidalgo Parkway]]
+15 al-Qadarif,[Address [adrress_id=400, address=1152 Citrus Heights Manor]]
 
 321 Malm,[Address [adrress_id=70, address=1150 Kimchon Manor]]
 
@@ -632,8 +632,8 @@
 506 Sumy,[Address [adrress_id=191, address=140 Chiayi Parkway]]
 
 3 Abu Dhabi,[Address [adrress_id=457, address=535 Ahmadnagar Manor]]
-12 al-Ayn,[Address [adrress_id=102, address=669 Firozabad Loop]]
 470 Sharja,[Address [adrress_id=297, address=1192 Tongliao Street]]
+12 al-Ayn,[Address [adrress_id=102, address=669 Firozabad Loop]]
 
 494 Southampton,[]
 496 Southport,[]

@@ -107,7 +107,6 @@ Boa Vista: 1
 Braslia: 1
 Goinia: 1
 Guaruj: 1
-guas Lindas de Gois: 1
 Ibirit: 1
 Juazeiro do Norte: 1
 Luzinia: 1
@@ -121,6 +120,7 @@ So Leopoldo: 1
 Sorocaba: 1
 Vila Velha: 1
 Vitria de Santo Anto: 1
+guas Lindas de Gois: 1
 
 Pais: Brunei
 CountryId: 16
@@ -783,10 +783,10 @@ Pais: Saudi Arabia
 CountryId: 82
 NumeroCiudades: 5
 Abha: 1
-al-Hawiya: 1
-al-Qatif: 1
 Jedda: 1
 Tabuk: 1
+al-Hawiya: 1
+al-Qatif: 1
 
 Pais: Senegal
 CountryId: 83
@@ -839,8 +839,8 @@ Jaffna: 1
 Pais: Sudan
 CountryId: 89
 NumeroCiudades: 2
-al-Qadarif: 1
 Omdurman: 1
+al-Qadarif: 1
 
 Pais: Sweden
 CountryId: 90
@@ -935,8 +935,8 @@ Pais: United Arab Emirates
 CountryId: 101
 NumeroCiudades: 3
 Abu Dhabi: 1
-al-Ayn: 1
 Sharja: 1
+al-Ayn: 1
 
 Pais: United Kingdom
 CountryId: 102

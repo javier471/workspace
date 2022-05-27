@@ -18,7 +18,7 @@ public class Juego {
 		tablero = new HashMap<>();
 		coordenadaJugadores = new ArrayList<>();
 		crearTablero();
-		for (int i = 0; i < Constantes.NUM_JUGADORES; i++) {
+		for (int i = 0; i < jugadores.length; i++) {
 			crearJugador(jugadores[i]);
 		}
 	}
@@ -56,7 +56,7 @@ public class Juego {
 			// Si la coordenada es nula significa que puedo colocar el elemento
 			if (tablero.get(c) == null) {
 				tablero.put(c, e);
-				// Solo aumento el contador cuando se que he podido a�adir
+				// Solo aumento el contador cuando se que he podido añadir
 				// Si no ha entrado en el if es que en esa coordenada hay algo
 				cont++;
 			}
@@ -122,8 +122,9 @@ public class Juego {
 	private void eliminarJugador(Coordenada c) {
 		// Si la coordenada es un jugador lo borro
 		if (tablero.get(c) instanceof Jugador) {
-			tablero.remove(c);
 			coordenadaJugadores.remove(c);
+			tablero.remove(c);
+			
 		}
 	}
 
@@ -164,7 +165,7 @@ public class Juego {
 			// miro en el tablero para sacar el jugador y con el jugador ya
 			// saco su nombre
 			Jugador aux = (Jugador) tablero.get(c);
-			resul.append("El jugador " + cont + " es un " + aux.getPlayer() + " ");
+			resul.append("El jugador " + cont + " es un " + aux.getPlayer() + "\n");
 			cont++;
 		}
 		return resul.toString();
@@ -194,15 +195,16 @@ public class Juego {
 
 		// Borramos la antigua coordenada
 		tablero.remove(coorActual);
+		coordenadaJugadores.remove(jugadorJuega);
+
 		tablero.put(coor, aux);
 		// Actualizamos en la lista de coordenadas de los jugadores
-		coordenadaJugadores.remove(jugadorJuega);
 		coordenadaJugadores.add(jugadorJuega, coor);
 	}
 
 	/**
-	 * Escribe el tablero en formato no gráfico. Devuelve el string con la
-	 * información
+	 * Escribe el tablero en formato no grÃ¡fico. Devuelve el string con la
+	 * informaciÃ³n
 	 */
 	@Override
 	public String toString() {
@@ -257,23 +259,19 @@ public class Juego {
 		// Si no es una dirección válida, mando un exception
 		String resul = "";
 		Jugador jugador = (Jugador) this.tablero.get(this.coordenadaJugadores.get(jugadorJuega));
-
 		Coordenada coordDestino = getNextPosition(direction);
-
 		// Tengo que ver que hay en la nueva casilla
 		Element elemento = this.tablero.get(coordDestino);
-
-		if (elemento != null && !coordDestino.equals(coordenadaJugadores.get(jugadorJuega))) { // Hay algo en la casilla
+		if (elemento != null) { // Hay algo en la casilla
 			if (elemento instanceof Jugador) {
-
 				Jugador enemigo = (Jugador) elemento;
 				int resultadoLucha = jugador.lucha(enemigo);
 				switch (resultadoLucha) {
 				case Constantes.EMPATE:
-					resul = "Empate entre los jugadore";
+					resul = "Empate entre los jugadores";
 					break;
 				case Constantes.GANA_USA_POCIMA:
-					resul = "El jugador " + jugador.getNombre() + " gana. Le quita una pócima al enemigo";
+					resul = "El jugador " + jugador.getNombre() + " gana. El enemigo pierde una pócima.";
 					break;
 				case Constantes.GANA_DINERO:
 					resul = "El jugador " + jugador.getNombre() + " gana. Le quita el dinero al enemigo";
@@ -281,11 +279,9 @@ public class Juego {
 				case Constantes.GANA_MUERE:
 					resul = "El jugador " + jugador.getNombre() + " gana. El enemigo muere";
 					this.eliminarJugador(coordDestino);
-					// Si se elimina el jugador que juega el dado se pone a 0 para que no siga
-					// tirando
 					break;
 				case Constantes.PIERDE_USA_POCIMA:
-					resul = "El enemigo " + enemigo.getNombre() + " gana. Le quita una pócima al jugador";
+					resul = "El enemigo " + enemigo.getNombre() + " gana. El jugador pierde una pócima.";
 					break;
 				case Constantes.PIERDE_DINERO:
 					resul = "El enemigo " + enemigo.getNombre() + " gana. Le quita el dinero al jugador";
@@ -293,11 +289,14 @@ public class Juego {
 				case Constantes.PIERDE_MUERE:
 					resul = "El enemigo " + enemigo.getNombre() + " gana. El jugador muere";
 					this.eliminarJugador(this.coordenadaJugadores.get(jugadorJuega));
-					dado = 0;
+					this.dado = 0;
 					// Decrementamos en uno el jugador, para que no se salte al siguiente
 					// ya que al borrarlo el siguiente apunta al siguiente, y al incrementarlo
 					// se le salta
 					this.jugadorJuega--;
+					break;
+				default:
+					resul = "Resultado incorrecto.";
 					break;
 				}
 				// Después de la lucha los jugadores no se mueven
@@ -317,7 +316,11 @@ public class Juego {
 				case Constantes.PIERDE_A_LA_ROCA:
 					resul = "El jugador " + jugador.getNombre() + " pierde. No se mueve";
 					break;
+				default:
+					resul = "Resultado incorrecto.";
+					break;
 				}
+				
 			} else if (elemento.getType() == ElementType.GEMA) {
 				jugador.encuentraGema();
 				this.cambiaJugadorAPosicion(coordDestino);
@@ -329,28 +332,24 @@ public class Juego {
 			} else if (elemento.getType() == ElementType.POCION) {
 				jugador.encuentraPocion();
 				this.cambiaJugadorAPosicion(coordDestino);
-
 			}
-
 		} else {
 			this.cambiaJugadorAPosicion(coordDestino);
 		}
-
 		return resul;
 	}
 
 	public void proximoJugador() {
-		jugadorJuega++;// Aumenta el jugador que le toca turno
+		// Aumenta el jugador que le toca turno
 		// Si es el ultimo, pongo a 0 para que le toque al primero
-		if (jugadorJuega == (Constantes.NUM_JUGADORES - 1)) {
+		if (jugadorJuega == (Constantes.NUM_JUGADORES-1)) {
 			jugadorJuega = 0;
+		} else {
+			jugadorJuega++;
 		}
 	}
 
 	public String getGanador() throws JuegoException {
-		if (!isTerminado()) {
-			throw new JuegoException("El juego no esta terminado");
-		}
 		String resul = "";
 		Jugador aux;
 		if (coordenadaJugadores.size() == 1) {
@@ -358,22 +357,22 @@ public class Juego {
 			aux = (Jugador) tablero.get(coordenadaJugadores.get(0));
 			resul = aux.toString();
 		} else {
-			for (Element e : tablero.values()) {
-				if (e instanceof Jugador) {
-					if (((Jugador) e).getDinero() == Constantes.DINERO) {
-						resul = e.toString();
-					}
+			for (Coordenada c : coordenadaJugadores) {
+				aux=(Jugador) tablero.get(c);
+				if(aux.getDinero()==Constantes.NUM_DINERO) {
+					resul=aux.resumen();
 				}
+				
 			}
 		}
 		return resul;
 	}
 
 	public String getNombreJuegadorQueJuega() {
-		// Saco de las coorjugadores la coordenada del jugador que est� jugando
+		// Saco de las coorjugadores la coordenada del jugador que está jugando
 		// y la busco en el tablero para guardar el jugador
 		Jugador aux = (Jugador) tablero.get(coordenadaJugadores.get(jugadorJuega));
-		return aux.getNombre();
+		return aux.getPlayer().toString();
 	}
 
 	public int getMovimientoJugador() {
@@ -394,9 +393,7 @@ public class Juego {
 	public void setDado() {
 		// Saco la coordenada del jugador que esta jugando y con esa coor
 		// saco al jugador, y le asigno al dado su velocidad
-		Coordenada c = coordenadaJugadores.get(jugadorJuega);
-		Jugador aux = (Jugador) tablero.get(c);
-		dado = aux.getVelocidadParaLuchar();
+		dado = ((Jugador) tablero.get(coordenadaJugadores.get(jugadorJuega))).getVelocidadParaLuchar();
 	}
 
 	public Element obtenerElementoTablero(Coordenada coord) {

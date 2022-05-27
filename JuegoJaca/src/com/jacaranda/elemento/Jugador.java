@@ -1,5 +1,7 @@
 package com.jacaranda.elemento;
 
+import java.util.Random;
+
 import com.jacaranda.logicaJuego.Constantes;
 
 public class Jugador extends Element {
@@ -27,11 +29,17 @@ public class Jugador extends Element {
 		return dinero;
 	}
 
-	public void setPociones(int pociones) {
+	public void setPociones(int pociones) throws JugadorException {
+		if(pociones<0 || pociones>Constantes.NUM_POCIONES) {
+			throw new JugadorException();
+		}
 		this.pociones = pociones;
 	}
 
-	public void setDinero(int dinero) {
+	public void setDinero(int dinero) throws JugadorException {
+		if(dinero<0 || dinero>Constantes.NUM_DINERO) {
+			throw new JugadorException();
+		}
 		this.dinero = dinero;
 	}
 
@@ -39,8 +47,13 @@ public class Jugador extends Element {
 		return gemas;
 	}
 
-	public void setGemas(int gemas) {
-		this.gemas = gemas;
+	public void setGemas(int gemas) throws JugadorException {
+		if(gemas<0 || gemas>Constantes.NUM_GEMAS) {
+			throw new JugadorException();
+		}
+		else{
+			this.gemas = gemas;
+		}
 	}
 
 	public PlayerType getPlayer() {
@@ -118,6 +131,10 @@ public class Jugador extends Element {
 		return "Jugador: " + super.getType() + " Dinero: " + getDinero() + " Gemas: " + getGemas() + " Pociones: "
 				+ getPociones();
 	}
+	
+	private Random r() {
+		return new Random();
+	}
 
 	private int getFuerza() {
 		return player.getFuerza();
@@ -132,17 +149,16 @@ public class Jugador extends Element {
 	}
 
 	public int getFuerzaParaLuchar() {
-		int resul = (int) (Math.random() * (getFuerza() - 0 + 1) + getFuerza());
+		int resul=(int)(Math.random()*getFuerza()+1);
 		return resul;
 	}
 
 	public int getMagiaParaLuchar() {
-		int resul = (int) (Math.random() * (getMagia() - 0 + 1) + getMagia());
-		return resul;
+		return r().nextInt(getMagia());
 	}
 
 	public int getVelocidadParaLuchar() {
-		int resul = (int) (Math.random() * (getVelocidad() - 0 + 1) + getVelocidad());
+		int resul=(int)(Math.random()*getVelocidad()+1);
 		return resul;
 	}
 }

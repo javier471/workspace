@@ -1,5 +1,6 @@
 package com.jacaranda.testsElementos;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.Test;
@@ -8,7 +9,7 @@ import com.jacaranda.elemento.*;
 
 import com.jacaranda.logicaJuego.*;
 
-class TestJugador {
+public class TestJugador {
 
 	@Test
 	public void testGetsDeJugador() {
@@ -127,91 +128,127 @@ class TestJugador {
 	}
 
 	@Test
-	public void testSetDineroCorrectoLimiteSuperior() {
+	public void testSetDineroCorrectoLimiteSuperior() throws JugadorException {
 		Jugador j = new Jugador(PlayerType.OGRO);
 		j.setDinero(Constantes.NUM_DINERO);
 		assertEquals(Constantes.NUM_DINERO, j.getDinero());
 	}
 
 	@Test
-	public void testSetDineroCorrectoLimiteInferior() {
+	public void testSetDineroCorrectoLimiteInferior() throws JugadorException {
 		Jugador j = new Jugador(PlayerType.OGRO);
 		j.setDinero(0);
 		assertEquals(0, j.getDinero());
 	}
 
 	@Test
-	public void testSetDineroIncorrectoLimiteInferior() {
+	public void testSetDineroIncorrectoLimiteInferior()  {
 		Jugador j = new Jugador(PlayerType.OGRO);
-		j.setDinero(-1);
-		fail("Tendría que haber saltado una excepción por dinero negativo.");
+		try {
+			j.setDinero(-1);
+			fail("Tendría que haber saltado una excepción por dinero negativo.");
+		} catch (JugadorException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 	@Test
-	public void testSetDineroIncorrectoLimiteSuperior() {
+	public void testSetDineroIncorrectoLimiteSuperior()  {
 		Jugador j = new Jugador(PlayerType.OGRO);
-		j.setDinero(Constantes.NUM_DINERO + 1);
-		fail("Tendría que haber saltado una excepción por dinero mayor del permitido.");
+		try {
+			j.setDinero(Constantes.NUM_DINERO + 1);
+			fail("Tendría que haber saltado una excepción por dinero mayor del permitido.");
+
+		} catch (JugadorException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Test
-	public void testSetPocionesCorrectoLimiteSuperior() {
+	public void testSetPocionesCorrectoLimiteSuperior() throws JugadorException {
 		Jugador j = new Jugador(PlayerType.OGRO);
 		j.setPociones(Constantes.NUM_POCIONES);
 		assertEquals(Constantes.NUM_POCIONES, j.getPociones());
 	}
 
 	@Test
-	public void testSetPocionesCorrectoLimiteInferior() {
+	public void testSetPocionesCorrectoLimiteInferior() throws JugadorException {
 		Jugador j = new Jugador(PlayerType.OGRO);
 		j.setPociones(0);
 		assertEquals(0, j.getPociones());
 	}
 
 	@Test
-	public void testSetPocionesIncorrectoLimiteInferior() {
+	public void testSetPocionesIncorrectoLimiteInferior()  {
 		Jugador j = new Jugador(PlayerType.OGRO);
-		j.setPociones(-1);
-		fail("Tendría que haber saltado una excepción por pociones negativa.");
+		try {
+			j.setPociones(-1);
+			fail("Debe lanzar exception");
+		} catch (JugadorException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		}
+
+	@Test
+	public void testSetPocionesIncorrectoLimiteSuperior()  {
+		Jugador j = new Jugador(PlayerType.OGRO);
+		try {
+			j.setPociones(Constantes.NUM_POCIONES + 1);
+			fail("Tendría que haber saltado una excepción por pociones mayor del número permitido.");
+
+		} catch (JugadorException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Test
-	public void testSetPocionesIncorrectoLimiteSuperior() {
-		Jugador j = new Jugador(PlayerType.OGRO);
-		j.setPociones(Constantes.NUM_POCIONES + 1);
-		fail("Tendría que haber saltado una excepción por pociones mayor del número permitido.");
-	}
-
-	@Test
-	public void testSetGemasCorrectoLimiteSuperior() {
+	public void testSetGemasCorrectoLimiteSuperior() throws JugadorException {
 		Jugador j = new Jugador(PlayerType.OGRO);
 		j.setGemas(Constantes.NUM_GEMAS);
 		assertEquals(Constantes.NUM_GEMAS, j.getGemas());
 	}
 
 	@Test
-	public void testSetGemasCorrectoLimiteInferior() {
+	public void testSetGemasCorrectoLimiteInferior() throws JugadorException {
 		Jugador j = new Jugador(PlayerType.OGRO);
 		j.setGemas(0);
 		assertEquals(0, j.getGemas());
 	}
 
 	@Test
-	public void testSetGemasIncorrectoLimiteInferior() {
+	public void testSetGemasIncorrectoLimiteInferior()  {
 		Jugador j = new Jugador(PlayerType.OGRO);
-		j.setGemas(-1);
-		fail("Tendría que haber saltado una excepción por gemas negativa.");
+		try {
+			j.setGemas(-1);
+			fail("Tendría que haber saltado una excepción por gemas negativa.");
+
+		} catch (JugadorException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Test
-	public void testSetGemasIncorrectoLimiteSuperior() {
+	public void testSetGemasIncorrectoLimiteSuperior()  {
 		Jugador j = new Jugador(PlayerType.OGRO);
-		j.setGemas(Constantes.NUM_GEMAS + 1);
-		fail("Tendría que haber saltado una excepción por gemas mayor del número permitido.");
+		try {
+			j.setGemas(Constantes.NUM_GEMAS + 1);
+			fail("Tendría que haber saltado una excepción por gemas mayor del número permitido.");
+
+		} catch (JugadorException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Test
-	public void testLuchaConPociones() {
+	public void testLuchaConPociones() throws JugadorException {
 		Jugador j1 = new Jugador(PlayerType.ELFO);
 		Jugador j2 = new Jugador(PlayerType.MAGO);
 		int resultado;
@@ -232,7 +269,7 @@ class TestJugador {
 	}
 
 	@Test
-	public void testLuchaConDinero() {
+	public void testLuchaConDinero() throws JugadorException {
 		Jugador j1 = new Jugador(PlayerType.ELFO);
 		Jugador j2 = new Jugador(PlayerType.MAGO);
 		int resultado;
@@ -264,7 +301,7 @@ class TestJugador {
 	}
 
 	@Test
-	public void testJugadorEncuentraRocaConGema() {
+	public void testJugadorEncuentraRocaConGema() throws JugadorException {
 		Jugador j = new Jugador(PlayerType.ELFO);
 		int resultado;
 		for (int i = 0; i < 30; i++) {

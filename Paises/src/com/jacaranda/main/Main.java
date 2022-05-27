@@ -119,7 +119,8 @@ public class Main {
 			FileWriter flujoEscritura = new FileWriter(nombre);
 			PrintWriter filtroEscritura = new PrintWriter(flujoEscritura);
 			
-			for (Country siguiente:paises) {				
+		
+			for (Country siguiente:paises) {	
 				filtroEscritura.println(siguiente.escribirCiudades());
 			}
 			filtroEscritura.close();
