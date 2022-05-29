@@ -22,7 +22,7 @@ public class Jugador extends Element {
 	}
 
 	public String getNombre() {
-		return player.toString();
+		return player.name();
 	}
 
 	public int getDinero() {

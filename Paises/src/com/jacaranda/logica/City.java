@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
-public class City {
+public class City implements Comparable<City>{
 	private int city_id;
 	private String city;
 	private List<Address> direcciones;
@@ -76,6 +76,14 @@ public class City {
 		return this.getCity_id() + " " + this.getCity() + "," + this.direcciones + "\n";
 	}
 
+	public int compareTo(City city) {
+		int resultado = this.numDirecciones() - city.numDirecciones();
+		if(resultado==0) {
+			resultado = this.city.compareTo(city.city);
+		}
+		return resultado;
+	}
+	
 	public int numDirecciones() {
 		return direcciones.size();
 	}

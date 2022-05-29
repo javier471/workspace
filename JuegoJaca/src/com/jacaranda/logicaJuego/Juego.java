@@ -103,20 +103,19 @@ public class Juego {
 	}
 
 	public boolean isTerminado() {
-		boolean resul = false;
-		boolean tieneMaxDinero = false;
-		for (Element e : tablero.values()) {
-			if (e instanceof Jugador) {
-				if (((Jugador) e).getDinero() == Constantes.DINERO) {
-					tieneMaxDinero = true;
+		boolean terminar = false;
+		boolean dinero = false;
+		for (Element elemento : this.tablero.values()) {
+			if (elemento instanceof Jugador) {
+				if (((Jugador) elemento).getDinero() == Constantes.DINERO) {
+					dinero = true;
 				}
 			}
 		}
-		if (coordenadaJugadores.size() == 1 || tieneMaxDinero) {
-			resul = true;
+	if (this.coordenadaJugadores.size() == 1 || dinero) {
+		terminar = true;
 		}
-
-		return resul;
+		return terminar;
 	}
 
 	private void eliminarJugador(Coordenada c) {
@@ -128,33 +127,22 @@ public class Juego {
 		}
 	}
 
-	private Coordenada getNextPosition(char direction) throws JuegoException {
-		// Busco la coordenada del jugador
-		Coordenada aux = coordenadaJugadores.get(jugadorJuega).clona();
-		if (direction != 'N' && direction != 'S' && direction != 'E' && direction != 'O') {
-			throw new JuegoException("Direccion no valida");
+	private Coordenada getNextPosition (char direccion) throws JuegoException {
+		if(direccion!='N' && direccion!='S' && direccion!='E' && direccion!='O') {
+			throw new JuegoException("Error en la direcciÃƒÂ³n.");
 		}
-		switch (direction) {
-		case 'N': {
-			aux.goUp();
-			break;
+		Coordenada coor;
+		coor = coordenadaJugadores.get(jugadorJuega).clona();
+		if(direccion=='N') {
+			coor.goUp();
+		}else if(direccion=='S') {
+			coor.goDown();
+		}else if(direccion=='E') {
+			coor.goRight();
+		}else {
+			coor.goLeft();
 		}
-		case 'S': {
-			aux.goDown();
-			break;
-		}
-		case 'E': {
-			aux.goRight();
-			break;
-		}
-		case 'O': {
-			aux.goLeft();
-			break;
-		}
-		default:
-			throw new JuegoException("Error");
-		}
-		return aux;
+		return coor;
 	}
 
 	public String imprimeNombreJugadores() {
@@ -342,7 +330,7 @@ public class Juego {
 	public void proximoJugador() {
 		// Aumenta el jugador que le toca turno
 		// Si es el ultimo, pongo a 0 para que le toque al primero
-		if (jugadorJuega == (Constantes.NUM_JUGADORES-1)) {
+		if (jugadorJuega == coordenadaJugadores.size()-1) {
 			jugadorJuega = 0;
 		} else {
 			jugadorJuega++;

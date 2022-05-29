@@ -18,12 +18,12 @@ public class Coordenada {
 
 	public Coordenada(int x, int y) {
 		super();
-		if (x < 0 || x >= Constantes.TAMANNO || y < 0 || y >= Constantes.TAMANNO) {
-			this.x = 0;
-			this.y = 0;
-		} else {
+		if (x >= 0 && x <= Constantes.TAMANNO-1 && y >=0 && y <= Constantes.TAMANNO-1) {
 			this.x = x;
 			this.y = y;
+		} else {
+			this.x = 0;
+			this.y = 0;
 		}
 	}
 

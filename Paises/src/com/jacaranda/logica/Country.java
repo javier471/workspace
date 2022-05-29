@@ -80,11 +80,14 @@ public class Country {
 		return ciudades.size();
 	}
 
+	public void ordena() {
+		Collections.sort(ciudades);
+	}
+	
 	public String escribirFichero() {
 		StringBuilder resultado = new StringBuilder();
 
-		ComparadorPaises co=new ComparadorPaises();
-		Collections.sort(ciudades,co);
+		ordena();
 		
 		for (City c : ciudades) {
 			resultado.append(c.escribirFichero());
@@ -102,4 +105,6 @@ public class Country {
 		}
 		return resultado.toString();
 	}
+	
+	
 }
