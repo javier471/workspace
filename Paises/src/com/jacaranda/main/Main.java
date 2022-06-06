@@ -7,7 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-
+import java.util.Collections;
 
 import com.jacaranda.logica.City;
 import com.jacaranda.logica.Country;
@@ -120,9 +120,10 @@ public class Main {
 			FileWriter flujoEscritura = new FileWriter(nombre);
 			PrintWriter filtroEscritura = new PrintWriter(flujoEscritura);
 			
-		
+			ComparadorPaises cp=new ComparadorPaises();
+			Collections.sort(paises,cp);
 			for (Country siguiente:paises) {	
-				filtroEscritura.println(siguiente.escribirCiudades());
+				filtroEscritura.println(siguiente.escribirFichero());
 			}
 			filtroEscritura.close();
 			flujoEscritura.close();

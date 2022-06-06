@@ -98,12 +98,16 @@ public class Country {
 	}
 	public String escribirCiudades() {
 		StringBuilder resultado=new StringBuilder();
-		ComparadorPaises cp=new ComparadorPaises();
-		Collections.sort(ciudades,cp);
+		
 		for (City siguiente:this.ciudades) {
 			resultado.append(siguiente.escribirFicheroCiudades());
 		}
 		return resultado.toString();
+	}
+	
+	public int CompareTo(Country o) {
+		int resul=this.numCiudades()-o.numCiudades();
+		return resul;
 	}
 	
 	
